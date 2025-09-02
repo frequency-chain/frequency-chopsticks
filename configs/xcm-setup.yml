@@ -1,0 +1,27 @@
+# XCM testing configuration for Frequency <-> AssetHub
+relaychain:
+  endpoint:
+    - wss://rpc.polkadot.io
+    - wss://polkadot-rpc.dwellir.com
+  mock-signature-host: true
+  runtime-log-level: 5
+  db: ./db/polkadot.sqlite
+  
+parachain:
+  - id: 2000
+    name: asset-hub
+    config: ./configs/asset-hub.yml
+    port: 8001
+    
+  - id: 2091  # Frequency parachain ID
+    name: frequency
+    config: ./configs/frequency.yml  
+    port: 8002
+
+# XCM routing configuration
+xcm:
+  hrmp:
+    - sender: 2000  # AssetHub
+      recipient: 2091  # Frequency
+    - sender: 2091  # Frequency  
+      recipient: 2000  # AssetHub

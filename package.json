@@ -1,0 +1,35 @@
+{
+  "name": "frequency-chopsticks-xcm-testing",
+  "version": "1.0.0",
+  "description": "XCM testing environment for Frequency and AssetHub using Chopsticks",
+  "scripts": {
+    "test": "RUST_BACKTRACE=1 VERBOSE_LOG=true RUNTIME_LOG_LEVEL=1 vitest",
+    "test:debug": "LOG_LEVEL=debug RUNTIME_LOG_LEVEL=5 vitest run",
+    "test:trace": "LOG_LEVEL=trace RUNTIME_LOG_LEVEL=5  vitest run --reporter=verbose",
+    "test:xcm": "npx @acala-network/chopsticks xcm --r polkadot --p frequency --p asset-hub",
+    "fork:frequency": "npx @acala-network/chopsticks --config=configs/frequency.yml",
+    "fork:asset-hub": "npx @acala-network/chopsticks --config=configs/asset-hub.yml",
+    "fork:clean": "rm -f ./db/*.sqlite || true",
+    "fork:xcm": "npm run -s fork:clean && POLKADOT_BLOCK_NUMBER=27409884 STATEMINT_BLOCK_NUMBER=9525342 FREQUENCY_BLOCK_NUMBER=9117938 npx @acala-network/chopsticks xcm -r ./configs/polkadot.yml -p ./configs/asset-hub.yml -p ./configs/frequency.yml",
+    "start": "node --loader ts-node/esm index.ts"
+  },
+  "devDependencies": {
+    "@acala-network/chopsticks": "^0.15.0",
+    "@acala-network/chopsticks-testing": "^0.15.0",
+    "@polkadot/api": "^12.0.0",
+    "@polkadot/types": "^12.0.0",
+    "@polkadot/util": "^13.0.0",
+    "@polkadot/util-crypto": "^13.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "type": "module",
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}
