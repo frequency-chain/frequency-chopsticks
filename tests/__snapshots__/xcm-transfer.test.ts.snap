@@ -138,6 +138,21 @@ exports[`XCM > Polkadot send downward messages to frequency > system events 2`] 
 ]
 `;
 
+exports[`XCM > frequency send horizontal messages to AssetHub > assethub-final-balance 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 0,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
 exports[`XCM > frequency send horizontal messages to AssetHub > check-initial-balance of alice on assetHub 1`] = `
 {
   "consumers": 0,
@@ -308,6 +323,21 @@ exports[`XCM > frequency send horizontal messages to AssetHub > final-balance 1`
 }
 `;
 
+exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-send 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 9999998094206,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
 exports[`XCM > frequency send horizontal messages to AssetHub > hrmp 1`] = `[]`;
 
 exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1`] = `
@@ -420,6 +450,8 @@ exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1
 `;
 
 exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `[]`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 2`] = `[]`;
 
 exports[`XCM > frequency send horizontal messages to AssetHub > system events 1`] = `
 [

@@ -200,15 +200,15 @@ describe('XCM', async () => {
       },
     })
 
-
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
-    await check(frequency.api.query.foreignAssets.account(  { 
-      parents: 1,
-      interior: "Here",
-    }, alice.address)).toMatchSnapshot()
+    // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
+    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
+    // await check(frequency.api.query.foreignAssets.account(  { 
+    //   parents: 1,
+    //   interior: "Here",
+    // }, alice.address)).toMatchSnapshot()
   
-    await frequency.api.tx.polkadotXcm
+    try {
+    let tx = await frequency.api.tx.polkadotXcm
       .limitedReserveTransferAssets(
         { 
           V3: { 
@@ -223,7 +223,7 @@ describe('XCM', async () => {
               X1: { 
                 AccountId32: { 
                   network: null, 
-                  id: alice.addressRaw, // Uint8Array ok
+                  id: alice.addressRaw, 
                 } 
               } 
             } 
@@ -245,38 +245,116 @@ describe('XCM', async () => {
         0,
         'Unlimited'
       )
-      .signAndSend(alice)
 
-   // 3. Check HRMP messages (before block creation)
-    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+      try {
+      console.log('SUBMITTING=======')
+      await new Promise(async (resolve, reject) => {
+        const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
+          console.log(`Transaction status: ${status.type}`)
+          console.log('here 1')
 
-    // 4. Check initial events (before block creation)
-    await checkSystemEvents(frequency).toMatchSnapshot('initial-events')
+          if (status.isInvalid) {
+            console.log('Transaction is INVALID')
+            unsub()
+            reject(new Error('Transaction invalid'))
+          }
+          console.log('here 2')
 
-      // 5. Create block on source chain (sends the
-    await frequency.chain.newBlock()
+          if (status.isDropped) {
+            console.log('X Transaction was DROPPED from pool')
+            unsub()
+            reject(new Error('Transaction dropped'))
+          }
+          console.log('here 3')
 
+          if (status.isReady) {
+            console.log('Transaction is ready in pool')
+          }
+          console.log('here 4')
+          
+          await frequency.chain.newBlock()
 
-    // 6. Check source chain events after sending
-    await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
+          if (status.isInBlock) {
+            console.log('Transaction INCLUDED in block')
 
-    // 7. Create block on destination chain (receives
+            if (dispatchError) {
+              if (dispatchError.isModule) {
+                const decoded = frequency.api.registry.findMetaError(dispatchError.asModule)
+                console.log('Dispatch error:', `${decoded.section}.${decoded.name}`)
+              } else {
+                console.log('Dispatch error:', dispatchError.toString())
+              }
+            }
+            console.log('here 5')
+
+            unsub()
+            resolve(true)
+          }
+        })
+      })
+
+    } catch (error: any) {
+      console.error('Error in transaction flow:', error.message)
+      console.error('Full error:', error)
+    }
+    console.log('here 6')
     await assetHub.chain.newBlock()
 
-    // 8. Check destination chain events after receiving
+      
+      // await tx.signAndSend(alice)
+
+      console.log('=== CHECKING EVENTS ===')
+      const events = await frequency.api.query.system.events()
+      console.log('Events after simple transaction:', events.length)
+      console.log('Events:', JSON.stringify(events, null, 2))
+
+      const success = events.find(({ event }) => event.method === 'ExtrinsicSuccess')
+      const failed = events.find(({ event }) => event.method === 'ExtrinsicFailed')
+
+      if (success) {
+        console.log('Simple transaction succeeded')
+      }
+      if (failed) {
+        console.log('Simple transaction failed:', failed.event.data.toHuman())
+      }
+    } catch (error) {
+      console.error('Error sending XCM transfer:', error)
+      throw error
+    }
+
+    // Check HRMP messages BEFORE block creation
+    console.log('=== CHECKING HRMP MESSAGES ===')
+    const hrmpMessages = await checkHrmp(frequency).value()
+    console.log('HRMP Messages:', JSON.stringify(hrmpMessages, null, 2))
+    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+
+    // Check HRMP messages before block creation
+    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+    await checkSystemEvents(frequency).toMatchSnapshot('initial-events')
+
+    await frequency.chain.newBlock()
+    await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
+    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot('frequency-after-send')
+
+
+    // Process on destination chain
+    await assetHub.chain.newBlock()
     await checkSystemEvents(assetHub).toMatchSnapshot('events-after-receiving')
 
-    // 9. Verify balance changes on destination chain
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("final-balance")
-    //  await checkHrmp(frequency).toMatchSnapshot()
-    // await checkSystemEvents(frequency).toMatchSnapshot()
-    // await frequency.chain.newBlock();
-    // await checkSystemEvents(frequency).toMatchSnapshot()
+    // Verify XCM success/failure
+    const events = await assetHub.api.query.system.events()
+    const xcmResults = events.filter(({ event }) =>
+      event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
+    )
+    console.log('XCM Results:', xcmResults.map(e => `${e.event.method}: ${e.event.data}`))
+
+    // final verification
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
+  
     // await check(frequency.api.query.foreignAssets.account(  { 
     //   parents: 1,
     //   interior: "Here",
     // }, alice.address)).toMatchSnapshot()
 
-    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
   })
 })

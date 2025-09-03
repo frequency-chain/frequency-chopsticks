@@ -40,7 +40,7 @@ export default {
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
       endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
-      port: 8004,
+      port: 8000,
       mockSignatureHost: true,
       runtimeLogLevel: 5,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
@@ -50,6 +50,8 @@ export default {
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
       endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
+      runtimeLogLevel: 5,
+      processQueuedMessages: true,
       ...options,
     })
   },

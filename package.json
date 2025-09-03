@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "XCM testing environment for Frequency and AssetHub using Chopsticks",
   "scripts": {
-    "test": "RUST_BACKTRACE=1 VERBOSE_LOG=true RUNTIME_LOG_LEVEL=1 vitest",
+    "test": "RUST_BACKTRACE=1 VERBOSE_LOG=true RUNTIME_LOG_LEVEL=5 vitest",
     "test:debug": "LOG_LEVEL=debug RUNTIME_LOG_LEVEL=5 vitest run",
     "test:trace": "LOG_LEVEL=trace RUNTIME_LOG_LEVEL=5  vitest run --reporter=verbose",
     "test:xcm": "npx @acala-network/chopsticks xcm --r polkadot --p frequency --p asset-hub",
@@ -30,6 +30,10 @@
     "experimentalSpecifierResolution": "node"
   },
   "dependencies": {
-    "dotenv": "^17.2.1"
+    "@polkadot-api/descriptors": "file:.papi/descriptors",
+    "@polkadot-labs/hdkd": "^0.0.23",
+    "@polkadot-labs/hdkd-helpers": "^0.0.23",
+    "dotenv": "^17.2.1",
+    "polkadot-api": "^1.16.4"
   }
 }
