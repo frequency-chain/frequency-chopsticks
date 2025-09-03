@@ -182,6 +182,10 @@ describe('XCM', async () => {
         Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
       },
       ForeignAssets: {
+        Asset: [[
+          [{parents: 1, interior: "Here"}],
+          {supply: 1000e10, owner: alice.address}
+        ]],
         Account: [[
           [
             { 
@@ -191,7 +195,7 @@ describe('XCM', async () => {
             alice.address
           ],
           {
-            balance: 10e10,
+            balance: 12e10,
             status:  { "Liquid": null },
             reason: {'Consumer': null },
             extra: null,
@@ -202,10 +206,12 @@ describe('XCM', async () => {
 
     // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
     // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
-    // await check(frequency.api.query.foreignAssets.account(  { 
-    //   parents: 1,
-    //   interior: "Here",
-    // }, alice.address)).toMatchSnapshot()
+    const balance = await frequency.api.query.foreignAssets.account(  { 
+      parents: 1,
+      interior: "Here",
+    }, alice.address);
+    console.log('alice foreign assets balance:', balance.toHuman())
+    check(balance).toMatchSnapshot()
   
     try {
     let tx = await frequency.api.tx.polkadotXcm
@@ -235,7 +241,7 @@ describe('XCM', async () => {
               id: { 
                 Concrete: { 
                   parents: 1, 
-                  interior: { Here: null } 
+                  interior: "Here" 
                 } 
               }, 
               fun: { Fungible: 5e10 } 
@@ -246,62 +252,62 @@ describe('XCM', async () => {
         'Unlimited'
       )
 
-      try {
-      console.log('SUBMITTING=======')
-      await new Promise(async (resolve, reject) => {
-        const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
-          console.log(`Transaction status: ${status.type}`)
-          console.log('here 1')
+      // try {
+    //   console.log('SUBMITTING=======')
+    //   await new Promise(async (resolve, reject) => {
+    //     const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
+    //       console.log(`Transaction status: ${status.type}`)
+    //       console.log('here 1')
 
-          if (status.isInvalid) {
-            console.log('Transaction is INVALID')
-            unsub()
-            reject(new Error('Transaction invalid'))
-          }
-          console.log('here 2')
+    //       if (status.isInvalid) {
+    //         console.log('Transaction is INVALID')
+    //         unsub()
+    //         reject(new Error('Transaction invalid'))
+    //       }
+    //       console.log('here 2')
 
-          if (status.isDropped) {
-            console.log('X Transaction was DROPPED from pool')
-            unsub()
-            reject(new Error('Transaction dropped'))
-          }
-          console.log('here 3')
+    //       if (status.isDropped) {
+    //         console.log('X Transaction was DROPPED from pool')
+    //         unsub()
+    //         reject(new Error('Transaction dropped'))
+    //       }
+    //       console.log('here 3')
 
-          if (status.isReady) {
-            console.log('Transaction is ready in pool')
-          }
-          console.log('here 4')
+    //       if (status.isReady) {
+    //         console.log('Transaction is ready in pool')
+    //       }
+    //       console.log('here 4')
           
-          await frequency.chain.newBlock()
+    //       await frequency.chain.newBlock()
 
-          if (status.isInBlock) {
-            console.log('Transaction INCLUDED in block')
+    //       if (status.isInBlock) {
+    //         console.log('Transaction INCLUDED in block')
 
-            if (dispatchError) {
-              if (dispatchError.isModule) {
-                const decoded = frequency.api.registry.findMetaError(dispatchError.asModule)
-                console.log('Dispatch error:', `${decoded.section}.${decoded.name}`)
-              } else {
-                console.log('Dispatch error:', dispatchError.toString())
-              }
-            }
-            console.log('here 5')
+    //         if (dispatchError) {
+    //           if (dispatchError.isModule) {
+    //             const decoded = frequency.api.registry.findMetaError(dispatchError.asModule)
+    //             console.log('Dispatch error:', `${decoded.section}.${decoded.name}`)
+    //           } else {
+    //             console.log('Dispatch error:', dispatchError.toString())
+    //           }
+    //         }
+    //         console.log('here 5')
 
-            unsub()
-            resolve(true)
-          }
-        })
-      })
+    //         unsub()
+    //         resolve(true)
+    //       }
+    //     })
+    //   })
 
-    } catch (error: any) {
-      console.error('Error in transaction flow:', error.message)
-      console.error('Full error:', error)
-    }
-    console.log('here 6')
-    await assetHub.chain.newBlock()
+    // } catch (error: any) {
+    //   console.error('Error in transaction flow:', error.message)
+    //   console.error('Full error:', error)
+    // }
+    // console.log('here 6')
+    // await assetHub.chain.newBlock()
 
       
-      // await tx.signAndSend(alice)
+      await tx.signAndSend(alice)
 
       console.log('=== CHECKING EVENTS ===')
       const events = await frequency.api.query.system.events()
