@@ -2293,3 +2293,886 @@ Cancelling test run. Press CTRL+c again to exit forcefully.
   ],
   "db": "polkadot-db.sqlite"
 }
+[2025-09-03T15:30:20.812Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:30:21.190Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T15:30:21.193Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:30:23.021Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:31:54.509Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:31:54.748Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T15:31:54.751Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:31:56.627Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:31:59.715Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:31:59.964Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T15:31:59.966Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:32:02.266Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:32:02.494Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-03T15:32:02.496Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:32:20.131Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:32:20.363Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T15:32:20.366Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:33:17.246Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:33:17.498Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T15:33:17.501Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:33:19.941Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:33:20.179Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-03T15:33:20.182Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:34:45.994Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:34:46.218Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T15:34:46.220Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:36:11.798Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:36:12.040Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T15:36:12.043Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:36:24.836Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:36:56.094Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:36:56.315Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:36:56.318Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:37:00.214Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:37:18.186Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:37:18.408Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-03T15:37:18.410Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:37:22.204Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:38:35.317Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:38:35.547Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-03T15:38:35.549Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:38:39.607Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:38:42.066Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:38:45.063Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:38:46.224Z] [ERROR] 2025-09-03 09:38:46        RPC-CORE: subscribeRuntimeVersion(): RuntimeVersion:: disconnected from ws://localhost:11309: 1000:: Normal Closure
+[2025-09-03T15:38:46.224Z] [ERROR] 2025-09-03 09:38:46        RPC-CORE: subscribeRuntimeVersion(): RuntimeVersion:: disconnected from ws://localhost:11309: 1000:: Normal Closure
+[2025-09-03T15:38:46.797Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:38:47.035Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:38:47.037Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:38:50.621Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:38:52.920Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:38:56.128Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:38:57.266Z] [ERROR] 2025-09-03 09:38:57        RPC-CORE: subscribeRuntimeVersion(): RuntimeVersion:: disconnected from ws://localhost:13015: 1000:: Normal Closure
+[2025-09-03T15:38:57.266Z] [ERROR] 2025-09-03 09:38:57        RPC-CORE: subscribeRuntimeVersion(): RuntimeVersion:: disconnected from ws://localhost:13015: 1000:: Normal Closure
+[2025-09-03T15:39:03.968Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:39:04.193Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T15:39:04.195Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:39:07.658Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:39:09.979Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:39:13.361Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:39:19.681Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:39:20.042Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-03T15:39:20.044Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:39:23.570Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:39:34.287Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:39:34.551Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-03T15:39:34.553Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:39:38.293Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:41:16.301Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:41:16.544Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T15:41:16.549Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:41:20.442Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:41:23.864Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:41:24.091Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:41:24.094Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:41:27.625Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:42:56.744Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:42:56.979Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T15:42:56.981Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:43:00.875Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:44:07.971Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:44:08.194Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:44:08.196Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:44:12.246Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:51:43.228Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:51:43.577Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T15:51:43.580Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:51:47.731Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:52:31.001Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:52:31.368Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-03T15:52:31.370Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:52:35.412Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:52:38.262Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:52:38.500Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T15:52:38.502Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:52:42.323Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:53:08.657Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:53:09.013Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-03T15:53:09.016Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:53:12.946Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:53:47.013Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:53:47.240Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:53:47.242Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:53:51.056Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:55:10.782Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:55:11.009Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:55:11.011Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:55:15.093Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:55:32.494Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:55:32.710Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T15:55:32.713Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:55:36.470Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:59:13.330Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:59:13.683Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T15:59:13.686Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:59:17.837Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:59:22.489Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:59:25.543Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:59:25.876Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T15:59:25.878Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:59:29.334Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:59:33.870Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:59:34.109Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-03T15:59:34.111Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:59:37.816Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T15:59:49.439Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T15:59:49.664Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-03T15:59:49.666Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T15:59:53.597Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:00:32.085Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:00:32.309Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T16:00:32.311Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:00:36.237Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:01:37.785Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:01:57.596Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:01:57.925Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-03T16:01:57.927Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:02:01.793Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:02:24.290Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:02:30.477Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:02:43.797Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:03:12.304Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:03:26.349Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:03:44.856Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:03:45.119Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T16:03:45.122Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:03:48.934Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:03:56.681Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:03:56.900Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-03T16:03:56.903Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:04:00.485Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:07:42.956Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:07:43.309Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-03T16:07:43.312Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:07:47.992Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:08:41.374Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:08:41.730Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T16:08:41.733Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:08:45.947Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:08:56.849Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:08:57.081Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-03T16:08:57.084Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:09:00.796Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:09:04.482Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:09:04.717Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T16:09:04.720Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:09:08.323Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:10:15.400Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:10:15.642Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T16:10:15.645Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:10:19.923Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:10:53.612Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:10:53.834Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T16:10:53.837Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:10:57.810Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:11:30.980Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:11:31.211Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T16:11:31.214Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:11:35.083Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T16:12:31.999Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T16:12:32.370Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T16:12:32.375Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8004,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T16:12:37.506Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { setStorage, DownwardMessage, } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing'
 import { setupContext, testingPairs} from '@acala-network/chopsticks-testing'
-import { connectVertical } from '@acala-network/chopsticks'
+import { connectVertical, connectParachains } from '@acala-network/chopsticks'
 
 
 const { check, checkSystemEvents, checkUmp } = withExpect(expect);
@@ -20,11 +20,13 @@ const downwardMessages: DownwardMessage[] = [
 describe('XCM', async () => {
   let frequency: Network
   let polkadot: Network
+  let assetHub: Network
   let networksD: Network
 
   beforeEach(async () => {
     frequency = await networks.frequency()
     // networksD = await networks.network()
+    assetHub = await networks.assetHub()
 
     polkadot = await networks.polkadot()
 
@@ -100,7 +102,7 @@ describe('XCM', async () => {
     await checkSystemEvents(frequency).toMatchSnapshot()
   })
 
-  it.only('frequency send upward messages to Polkadot', async () => {
+  it('frequency send upward messages to Polkadot', async () => {
     await connectVertical(polkadot.chain, frequency.chain)
 
     const { alice } = testingPairs()
@@ -168,5 +170,89 @@ describe('XCM', async () => {
 
     // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
     // await checkSystemEvents(polkadot).toMatchSnapshot()
+  })
+
+  it.only("frequency send horizontal messages to AssetHub", async () => {
+    await connectParachains([frequency.chain, assetHub.chain])
+
+    const { alice } = testingPairs()
+    
+    await setStorage(frequency.chain, {
+      System: {
+        Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+      },
+      ForeignAssets: {
+        Account: [[
+          [
+            { 
+              parents: 1,
+              interior: "Here",
+            },
+            alice.address
+          ],
+          {
+            balance: 10e10,
+            status:  { "Liquid": null },
+            reason: {'Consumer': null },
+            extra: null,
+          }
+      ]],
+      },
+    })
+
+
+    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
+    await check(frequency.api.query.foreignAssets.account(  { 
+      parents: 1,
+      interior: "Here",
+    }, alice.address)).toMatchSnapshot()
+  
+    await frequency.api.tx.polkadotXcm
+      .limitedReserveTransferAssets(
+        { 
+          V3: { 
+            parents: 1, 
+            interior: { X1: { Parachain: 1000 } } 
+          } 
+        },
+        { 
+          V3: { 
+            parents: 0, 
+            interior: { 
+              X1: { 
+                AccountId32: { 
+                  network: null, 
+                  id: alice.addressRaw, // Uint8Array ok
+                } 
+              } 
+            } 
+          } 
+        },
+        { 
+          V3: [
+            { 
+              id: { 
+                Concrete: { 
+                  parents: 1, 
+                  interior: { Here: null } 
+                } 
+              }, 
+              fun: { Fungible: 5e10 } 
+            }
+          ] 
+        },
+        0,
+        'Unlimited'
+      )
+      .signAndSend(alice)
+    
+    await checkSystemEvents(frequency).toMatchSnapshot()
+    await frequency.chain.newBlock();
+    await checkSystemEvents(frequency).toMatchSnapshot()
+    await check(frequency.api.query.foreignAssets.account(  { 
+      parents: 1,
+      interior: "Here",
+    }, alice.address)).toMatchSnapshot()
   })
 })

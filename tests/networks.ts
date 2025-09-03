@@ -53,6 +53,16 @@ export default {
       ...options,
     })
   },
+  assetHub: (options?: Partial<SetupOption>) => {
+    return setupContext({
+      wasmOverride: process.env.ASSET_HUB_WASM || undefined,
+      runtimeLogLevel: 5,
+      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,
+      endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
+      ...options,
+    })
+  },
   network: (options?: Partial<Record<string, | string | undefined>>) => {
       return setupNetworks({
         frequency: {
@@ -61,6 +71,14 @@ export default {
         blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
           endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
           db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
+          ...options,
+        },
+        assetHub: {
+          wasmOverride: process.env.ASSET_HUB_WASM || undefined,
+          runtimeLogLevel: 5,
+          blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,
+          endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
+          db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
           ...options,
         },
         polkadot: {
