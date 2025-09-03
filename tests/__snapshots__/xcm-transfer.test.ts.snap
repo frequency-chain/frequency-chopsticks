@@ -138,6 +138,289 @@ exports[`XCM > Polkadot send downward messages to frequency > system events 2`] 
 ]
 `;
 
+exports[`XCM > frequency send horizontal messages to AssetHub > check-initial-balance of alice on assetHub 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 0,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > check-initial-balance of alice on frequency 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 10000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > events-after-receiving 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 290000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "No",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 130000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > events-after-sending 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+      "freeBalance": "(rounded 10000000000000)",
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 1900000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 1900000)",
+      "tip": 0,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": {
+        "Module": {
+          "error": "0x18000000",
+          "index": 72,
+        },
+      },
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 1300000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > final-balance 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 0,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > hrmp 1`] = `[]`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "No",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 99000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 10000)",
+          "refTime": "(rounded 230000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "amount": "(rounded 6800000)",
+      "msaId": 2,
+    },
+    "method": "CapacityWithdrawn",
+    "section": "capacity",
+  },
+  {
+    "data": {
+      "key": "f6bNmqaacEGcnraEKM4rLGKLRLJXUDpCt6WFmGw6YqDiwhDHv",
+      "msaId": "(rounded 550000)",
+    },
+    "method": "MsaCreated",
+    "section": "msa",
+  },
+  {
+    "data": {
+      "delegatorId": "(rounded 550000)",
+      "providerId": 2,
+    },
+    "method": "DelegationGranted",
+    "section": "msa",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "handle": "jordan.39",
+      "msaId": "(rounded 550000)",
+    },
+    "method": "HandleClaimed",
+    "section": "handles",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "currContentHash": "(rounded 1900000000)",
+      "msaId": "(rounded 550000)",
+      "prevContentHash": 0,
+      "schemaId": 7,
+    },
+    "method": "ItemizedPageUpdated",
+    "section": "statefulStorage",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {},
+    "method": "BatchCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 73000)",
+          "refTime": "(rounded 2000000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `[]`;
+
 exports[`XCM > frequency send horizontal messages to AssetHub > system events 1`] = `
 [
   {
@@ -388,6 +671,21 @@ exports[`XCM > frequency send horizontal messages to AssetHub 4`] = `
     "consumer": null,
   },
   "status": "Liquid",
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub 5`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 0,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
 }
 `;
 

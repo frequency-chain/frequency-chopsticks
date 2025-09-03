@@ -5,7 +5,7 @@ import { setupContext, testingPairs} from '@acala-network/chopsticks-testing'
 import { connectVertical, connectParachains } from '@acala-network/chopsticks'
 
 
-const { check, checkSystemEvents, checkUmp } = withExpect(expect);
+const { check, checkSystemEvents, checkUmp, checkHrmp } = withExpect(expect);
 
 
 import networks, { type Network } from './networks.js'
@@ -246,13 +246,37 @@ describe('XCM', async () => {
         'Unlimited'
       )
       .signAndSend(alice)
-    
-    await checkSystemEvents(frequency).toMatchSnapshot()
-    await frequency.chain.newBlock();
-    await checkSystemEvents(frequency).toMatchSnapshot()
-    await check(frequency.api.query.foreignAssets.account(  { 
-      parents: 1,
-      interior: "Here",
-    }, alice.address)).toMatchSnapshot()
+
+   // 3. Check HRMP messages (before block creation)
+    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+
+    // 4. Check initial events (before block creation)
+    await checkSystemEvents(frequency).toMatchSnapshot('initial-events')
+
+      // 5. Create block on source chain (sends the
+    await frequency.chain.newBlock()
+
+
+    // 6. Check source chain events after sending
+    await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
+
+    // 7. Create block on destination chain (receives
+    await assetHub.chain.newBlock()
+
+    // 8. Check destination chain events after receiving
+    await checkSystemEvents(assetHub).toMatchSnapshot('events-after-receiving')
+
+    // 9. Verify balance changes on destination chain
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("final-balance")
+    //  await checkHrmp(frequency).toMatchSnapshot()
+    // await checkSystemEvents(frequency).toMatchSnapshot()
+    // await frequency.chain.newBlock();
+    // await checkSystemEvents(frequency).toMatchSnapshot()
+    // await check(frequency.api.query.foreignAssets.account(  { 
+    //   parents: 1,
+    //   interior: "Here",
+    // }, alice.address)).toMatchSnapshot()
+
+    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
   })
 })
