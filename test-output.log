@@ -1703,3 +1703,1266 @@
 [2025-09-03T23:24:01.769Z] [LOG] === CHECKING HRMP MESSAGES ===
 [2025-09-03T23:24:01.771Z] [LOG] HRMP Messages: []
 [2025-09-03T23:24:10.998Z] [LOG] XCM Results: []
+[2025-09-03T23:26:32.350Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:27:23.122Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:28:10.006Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:28:10.383Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-03T23:28:10.386Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:28:14.346Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:28:16.671Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:28:17.322Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:28:17.324Z] [LOG] HRMP Messages: []
+[2025-09-03T23:28:26.486Z] [LOG] XCM Results: []
+[2025-09-03T23:31:05.491Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:31:05.847Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T23:31:05.850Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:31:09.631Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:31:11.952Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:31:12.634Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:31:12.640Z] [LOG] HRMP Messages: []
+[2025-09-03T23:32:45.192Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:32:45.548Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T23:32:45.552Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:32:49.930Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:32:52.117Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:32:52.774Z] [LOG] before block----------------------------
+[2025-09-03T23:32:52.775Z] [LOG] after block----------------------------
+[2025-09-03T23:32:52.775Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:32:52.779Z] [LOG] HRMP Messages: []
+[2025-09-03T23:33:35.766Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:33:35.996Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-03T23:33:35.999Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:33:40.583Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:33:42.831Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:33:43.497Z] [LOG] before block----------------------------
+[2025-09-03T23:33:43.497Z] [LOG] after block----------------------------
+[2025-09-03T23:33:43.498Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:33:44.073Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:33:44.344Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-03T23:33:44.347Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:33:47.864Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:33:50.089Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:33:50.758Z] [LOG] before block----------------------------
+[2025-09-03T23:33:50.758Z] [LOG] after block----------------------------
+[2025-09-03T23:33:50.758Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:33:59.662Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:33:59.924Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-03T23:33:59.927Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:34:03.676Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:34:05.962Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:34:06.657Z] [LOG] before block----------------------------
+[2025-09-03T23:34:06.658Z] [LOG] after block----------------------------
+[2025-09-03T23:34:06.658Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:34:15.412Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:34:15.626Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T23:34:15.629Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:34:19.310Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:34:21.412Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:34:22.067Z] [LOG] before block----------------------------
+[2025-09-03T23:34:22.068Z] [LOG] after block----------------------------
+[2025-09-03T23:34:22.068Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:35:53.397Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:35:53.611Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T23:35:53.615Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:35:58.043Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:36:00.760Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:36:01.401Z] [LOG] before block----------------------------
+[2025-09-03T23:36:01.401Z] [LOG] after block----------------------------
+[2025-09-03T23:36:01.401Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:36:27.919Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:36:28.155Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-03T23:36:28.160Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:36:32.271Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:36:34.836Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:36:35.482Z] [LOG] before block----------------------------
+[2025-09-03T23:36:35.483Z] [LOG] after block----------------------------
+[2025-09-03T23:36:35.483Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:36:36.087Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:36:36.309Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-03T23:36:36.311Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:36:39.680Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:36:41.914Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:36:42.598Z] [LOG] before block----------------------------
+[2025-09-03T23:36:42.598Z] [LOG] after block----------------------------
+[2025-09-03T23:36:42.598Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:38:29.396Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:38:29.622Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T23:38:29.625Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:38:34.372Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:38:36.756Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:38:37.404Z] [LOG] before block----------------------------
+[2025-09-03T23:38:37.405Z] [LOG] after block----------------------------
+[2025-09-03T23:38:37.405Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:38:51.746Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:38:51.963Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T23:38:51.966Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:38:55.722Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:38:57.840Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:38:58.496Z] [LOG] before block----------------------------
+[2025-09-03T23:38:58.496Z] [LOG] after block----------------------------
+[2025-09-03T23:38:58.497Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:39:08.219Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:39:08.496Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T23:39:08.499Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:39:12.555Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:39:14.821Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:39:15.489Z] [LOG] before block----------------------------
+[2025-09-03T23:39:15.490Z] [LOG] after block----------------------------
+[2025-09-03T23:39:15.490Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:39:39.903Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:39:40.160Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T23:39:40.163Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:39:44.394Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:39:46.736Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:39:49.371Z] [LOG] before block----------------------------
+[2025-09-03T23:39:49.372Z] [LOG] after block----------------------------
+[2025-09-03T23:39:49.372Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:40:38.715Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:40:39.070Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-03T23:40:39.075Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:40:42.757Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:40:45.035Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:40:47.600Z] [LOG] before block----------------------------
+[2025-09-03T23:40:47.600Z] [LOG] after block----------------------------
+[2025-09-03T23:40:47.600Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:41:49.240Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:41:49.611Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-03T23:41:49.614Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:41:53.244Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:41:55.376Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:42:12.671Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:42:12.924Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-03T23:42:12.927Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:42:17.092Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:42:19.729Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:42:22.336Z] [ERROR] 2025-09-03 17:42:22        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1011: {"unknown":{"noUnsignedValidator":null}}
+[2025-09-03T23:42:22.337Z] [ERROR] 2025-09-03 17:42:22        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1011: {"unknown":{"noUnsignedValidator":null}}
+[2025-09-03T23:42:52.411Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:42:52.771Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-03T23:42:52.773Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:42:57.043Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:42:59.186Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:43:01.775Z] [LOG] before block----------------------------
+[2025-09-03T23:43:01.775Z] [LOG] after block----------------------------
+[2025-09-03T23:43:01.775Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:43:24.451Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:43:24.684Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T23:43:24.686Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:43:28.981Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:43:31.573Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:43:34.207Z] [LOG] before block----------------------------
+[2025-09-03T23:43:34.208Z] [LOG] after block----------------------------
+[2025-09-03T23:43:34.208Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:43:35.603Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:43:35.871Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-03T23:43:35.874Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:43:39.421Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:43:41.746Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:43:50.201Z] [LOG] before block----------------------------
+[2025-09-03T23:43:50.201Z] [LOG] after block----------------------------
+[2025-09-03T23:43:50.201Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:43:50.863Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:43:51.087Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-03T23:43:51.090Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:43:54.738Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:43:56.818Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:44:05.063Z] [LOG] before block----------------------------
+[2025-09-03T23:44:05.064Z] [LOG] after block----------------------------
+[2025-09-03T23:44:05.064Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:51:41.414Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:51:41.691Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-03T23:51:41.693Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:51:45.276Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:51:47.385Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:51:55.369Z] [LOG] before block----------------------------
+[2025-09-03T23:51:55.370Z] [LOG] after block----------------------------
+[2025-09-03T23:51:55.370Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:52:49.450Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:52:49.611Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-03T23:52:49.615Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:52:52.982Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:52:54.949Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:53:02.597Z] [LOG] before block----------------------------
+[2025-09-03T23:53:02.598Z] [LOG] after block----------------------------
+[2025-09-03T23:53:02.598Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:53:04.951Z] [LOG] XCM Results: []
+[2025-09-03T23:53:34.582Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:53:34.747Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-03T23:53:34.749Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:53:38.878Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:53:41.013Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:53:47.822Z] [LOG] before block----------------------------
+[2025-09-03T23:53:47.824Z] [LOG] after block----------------------------
+[2025-09-03T23:53:47.824Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:53:49.760Z] [LOG] XCM Results: []
+[2025-09-03T23:54:47.062Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:54:47.387Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-03T23:54:47.389Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:54:51.260Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:54:53.217Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:55:00.054Z] [LOG] before block----------------------------
+[2025-09-03T23:55:00.054Z] [LOG] after block----------------------------
+[2025-09-03T23:55:00.055Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:55:02.386Z] [LOG] XCM Results: []
+[2025-09-03T23:58:59.621Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:58:59.907Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-03T23:58:59.909Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-03T23:59:03.522Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-03T23:59:05.464Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-03T23:59:10.272Z] [LOG] before block----------------------------
+[2025-09-03T23:59:10.273Z] [LOG] after block----------------------------
+[2025-09-03T23:59:10.273Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-03T23:59:56.690Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-03T23:59:56.868Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-03T23:59:56.870Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:00:00.852Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:00:02.774Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:00:07.074Z] [LOG] before block----------------------------
+[2025-09-04T00:00:07.074Z] [LOG] after block----------------------------
+[2025-09-04T00:00:07.074Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:00:08.952Z] [LOG] XCM Results: []
+[2025-09-04T00:01:16.813Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:01:17.095Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-04T00:01:17.097Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:01:30.875Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:01:34.141Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:01:39.020Z] [LOG] before block----------------------------
+[2025-09-04T00:01:39.020Z] [LOG] after block----------------------------
+[2025-09-04T00:01:39.020Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:01:40.041Z] [LOG] XCM Results: []
+[2025-09-04T00:06:25.459Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:06:25.752Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-04T00:06:25.754Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:06:29.324Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:06:30.605Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:06:35.316Z] [LOG] before block----------------------------
+[2025-09-04T00:06:35.316Z] [LOG] after block----------------------------
+[2025-09-04T00:06:35.317Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:06:36.527Z] [LOG] XCM Results: []
+[2025-09-04T00:06:36.978Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:06:37.152Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-04T00:06:37.155Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:06:40.862Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:06:42.021Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:06:46.765Z] [LOG] before block----------------------------
+[2025-09-04T00:06:46.765Z] [LOG] after block----------------------------
+[2025-09-04T00:06:46.765Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:06:47.776Z] [LOG] XCM Results: []
+[2025-09-04T00:06:48.279Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:06:48.447Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-04T00:06:48.449Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:06:52.044Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:06:53.605Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:06:59.232Z] [LOG] before block----------------------------
+[2025-09-04T00:06:59.233Z] [LOG] after block----------------------------
+[2025-09-04T00:06:59.233Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:07:00.269Z] [LOG] XCM Results: []
+[2025-09-04T00:07:22.193Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:07:22.357Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-04T00:07:22.359Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:07:25.831Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:07:27.172Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:07:33.054Z] [LOG] before block----------------------------
+[2025-09-04T00:07:33.055Z] [LOG] after block----------------------------
+[2025-09-04T00:07:33.055Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:07:34.072Z] [LOG] XCM Results: []
+[2025-09-04T00:07:36.307Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:07:36.473Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-04T00:07:36.475Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:07:39.725Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:07:40.952Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:07:46.604Z] [LOG] before block----------------------------
+[2025-09-04T00:07:46.605Z] [LOG] after block----------------------------
+[2025-09-04T00:07:46.605Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:07:47.915Z] [LOG] XCM Results: []
+[2025-09-04T00:07:48.386Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:07:48.556Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-04T00:07:48.558Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:07:52.158Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:07:53.411Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:07:57.924Z] [LOG] before block----------------------------
+[2025-09-04T00:07:57.924Z] [LOG] after block----------------------------
+[2025-09-04T00:07:57.925Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:07:57.942Z] [LOG] XCM Results: []
+[2025-09-04T00:07:59.177Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:07:59.338Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-04T00:07:59.340Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:08:02.957Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:08:04.306Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:08:09.299Z] [LOG] before block----------------------------
+[2025-09-04T00:08:09.300Z] [LOG] after block----------------------------
+[2025-09-04T00:08:09.300Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:08:09.319Z] [LOG] XCM Results: []
+[2025-09-04T00:09:31.920Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:09:32.214Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-04T00:09:32.216Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:09:35.725Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:09:37.040Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:09:41.580Z] [LOG] before block----------------------------
+[2025-09-04T00:09:41.581Z] [LOG] after block----------------------------
+[2025-09-04T00:09:41.582Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:09:42.799Z] [LOG] XCM Results: []
+[2025-09-04T00:09:58.282Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:09:58.449Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-04T00:09:58.451Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:10:02.149Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:10:04.072Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:10:08.748Z] [LOG] before block----------------------------
+[2025-09-04T00:10:08.749Z] [LOG] after block----------------------------
+[2025-09-04T00:10:08.749Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:10:10.707Z] [LOG] XCM Results: []
+[2025-09-04T00:10:14.077Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:10:14.241Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-04T00:10:14.243Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:10:17.594Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:10:18.808Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:10:24.246Z] [LOG] before block----------------------------
+[2025-09-04T00:10:24.247Z] [LOG] after block----------------------------
+[2025-09-04T00:10:24.247Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:10:25.257Z] [LOG] XCM Results: []
+[2025-09-04T00:12:01.710Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:12:01.992Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-04T00:12:01.993Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:12:06.096Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:12:07.630Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:12:12.452Z] [LOG] before block----------------------------
+[2025-09-04T00:12:12.453Z] [LOG] after block----------------------------
+[2025-09-04T00:12:12.453Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:12:13.451Z] [LOG] XCM Results: []
+[2025-09-04T00:12:33.327Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:12:33.490Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-04T00:12:33.492Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:12:37.049Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:12:38.602Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:12:43.817Z] [LOG] before block----------------------------
+[2025-09-04T00:12:43.817Z] [LOG] after block----------------------------
+[2025-09-04T00:12:43.817Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:12:58.779Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:12:58.947Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-04T00:12:58.949Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:13:02.403Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:13:03.609Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:13:08.444Z] [LOG] before block----------------------------
+[2025-09-04T00:13:08.445Z] [LOG] after block----------------------------
+[2025-09-04T00:13:08.445Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:13:09.445Z] [LOG] XCM Results: []
+[2025-09-04T00:13:27.603Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:13:27.776Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-04T00:13:27.779Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:13:32.027Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:13:33.756Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:13:38.431Z] [LOG] before block----------------------------
+[2025-09-04T00:13:38.431Z] [LOG] after block----------------------------
+[2025-09-04T00:13:38.431Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:14:07.410Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-04T00:14:07.731Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-04T00:14:07.733Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-04T00:14:11.173Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-04T00:14:12.401Z] [LOG] alice foreign assets balance: {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-04T00:14:17.089Z] [LOG] before block----------------------------
+[2025-09-04T00:14:17.089Z] [LOG] after block----------------------------
+[2025-09-04T00:14:17.089Z] [LOG] === CHECKING HRMP MESSAGES ===
+[2025-09-04T00:14:18.081Z] [LOG] XCM Results: []

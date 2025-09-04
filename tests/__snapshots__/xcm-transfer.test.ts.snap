@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`XCM > frequency send horizontal messages to AssetHub > AssetHub chain xcm events 1`] = `[]`;
+
 exports[`XCM > frequency send horizontal messages to AssetHub > assethub-final-balance 1`] = `
 {
   "consumers": 0,
@@ -48,7 +50,33 @@ exports[`XCM > frequency send horizontal messages to AssetHub > events-after-rec
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > events-after-sending 1`] = `
+exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-send 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 9999998094206,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > frequency-final-balance 1`] = `
+{
+  "balance": 39030000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1`] = `
 [
   {
     "data": {
@@ -307,133 +335,83 @@ exports[`XCM > frequency send horizontal messages to AssetHub > events-after-sen
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-send 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": 9999998094206,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1`] = `
+exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `
 [
   {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "No",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 99000000)",
-        },
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v4": [
+          {
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 50000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 50000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 1,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "network": null,
+                      },
+                    },
+                  ],
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "0xc19a7cd8603092f04db6fdc5df0d4d94abe5d6d63f6bb0b70ac1a9fa79772eaf",
+          },
+        ],
       },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 10000)",
-          "refTime": "(rounded 230000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "amount": "(rounded 6800000)",
-      "msaId": 2,
-    },
-    "method": "CapacityWithdrawn",
-    "section": "capacity",
-  },
-  {
-    "data": {
-      "key": "f6bNmqaacEGcnraEKM4rLGKLRLJXUDpCt6WFmGw6YqDiwhDHv",
-      "msaId": "(rounded 550000)",
-    },
-    "method": "MsaCreated",
-    "section": "msa",
-  },
-  {
-    "data": {
-      "delegatorId": "(rounded 550000)",
-      "providerId": 2,
-    },
-    "method": "DelegationGranted",
-    "section": "msa",
-  },
-  {
-    "data": {},
-    "method": "ItemCompleted",
-    "section": "utility",
-  },
-  {
-    "data": {
-      "handle": "jordan.39",
-      "msaId": "(rounded 550000)",
-    },
-    "method": "HandleClaimed",
-    "section": "handles",
-  },
-  {
-    "data": {},
-    "method": "ItemCompleted",
-    "section": "utility",
-  },
-  {
-    "data": {
-      "currContentHash": "(rounded 1900000000)",
-      "msaId": "(rounded 550000)",
-      "prevContentHash": 0,
-      "schemaId": 7,
-    },
-    "method": "ItemizedPageUpdated",
-    "section": "statefulStorage",
-  },
-  {
-    "data": {},
-    "method": "ItemCompleted",
-    "section": "utility",
-  },
-  {
-    "data": {},
-    "method": "BatchCompleted",
-    "section": "utility",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Normal",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 73000)",
-          "refTime": "(rounded 2000000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
+    ],
+    "recipient": 1000,
   },
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `[]`;
-
-exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 2`] = `[]`;
+exports[`XCM > frequency send horizontal messages to AssetHub > to chain xcm events 1`] = `[]`;
 
 exports[`XCM > frequency send horizontal messages to AssetHub 1`] = `
 {

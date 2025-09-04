@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { setStorage, DownwardMessage, } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing'
-import { setupContext, testingPairs} from '@acala-network/chopsticks-testing'
+import { setupContext, testingPairs, sendTransaction} from '@acala-network/chopsticks-testing'
 import { connectVertical, connectParachains } from '@acala-network/chopsticks'
 
 
@@ -25,8 +25,10 @@ describe('XCM', async () => {
 
   beforeEach(async () => {
     frequency = await networks.frequency()
+    frequency.dev.newBlock()
     // networksD = await networks.network()
     assetHub = await networks.assetHub()
+    assetHub.dev.newBlock()
 
     polkadot = await networks.polkadot()
 
@@ -173,7 +175,7 @@ describe('XCM', async () => {
   })
 
   it.only("frequency send horizontal messages to AssetHub", async () => {
-    await connectParachains([frequency.chain, assetHub.chain])
+    await connectParachains([frequency.chain, assetHub.chain], false)
 
     const { alice } = testingPairs()
     
@@ -204,6 +206,12 @@ describe('XCM', async () => {
       },
     })
 
+    // await setStorage(assetHub.chain, {
+    //   System: {
+    //     Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+    //   },
+    // })
+
     // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
     // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
     const balance = await frequency.api.query.foreignAssets.account(  { 
@@ -213,7 +221,7 @@ describe('XCM', async () => {
     console.log('alice foreign assets balance:', balance.toHuman())
     check(balance).toMatchSnapshot()
   
-    try {
+    // try {
     let tx = await frequency.api.tx.polkadotXcm
       .limitedReserveTransferAssets(
         { 
@@ -304,48 +312,52 @@ describe('XCM', async () => {
     //   console.error('Full error:', error)
     // }
     // console.log('here 6')
-    // await assetHub.chain.newBlock()
 
-      
-      await tx.signAndSend(alice)
+      await sendTransaction(tx.signAsync(alice)) 
+      await frequency.chain.newBlock()
+      // await tx.signAndSend(alice)
 
-      console.log('=== CHECKING EVENTS ===')
-      const events = await frequency.api.query.system.events()
-      console.log('Events after simple transaction:', events.length)
-      console.log('Events:', JSON.stringify(events, null, 2))
+      // console.log('=== CHECKING EVENTS ===')
+      // const events = await frequency.api.query.system.events()
+      // console.log('Events after simple transaction:', events.length)
+      // console.log('Events:', JSON.stringify(events, null, 2))
 
-      const success = events.find(({ event }) => event.method === 'ExtrinsicSuccess')
-      const failed = events.find(({ event }) => event.method === 'ExtrinsicFailed')
+    //   const success = events.find(({ event }) => event.method === 'ExtrinsicSuccess')
+    //   const failed = events.find(({ event }) => event.method === 'ExtrinsicFailed')
 
-      if (success) {
-        console.log('Simple transaction succeeded')
-      }
-      if (failed) {
-        console.log('Simple transaction failed:', failed.event.data.toHuman())
-      }
-    } catch (error) {
-      console.error('Error sending XCM transfer:', error)
-      throw error
-    }
-
+    //   if (success) {
+    //     console.log('Simple transaction succeeded')
+    //   }
+    //   if (failed) {
+    //     console.log('Simple transaction failed:', failed.event.data.toHuman())
+    //   }
+    // } catch (error) {
+    //   console.error('Error sending XCM transfer:', error)
+    //   throw error
+    // }
+    console.log("before block----------------------------")
+    // frequency.chain.newBlock();
+    console.log("after block----------------------------")
     // Check HRMP messages BEFORE block creation
     console.log('=== CHECKING HRMP MESSAGES ===')
-    const hrmpMessages = await checkHrmp(frequency).value()
-    console.log('HRMP Messages:', JSON.stringify(hrmpMessages, null, 2))
-    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+    await checkHrmp(frequency).toMatchSnapshot('outbound-hrmp-messages')
+    // console.log('HRMP Messages:', JSON.stringify(hrmpMessages, null, 2))
+    // await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
 
     // Check HRMP messages before block creation
-    await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+    // await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
     await checkSystemEvents(frequency).toMatchSnapshot('initial-events')
 
-    await frequency.chain.newBlock()
-    await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
+    // await frequency.chain.newBlock()
+    // await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot('frequency-after-send')
 
 
     // Process on destination chain
     await assetHub.chain.newBlock()
-    await checkSystemEvents(assetHub).toMatchSnapshot('events-after-receiving')
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
+    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('AssetHub chain xcm events')
+    // await checkSystemEvents(assetHub).toMatchSnapshot('events-after-receiving')
 
     // Verify XCM success/failure
     const events = await assetHub.api.query.system.events()
@@ -355,12 +367,12 @@ describe('XCM', async () => {
     console.log('XCM Results:', xcmResults.map(e => `${e.event.method}: ${e.event.data}`))
 
     // final verification
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
+    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
   
-    // await check(frequency.api.query.foreignAssets.account(  { 
-    //   parents: 1,
-    //   interior: "Here",
-    // }, alice.address)).toMatchSnapshot()
+    await check(frequency.api.query.foreignAssets.account(  { 
+      parents: 1,
+      interior: "Here",
+    }, alice.address)).toMatchSnapshot('frequency-final-balance')
 
   })
 })
