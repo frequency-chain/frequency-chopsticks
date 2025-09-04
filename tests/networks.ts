@@ -6,7 +6,8 @@ dotenvConfig()
 const endpoints = {
   polkadot: ['wss://rpc.ibp.network/polkadot'],
   frequency: ['wss://0.rpc.frequency.xyz'],
-  assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
+  // assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
+  assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io']
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -62,6 +63,7 @@ export default {
       blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
+      processQueuedMessages: true,
       ...options,
     })
   },
@@ -70,12 +72,14 @@ export default {
         frequency: {
         wasmOverride: process.env.FREQUENCY_WASM || undefined,
         runtimeLogLevel: 5,
+        allowUnresolvedImports: true,
         blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
           endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
           db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
           ...options,
         },
         assetHub: {
+          allowUnresolvedImports: true,
           wasmOverride: process.env.ASSET_HUB_WASM || undefined,
           runtimeLogLevel: 5,
           blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,

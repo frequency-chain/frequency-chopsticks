@@ -17,49 +17,16 @@ exports[`XCM > frequency send horizontal messages to AssetHub > assethub-final-b
 }
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > events-after-receiving 1`] = `
-[
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 290000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "No",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 130000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
 exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-send 1`] = `
 {
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 9999998094206,
+    "free": 9999995419260,
     "frozen": 0,
     "reserved": 0,
   },
-  "nonce": 0,
+  "nonce": 2,
   "providers": 1,
   "sufficients": 0,
 }
@@ -105,28 +72,6 @@ exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1
     },
     "method": "ExtrinsicSuccess",
     "section": "system",
-  },
-  {
-    "data": {
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "NewAccount",
-    "section": "system",
-  },
-  {
-    "data": {
-      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-      "freeBalance": "(rounded 10000000000000)",
-    },
-    "method": "Endowed",
-    "section": "balances",
   },
   {
     "data": {
@@ -335,6 +280,193 @@ exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1
 ]
 `;
 
+exports[`XCM > frequency send horizontal messages to AssetHub > initial-events-force-subscribe-version-notify 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+      "freeBalance": "(rounded 10000000000000)",
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 1300000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 1300000)",
+      "tip": 0,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": "BadOrigin",
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 1100000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+  {
+    "data": {
+      "amount": "(rounded 1300000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 1300000)",
+      "tip": 0,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": "BadOrigin",
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 1100000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > frequency send horizontal messages to AssetHub > initial-events-taco 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "cost": [
+        {
+          "fun": {
+            "Fungible": "(rounded 30000000000)",
+          },
+          "id": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      ],
+      "destination": {
+        "interior": {
+          "X1": [
+            {
+              "Parachain": 1000,
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "messageId": "(hash)",
+    },
+    "method": "VersionNotifyRequested",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
 exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `
 [
   {
@@ -390,7 +522,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-me
                   "x1": [
                     {
                       "accountId32": {
-                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
                         "network": null,
                       },
                     },
@@ -401,7 +533,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-me
             },
           },
           {
-            "setTopic": "0xc19a7cd8603092f04db6fdc5df0d4d94abe5d6d63f6bb0b70ac1a9fa79772eaf",
+            "setTopic": "(redacted)",
           },
         ],
       },
@@ -410,8 +542,6 @@ exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-me
   },
 ]
 `;
-
-exports[`XCM > frequency send horizontal messages to AssetHub > to chain xcm events 1`] = `[]`;
 
 exports[`XCM > frequency send horizontal messages to AssetHub 1`] = `
 {

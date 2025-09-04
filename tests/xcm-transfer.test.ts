@@ -25,16 +25,17 @@ describe('XCM', async () => {
 
   beforeEach(async () => {
     frequency = await networks.frequency()
-    frequency.dev.newBlock()
+    // frequency.chain.newBlock()
     // networksD = await networks.network()
     assetHub = await networks.assetHub()
-    assetHub.dev.newBlock()
+    // assetHub.chain.newBlock()
 
     polkadot = await networks.polkadot()
 
     return async () => {
       await frequency.teardown()
       await polkadot.teardown()
+      await assetHub.teardown()
     }
   })
 
@@ -53,7 +54,7 @@ describe('XCM', async () => {
   it('Polkadot send downward messages to frequency', async () => {
     await connectVertical(polkadot.chain, frequency.chain)
 
-    const { alice } = testingPairs()
+    const { alice, bob } = testingPairs()
 
     polkadot.dev.setStorage({
       System: {
@@ -177,7 +178,24 @@ describe('XCM', async () => {
   it.only("frequency send horizontal messages to AssetHub", async () => {
     await connectParachains([frequency.chain, assetHub.chain], false)
 
-    const { alice } = testingPairs()
+    const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber()
+    frequency.dev.setHead(blockNumberFrequency)
+
+    const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber()
+    assetHub.dev.setHead(blockNumberAssetHub)
+
+
+    const { alice, bob} = testingPairs()
+    // ✅ Setup AssetHub to be able to receive and process messages
+    await setStorage(assetHub.chain, {
+      System: {
+        Account: [[[alice.address], { data: { free: 0 } }]],
+      },
+      // MessageQueue: {
+      //   ServiceHead: null,
+      // }
+    })
+
     
     await setStorage(frequency.chain, {
       System: {
@@ -204,24 +222,47 @@ describe('XCM', async () => {
           }
       ]],
       },
+      PolkadotXcm: {
+        SafeXcmVersion: 3,
+        // VersionNotifiers: [[
+        //   [4, 
+        //     {
+        //       V5: {parents: 1, interior: {X1: [{Parachain: 1000}]}}
+        //     }
+        //   ],
+        //   0,
+        // ]],
+        SupportedVersion: [[
+          [5, 
+            {
+              V5: {parents: 1, interior: {X1: [{Parachain: 1000}]}}
+            }
+          ],
+          4,
+        ]],
+      }
     })
 
-    // await setStorage(assetHub.chain, {
-    //   System: {
-    //     Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
-    //   },
-    // })
+    // console.log(
+    //   frequency.api.query.polkadotXcm.supportedVersion.
+    // );
+// ]    const versions = await frequency.api.query.polkadotxcm.supportedversion(0, {v3:{parents: 1, interior: {x1: {parachain: 1000}}}});
+// const versions = await frequency.api.query.polkadotXcm.supportedVersion(4, {v4:{parents: 1, interior: {X1: [{Parachain: 1000}]}}});
+//     console.log('versions:', versions.toHuman())
 
-    // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot()
-    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot()
+
     const balance = await frequency.api.query.foreignAssets.account(  { 
       parents: 1,
       interior: "Here",
     }, alice.address);
-    console.log('alice foreign assets balance:', balance.toHuman())
     check(balance).toMatchSnapshot()
   
-    // try {
+    const forceSubscribeVersionNotify = frequency.api.tx.polkadotXcm.forceSubscribeVersionNotify({V4:{parents: 1, interior: {X1: [{Parachain: 1000}]}}})
+    await forceSubscribeVersionNotify.signAndSend(alice)
+    await sendTransaction(forceSubscribeVersionNotify.signAsync(alice))
+    await frequency.chain.newBlock()
+    await checkSystemEvents(frequency).toMatchSnapshot('initial-events-force-subscribe-version-notify')
+
     let tx = await frequency.api.tx.polkadotXcm
       .limitedReserveTransferAssets(
         { 
@@ -237,7 +278,7 @@ describe('XCM', async () => {
               X1: { 
                 AccountId32: { 
                   network: null, 
-                  id: alice.addressRaw, 
+                  id: bob.addressRaw, 
                 } 
               } 
             } 
@@ -260,119 +301,48 @@ describe('XCM', async () => {
         'Unlimited'
       )
 
-      // try {
-    //   console.log('SUBMITTING=======')
-    //   await new Promise(async (resolve, reject) => {
-    //     const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
-    //       console.log(`Transaction status: ${status.type}`)
-    //       console.log('here 1')
-
-    //       if (status.isInvalid) {
-    //         console.log('Transaction is INVALID')
-    //         unsub()
-    //         reject(new Error('Transaction invalid'))
-    //       }
-    //       console.log('here 2')
-
-    //       if (status.isDropped) {
-    //         console.log('X Transaction was DROPPED from pool')
-    //         unsub()
-    //         reject(new Error('Transaction dropped'))
-    //       }
-    //       console.log('here 3')
-
-    //       if (status.isReady) {
-    //         console.log('Transaction is ready in pool')
-    //       }
-    //       console.log('here 4')
-          
-    //       await frequency.chain.newBlock()
-
-    //       if (status.isInBlock) {
-    //         console.log('Transaction INCLUDED in block')
-
-    //         if (dispatchError) {
-    //           if (dispatchError.isModule) {
-    //             const decoded = frequency.api.registry.findMetaError(dispatchError.asModule)
-    //             console.log('Dispatch error:', `${decoded.section}.${decoded.name}`)
-    //           } else {
-    //             console.log('Dispatch error:', dispatchError.toString())
-    //           }
-    //         }
-    //         console.log('here 5')
-
-    //         unsub()
-    //         resolve(true)
-    //       }
-    //     })
-    //   })
-
-    // } catch (error: any) {
-    //   console.error('Error in transaction flow:', error.message)
-    //   console.error('Full error:', error)
-    // }
-    // console.log('here 6')
-
       await sendTransaction(tx.signAsync(alice)) 
-      await frequency.chain.newBlock()
       // await tx.signAndSend(alice)
+      await frequency.chain.newBlock()
 
-      // console.log('=== CHECKING EVENTS ===')
-      // const events = await frequency.api.query.system.events()
-      // console.log('Events after simple transaction:', events.length)
-      // console.log('Events:', JSON.stringify(events, null, 2))
-
-    //   const success = events.find(({ event }) => event.method === 'ExtrinsicSuccess')
-    //   const failed = events.find(({ event }) => event.method === 'ExtrinsicFailed')
-
-    //   if (success) {
-    //     console.log('Simple transaction succeeded')
-    //   }
-    //   if (failed) {
-    //     console.log('Simple transaction failed:', failed.event.data.toHuman())
-    //   }
-    // } catch (error) {
-    //   console.error('Error sending XCM transfer:', error)
-    //   throw error
-    // }
-    console.log("before block----------------------------")
-    // frequency.chain.newBlock();
-    console.log("after block----------------------------")
-    // Check HRMP messages BEFORE block creation
-    console.log('=== CHECKING HRMP MESSAGES ===')
-    await checkHrmp(frequency).toMatchSnapshot('outbound-hrmp-messages')
-    // console.log('HRMP Messages:', JSON.stringify(hrmpMessages, null, 2))
-    // await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
-
-    // Check HRMP messages before block creation
-    // await checkHrmp(frequency).toMatchSnapshot("outbound-hrmp-messages")
+    await checkHrmp(frequency).redact({ redactKeys: /setTopic/ }).toMatchSnapshot('outbound-hrmp-messages')
     await checkSystemEvents(frequency).toMatchSnapshot('initial-events')
 
-    // await frequency.chain.newBlock()
-    // await checkSystemEvents(frequency).toMatchSnapshot('events-after-sending')
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot('frequency-after-send')
 
-
+    // await frequency.chain.newBlock()
+    // await checkSystemEvents(frequency).toMatchSnapshot('initial-events-taco')
     // Process on destination chain
+    // console.log('=== CHECKING ASSET HUB BLOCK ===')
+      // Check AssetHub inbox
+  // before processing
+  // const inboxBefore = await assetHub.api.query.parachainSystem.lastHrmpMqcHeads()
+  // console.log('AssetHubinbox before block:',inboxBefore.toHuman())
+  const inboxBefore = await assetHub.api.query.parachainSystem.lastHrmpMqcHeads()
+  console.log('AssetHubinbox before block:',inboxBefore.toHuman())
     await assetHub.chain.newBlock()
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
+
+  const inboxAfter= await assetHub.api.query.parachainSystem.lastHrmpMqcHeads()
+  console.log('AssetHubinbox before block:',inboxAfter.toHuman())
+
     await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('AssetHub chain xcm events')
-    // await checkSystemEvents(assetHub).toMatchSnapshot('events-after-receiving')
+    // await checkSystemEvents(assetHub).toMatchSnapshot('AssetHub chain xcm events')
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
+
 
     // Verify XCM success/failure
     const events = await assetHub.api.query.system.events()
+    // console.log('AssetHub events:', events.toHuman())
     const xcmResults = events.filter(({ event }) =>
       event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
     )
-    console.log('XCM Results:', xcmResults.map(e => `${e.event.method}: ${e.event.data}`))
+    // console.log('XCM Results:', xcmResults.map(e => `${e.event.method}: ${e.event.data}`))
 
-    // final verification
-    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot("assethub-final-balance")
   
     await check(frequency.api.query.foreignAssets.account(  { 
       parents: 1,
       interior: "Here",
     }, alice.address)).toMatchSnapshot('frequency-final-balance')
 
-  })
+  }, 240000)
 })
