@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`XCM > frequency send horizontal messages to AssetHub > AssetHub chain xcm events 1`] = `[]`;
+exports[`XCM > AssetHub send DOT to Frequency > AssetHub chain xcm events 1`] = `[]`;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > assethub-final-balance 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > assethub-final-balance 1`] = `
 {
   "consumers": 0,
   "data": {
     "feeFrozen": 0,
-    "free": 0,
+    "free": 10000000000000,
     "miscFrozen": 0,
     "reserved": 0,
   },
@@ -17,7 +17,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > assethub-final-b
 }
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-send 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > frequency-after-send 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -32,7 +32,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > frequency-after-
 }
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > frequency-final-balance 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > frequency-final-balance 1`] = `
 {
   "balance": 39030000000,
   "extra": null,
@@ -43,7 +43,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > frequency-final-
 }
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
 [
   {
     "data": {
@@ -280,7 +280,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > initial-events 1
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > initial-events-force-subscribe-version-notify 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > initial-events-force-subscribe-version-notify 1`] = `
 [
   {
     "data": {
@@ -399,75 +399,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > initial-events-f
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub > initial-events-taco 1`] = `
-[
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "cost": [
-        {
-          "fun": {
-            "Fungible": "(rounded 30000000000)",
-          },
-          "id": {
-            "interior": "Here",
-            "parents": 1,
-          },
-        },
-      ],
-      "destination": {
-        "interior": {
-          "X1": [
-            {
-              "Parachain": 1000,
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "messageId": "(hash)",
-    },
-    "method": "VersionNotifyRequested",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 2000)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 98000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-messages 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > outbound-hrmp-messages 1`] = `
 [
   {
     "data": [
@@ -543,7 +475,7 @@ exports[`XCM > frequency send horizontal messages to AssetHub > outbound-hrmp-me
 ]
 `;
 
-exports[`XCM > frequency send horizontal messages to AssetHub 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency 1`] = `
 {
   "balance": 120000000000,
   "extra": null,

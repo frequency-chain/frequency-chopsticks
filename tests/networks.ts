@@ -60,7 +60,7 @@ export default {
     return setupContext({
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
       runtimeLogLevel: 5,
-      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,
+      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9622453,
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
       processQueuedMessages: true,
