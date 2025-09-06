@@ -1012,3 +1012,2503 @@
 [2025-09-05T20:48:20.580Z] [ERROR] 2025-09-05 14:48:20        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
 [2025-09-05T20:48:33.590Z] [LOG] Test setup initialized - logging to test-output.log
 [2025-09-05T20:48:33.919Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-05T20:54:48.029Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:54:48.429Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-05T20:54:48.432Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:54:52.451Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:54:55.771Z] [ERROR] 2025-09-05 14:54:55        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:54:55.771Z] [ERROR] 2025-09-05 14:54:55        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:55:30.155Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:55:30.496Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-05T20:55:30.499Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:55:33.996Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:55:36.964Z] [ERROR] 2025-09-05 14:55:36        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:55:36.965Z] [ERROR] 2025-09-05 14:55:36        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:55:48.343Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:55:48.612Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-05T20:55:48.615Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:55:52.214Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:55:55.348Z] [ERROR] 2025-09-05 14:55:55        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:55:55.349Z] [ERROR] 2025-09-05 14:55:55        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T20:56:07.472Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:56:07.707Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-05T20:56:07.710Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:56:11.477Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:58:00.616Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:58:00.856Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-05T20:58:00.859Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:58:04.753Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:58:47.444Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T20:58:47.719Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-05T20:58:47.722Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T20:58:51.148Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T20:58:53.370Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T21:00:02.316Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T21:00:02.700Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-05T21:00:02.703Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T21:00:06.858Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T21:00:09.368Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T21:00:23.931Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T21:00:24.328Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-05T21:00:24.331Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T21:00:28.171Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T21:00:30.416Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T21:18:05.537Z] [ERROR] 2025-09-05 15:18:05          API-WS: disconnected from wss://0.rpc.frequency.xyz: 1006:: Abnormal Closure
+[2025-09-05T23:14:29.028Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:14:29.441Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:14:29.444Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:14:33.290Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:14:35.459Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:18:43.255Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:18:43.615Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:18:43.617Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:18:46.790Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:18:53.626Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:18:53.870Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:18:53.873Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:18:56.701Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:19:26.566Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:19:26.963Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-05T23:19:26.966Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:19:29.825Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:19:46.007Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:19:46.237Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-05T23:19:46.239Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:19:49.104Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:19:56.967Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:19:57.186Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-05T23:19:57.189Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:19:59.751Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:20:12.291Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:20:12.555Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-05T23:20:12.557Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:20:15.617Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:20:22.779Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:20:23.029Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-05T23:20:23.033Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:20:25.790Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:20:28.302Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:20:28.516Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:20:28.518Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:20:31.532Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:20:33.522Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:20:37.095Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:20:37.313Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-05T23:20:37.315Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:20:40.094Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:20:42.132Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:21:10.109Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:21:10.326Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-05T23:21:10.328Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:21:13.142Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:21:15.077Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:21:24.799Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:21:25.034Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-05T23:21:25.037Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:21:27.644Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:21:29.599Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:21:36.439Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:21:36.660Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:21:36.662Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:21:39.436Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:21:41.522Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:22:09.657Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:22:09.924Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:22:09.926Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:22:12.906Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:22:14.854Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:22:41.455Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:22:41.672Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-05T23:22:41.675Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:22:44.674Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:22:46.671Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:22:55.992Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:22:56.267Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:22:56.269Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:22:59.149Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:23:01.263Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:24:09.561Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:24:09.926Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-05T23:24:09.928Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:24:12.785Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:24:14.747Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:24:29.086Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:24:29.444Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-05T23:24:29.448Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:24:32.463Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:24:34.476Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:25:05.444Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:25:05.656Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-05T23:25:05.659Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:25:08.496Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:25:10.415Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:25:14.612Z] [ERROR] 2025-09-05 17:25:14        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:26:46.212Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:26:46.433Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:26:46.436Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:26:49.560Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:26:51.620Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:26:55.866Z] [ERROR] 2025-09-05 17:26:55        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:27:56.903Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:27:57.114Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:27:57.117Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:28:00.178Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:28:02.263Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:28:06.782Z] [ERROR] 2025-09-05 17:28:06        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:30:20.122Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:30:20.511Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-05T23:30:20.513Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:30:23.518Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:30:25.667Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:30:29.953Z] [ERROR] 2025-09-05 17:30:29        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:31:58.128Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:31:58.585Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-05T23:31:58.587Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:32:01.887Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:32:04.009Z] [LOG] balance {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:32:04.023Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:32:08.383Z] [ERROR] 2025-09-05 17:32:08        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:32:09.941Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:32:10.269Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-05T23:32:10.271Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:32:13.097Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:32:15.098Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:32:15.113Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:32:19.345Z] [ERROR] 2025-09-05 17:32:19        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:39:46.024Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:39:46.415Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-05T23:39:46.419Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:39:49.942Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:39:52.239Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:39:52.254Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:39:56.796Z] [ERROR] 2025-09-05 17:39:56        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:41:17.640Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:41:18.015Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:41:18.018Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:41:21.048Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:41:23.455Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "0",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "170,141,183,460,469,231,731,687,303,715,884,105,728"
+  }
+}
+[2025-09-05T23:41:23.469Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:41:27.767Z] [ERROR] 2025-09-05 17:41:27        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:41:40.968Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:41:41.193Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-05T23:41:41.196Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:41:44.146Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:41:46.126Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:41:46.141Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:41:50.642Z] [ERROR] 2025-09-05 17:41:50        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:41:54.174Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:41:54.398Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:41:54.401Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:41:57.150Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:41:59.193Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:41:59.267Z] [LOG] balance null
+[2025-09-05T23:42:03.381Z] [ERROR] 2025-09-05 17:42:03        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:42:03.990Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:42:04.260Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:42:04.263Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:42:07.313Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:42:09.328Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:42:09.344Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:42:13.894Z] [ERROR] 2025-09-05 17:42:13        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:42:16.855Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:42:17.190Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:42:17.192Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:42:20.119Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:42:22.187Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:42:22.203Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:42:26.463Z] [ERROR] 2025-09-05 17:42:26        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:43:31.866Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:43:32.181Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:43:32.183Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:43:35.296Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:43:37.395Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:43:37.409Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:44:02.538Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:44:02.851Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-05T23:44:02.853Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:44:05.749Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:44:07.746Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:44:07.761Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:44:11.973Z] [ERROR] 2025-09-05 17:44:11        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:45:13.616Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:45:13.851Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-05T23:45:13.853Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:45:16.839Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:45:18.956Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:45:18.970Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:45:23.091Z] [ERROR] 2025-09-05 17:45:23        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:46:03.765Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:46:24.184Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:46:24.421Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-05T23:46:24.424Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:46:27.624Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:46:29.673Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:46:29.687Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:46:34.137Z] [ERROR] 2025-09-05 17:46:34        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:46:59.406Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:46:59.804Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:46:59.806Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:47:02.632Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:47:04.700Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:47:04.715Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:47:08.773Z] [ERROR] 2025-09-05 17:47:08        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:47:09.323Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:47:09.559Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-05T23:47:09.562Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:47:12.251Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:47:14.200Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:47:14.214Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:47:18.541Z] [ERROR] 2025-09-05 17:47:18        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:47:27.879Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:47:28.246Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-05T23:47:28.249Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:47:31.112Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:47:33.166Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:47:33.184Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:47:37.521Z] [ERROR] 2025-09-05 17:47:37        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:47:38.206Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:47:38.568Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-05T23:47:38.571Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:47:41.480Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:47:43.500Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:47:43.516Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:47:48.013Z] [ERROR] 2025-09-05 17:47:48        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:47:48.774Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:47:49.132Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-05T23:47:49.135Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:47:51.920Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:47:53.910Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:47:53.924Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:47:58.253Z] [ERROR] 2025-09-05 17:47:58        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:48:26.033Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:48:26.270Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+[2025-09-05T23:48:26.273Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:48:29.425Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:48:31.620Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:48:31.639Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:48:36.047Z] [ERROR] 2025-09-05 17:48:36        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:48:36.594Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:48:36.806Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-05T23:48:36.808Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:48:39.624Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:48:41.574Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:48:41.592Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:48:45.776Z] [ERROR] 2025-09-05 17:48:45        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:51:13.309Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:51:13.702Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-05T23:51:13.704Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:51:16.518Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:51:18.598Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:51:18.611Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:51:22.709Z] [ERROR] 2025-09-05 17:51:22        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:51:22.710Z] [ERROR] 2025-09-05 17:51:22        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:51:57.537Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:51:57.904Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-05T23:51:57.907Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:52:00.766Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:52:02.801Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:52:02.817Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:52:07.164Z] [ERROR] 2025-09-05 17:52:07        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:52:07.165Z] [ERROR] 2025-09-05 17:52:07        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:52:07.714Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:52:07.946Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-05T23:52:07.949Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:52:10.915Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:52:12.886Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:52:12.901Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:52:17.268Z] [ERROR] 2025-09-05 17:52:17        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:52:17.269Z] [ERROR] 2025-09-05 17:52:17        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:53:08.155Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:53:08.374Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-05T23:53:08.376Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:53:11.641Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:53:13.797Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:53:13.810Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:53:18.019Z] [ERROR] 2025-09-05 17:53:18        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:53:18.019Z] [ERROR] 2025-09-05 17:53:18        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:53:52.627Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:53:52.886Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-05T23:53:52.888Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:53:56.026Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:53:58.049Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:53:58.064Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:54:02.319Z] [ERROR] 2025-09-05 17:54:02        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:54:02.320Z] [ERROR] 2025-09-05 17:54:02        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:54:02.880Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:54:03.106Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-05T23:54:03.109Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:54:06.000Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:54:08.016Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:54:08.029Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:54:12.352Z] [ERROR] 2025-09-05 17:54:12        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:54:12.353Z] [ERROR] 2025-09-05 17:54:12        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:54:23.209Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-05T23:54:23.428Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-05T23:54:23.430Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-05T23:54:26.528Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-05T23:54:28.577Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-05T23:54:28.602Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-05T23:54:33.057Z] [ERROR] 2025-09-05 17:54:33        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-05T23:54:33.058Z] [LOG] error {}
+[2025-09-05T23:54:33.059Z] [ERROR] 2025-09-05 17:54:33        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:03:28.363Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:03:28.766Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-06T00:03:28.769Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:03:32.092Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:03:34.492Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:03:34.510Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:03:38.985Z] [ERROR] 2025-09-05 18:03:38        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:03:38.986Z] [LOG] error {}
+[2025-09-06T00:03:38.988Z] [ERROR] 2025-09-05 18:03:38        RPC-CORE: submitAndWatchExtrinsic(extrinsic: Extrinsic): ExtrinsicStatus:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:06:57.260Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:06:57.617Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-06T00:06:57.621Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:07:00.562Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:07:02.826Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:07:02.846Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:07:07.301Z] [ERROR] 2025-09-05 18:07:07        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:07:07.302Z] [LOG] error {}
+[2025-09-06T00:08:33.280Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:08:33.720Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[2025-09-06T00:08:33.727Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:08:36.792Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:08:38.914Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:08:38.933Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:08:43.344Z] [ERROR] 2025-09-05 18:08:43        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:08:43.345Z] [LOG] error {}
+[2025-09-06T00:09:06.259Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:09:06.641Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-06T00:09:06.644Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:09:09.634Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:09:11.604Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:09:11.619Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:09:15.942Z] [ERROR] 2025-09-05 18:09:15        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:09:15.943Z] [LOG] error {}
+[2025-09-06T00:09:16.573Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:09:16.823Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-06T00:09:16.825Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:09:19.653Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:09:21.611Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:09:21.626Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:09:25.303Z] [LOG] account {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:09:25.988Z] [ERROR] 2025-09-05 18:09:25        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:09:25.989Z] [LOG] error {}
+[2025-09-06T00:09:56.539Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:09:56.933Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+[2025-09-06T00:09:56.936Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:10:00.308Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:10:02.462Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:10:02.482Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:10:06.781Z] [ERROR] 2025-09-05 18:10:06        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:10:06.782Z] [LOG] error {}
+[2025-09-06T00:10:48.452Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:10:48.800Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-06T00:10:48.803Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:10:51.651Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:10:53.668Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:10:53.688Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:10:57.933Z] [ERROR] 2025-09-05 18:10:57        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:11:23.865Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:11:24.165Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-06T00:11:24.168Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:11:27.218Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:11:29.312Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:11:29.328Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:11:33.783Z] [ERROR] 2025-09-05 18:11:33        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:13:21.742Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:13:22.142Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-06T00:13:22.145Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:13:26.545Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:13:29.053Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:13:29.068Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:13:35.617Z] [ERROR] 2025-09-05 18:13:35        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:13:50.570Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:13:50.860Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-06T00:13:50.863Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:13:53.849Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:13:55.844Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "miscFrozen": "0",
+    "feeFrozen": "0"
+  }
+}
+[2025-09-06T00:13:55.860Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:14:29.605Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:14:30.026Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-06T00:14:30.029Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:14:32.779Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:14:34.749Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "miscFrozen": "0",
+    "feeFrozen": "0"
+  }
+}
+[2025-09-06T00:14:34.763Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:23:54.506Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:23:54.896Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-06T00:23:54.898Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:23:59.634Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:24:02.154Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:24:02.178Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:24:08.587Z] [ERROR] 2025-09-05 18:24:08        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:25:16.033Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:25:16.505Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[2025-09-06T00:25:16.508Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:25:19.930Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:25:22.127Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:25:22.144Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:25:26.728Z] [ERROR] 2025-09-05 18:25:26        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:26:25.863Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:26:26.214Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-06T00:26:26.217Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:26:29.004Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:26:31.044Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:26:31.068Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:26:34.828Z] [LOG] blockNumber 9628835
+[2025-09-06T00:26:35.593Z] [ERROR] 2025-09-05 18:26:35        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:48:57.012Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:48:57.472Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[2025-09-06T00:48:57.475Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:49:01.403Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:49:03.786Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:49:03.804Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:49:07.385Z] [LOG] blockNumber 9628835
+[2025-09-06T00:49:08.304Z] [ERROR] 2025-09-05 18:49:08        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:52:59.360Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:52:59.736Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[2025-09-06T00:52:59.739Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:53:03.389Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:53:05.854Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:53:05.869Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:53:09.615Z] [LOG] blockNumber 9628835
+[2025-09-06T00:53:10.610Z] [ERROR] 2025-09-05 18:53:10        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:54:05.244Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:54:05.499Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[2025-09-06T00:54:05.502Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:54:09.283Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:54:12.947Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:54:12.962Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:54:16.604Z] [LOG] blockNumber 9628835
+[2025-09-06T00:54:17.500Z] [ERROR] 2025-09-05 18:54:17        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:55:35.619Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:55:36.008Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[2025-09-06T00:55:36.011Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:55:39.706Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:55:42.093Z] [LOG] balanceAssetHub {
+  "nonce": "0",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:55:42.118Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:55:45.734Z] [LOG] blockNumber 9628835
+[2025-09-06T00:55:46.599Z] [ERROR] 2025-09-05 18:55:46        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}
+[2025-09-06T00:55:47.233Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-06T00:55:47.478Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[2025-09-06T00:55:47.481Z] [LOG] Setting up Frequency network with options: {
+  "wasmOverride": "./wasm/frequency_runtime.wasm",
+  "blockNumber": 3000000,
+  "endpoint": [
+    "wss://0.rpc.frequency.xyz"
+  ],
+  "port": 8000,
+  "mockSignatureHost": true,
+  "runtimeLogLevel": 5,
+  "db": "frequency-db.sqlite"
+}
+[2025-09-06T00:55:50.861Z] [LOG] Setting up Polkadot network with options: {
+  "blockNumber": 14500000,
+  "endpoint": [
+    "wss://rpc.ibp.network/polkadot"
+  ],
+  "db": "polkadot-db.sqlite"
+}
+[2025-09-06T00:55:53.056Z] [LOG] balanceAssetHub {
+  "nonce": "1",
+  "consumers": "0",
+  "providers": "0",
+  "sufficients": "0",
+  "data": {
+    "free": "1,000,000,000,000,000",
+    "reserved": "0",
+    "frozen": "0",
+    "flags": "0"
+  }
+}
+[2025-09-06T00:55:53.071Z] [LOG] balance {
+  "balance": "120,000,000,000",
+  "status": "Liquid",
+  "reason": "Consumer",
+  "extra": null
+}
+[2025-09-06T00:55:56.722Z] [LOG] blockNumber 9628835
+[2025-09-06T00:55:57.660Z] [ERROR] 2025-09-05 18:55:57        RPC-CORE: submitExtrinsic(extrinsic: Extrinsic): Hash:: 1010: {"invalid":{"payment":null}}

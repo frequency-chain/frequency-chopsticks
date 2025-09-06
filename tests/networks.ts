@@ -7,7 +7,8 @@ const endpoints = {
   polkadot: ['wss://rpc.ibp.network/polkadot'],
   frequency: ['wss://0.rpc.frequency.xyz'],
   // assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
-  assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io']
+  // assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io']
+  assetHub: ['wss://statemint.api.onfinality.io/public-ws']
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -60,7 +61,7 @@ export default {
     return setupContext({
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
       runtimeLogLevel: 5,
-      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9622453,
+      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9628835,
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
       processQueuedMessages: true,
