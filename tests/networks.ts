@@ -8,7 +8,9 @@ const endpoints = {
   frequency: ['wss://0.rpc.frequency.xyz'],
   // assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
   // assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io']
-  assetHub: ['wss://statemint.api.onfinality.io/public-ws']
+  // assetHub: ['wss://statemint.api.onfinality.io/public-ws'],
+  assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
+  // assetHub: ['wss://pas-rpc.stakeworld.io/assethub']
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -38,15 +40,6 @@ export default {
     })
   },
   frequency: (options?: Partial<SetupOption>) => {
-    console.log('Setting up Frequency network with options:', {
-      wasmOverride: process.env.FREQUENCY_WASM || undefined,
-      blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
-      endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
-      port: 8000,
-      mockSignatureHost: true,
-      runtimeLogLevel: 5,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
-    })
     return setupContext({
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
@@ -58,43 +51,19 @@ export default {
     })
   },
   assetHub: (options?: Partial<SetupOption>) => {
-    return setupContext({
+    const config = {
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
       runtimeLogLevel: 5,
-      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9628835,
+      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9651100,
+      port: 8001,
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'assethub-db.sqlite' : undefined,
       processQueuedMessages: true,
       ...options,
-    })
+    };
+
+    console.log('Setting up AssetHub network with options:', config)
+
+    return setupContext(config)
   },
-  network: (options?: Partial<Record<string, | string | undefined>>) => {
-      return setupNetworks({
-        frequency: {
-        wasmOverride: process.env.FREQUENCY_WASM || undefined,
-        runtimeLogLevel: 5,
-        allowUnresolvedImports: true,
-        blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
-          endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
-          db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
-          ...options,
-        },
-        assetHub: {
-          allowUnresolvedImports: true,
-          wasmOverride: process.env.ASSET_HUB_WASM || undefined,
-          runtimeLogLevel: 5,
-          blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 3000000,
-          endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
-          db: !process.env.RUN_TESTS_WITHOUT_DB ? 'asset-hub-db.sqlite' : undefined,
-          ...options,
-        },
-        polkadot: {
-          wasmOverride: process.env.POLKADOT_WASM || undefined,
-          runtimeLogLevel: 5,
-          blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 14500000,
-          endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
-          db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
-          ...options,
-      }})
-    }
 }

@@ -1,0 +1,223 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 1500)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 130000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 17000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 17000000)",
+      "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 17000000)",
+      "tip": 0,
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": {
+        "Module": {
+          "error": "0x18000000",
+          "index": 31,
+        },
+      },
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 16000)",
+          "refTime": "(rounded 1200000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > AssetHub send DOT to Frequency > initial-events-force-subscribe-version-notify 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "No",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 99000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 10000)",
+          "refTime": "(rounded 230000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "amount": "(rounded 6800000)",
+      "msaId": 2,
+    },
+    "method": "CapacityWithdrawn",
+    "section": "capacity",
+  },
+  {
+    "data": {
+      "key": "f6bNmqaacEGcnraEKM4rLGKLRLJXUDpCt6WFmGw6YqDiwhDHv",
+      "msaId": "(rounded 550000)",
+    },
+    "method": "MsaCreated",
+    "section": "msa",
+  },
+  {
+    "data": {
+      "delegatorId": "(rounded 550000)",
+      "providerId": 2,
+    },
+    "method": "DelegationGranted",
+    "section": "msa",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "handle": "jordan.39",
+      "msaId": "(rounded 550000)",
+    },
+    "method": "HandleClaimed",
+    "section": "handles",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "currContentHash": "(rounded 1900000000)",
+      "msaId": "(rounded 550000)",
+      "prevContentHash": 0,
+      "schemaId": 7,
+    },
+    "method": "ItemizedPageUpdated",
+    "section": "statefulStorage",
+  },
+  {
+    "data": {},
+    "method": "ItemCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {},
+    "method": "BatchCompleted",
+    "section": "utility",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 73000)",
+          "refTime": "(rounded 2000000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > AssetHub send DOT to Frequency > outbound-hrmp-messages 1`] = `[]`;
+
+exports[`XCM > AssetHub send DOT to Frequency 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 1000000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > AssetHub send DOT to Frequency 2`] = `
+{
+  "balance": 120000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
