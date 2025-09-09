@@ -8,7 +8,7 @@ const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
-describe('XCM', async () => {
+describe('XCM limited reserve transfer from AssetHub to Frequency', async () => {
   let frequency: Network;
   let assetHub: Network;
 
@@ -26,13 +26,18 @@ describe('XCM', async () => {
     const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
     assetHub.dev.setHead(blockNumberAssetHub);
 
-    return async () => {
-      await frequency.teardown();
-      await assetHub.teardown();
-    };
+    // return async () => {
+    //   await frequency.teardown();
+    //   await assetHub.teardown();
+    // };
   });
 
-  it.only('AssetHub send DOT to Frequency', async () => {
+  afterEach(async () => {
+    await frequency.teardown();
+    await assetHub.teardown();
+  });
+
+  it('AssetHub send DOT to Frequency', async () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
     const { alice, bob, charlie } = testingPairs();
