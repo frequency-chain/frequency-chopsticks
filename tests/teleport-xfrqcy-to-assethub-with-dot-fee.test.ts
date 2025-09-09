@@ -178,14 +178,63 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
       ],
     };
 
+    const tx = await frequency.api.tx.polkadotXcm.execute(xcm, {
+      refTime: 8000000000,
+      proofSize: 200000,
+    });
 
-    await frequency.api.tx.polkadotXcm.execute(xcm, {
-        refTime: 8000000000,
-        proofSize: 200000
+    try {
+      await new Promise(async (resolve, reject) => {
+        const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
+          console.log(`Transaction status: ${status.type}`);
+
+          if (status.isInvalid) {
+            console.log('❌ Transaction is invalid');
+            unsub();
+            reject(new Error('Transaction is invalid'));
+            return;
+          }
+
+          if (status.isDropped) {
+            console.log('❌ Transaction is dropped');
+            unsub();
+            reject(new Error('Transaction is dropped'));
+            return;
+          }
+
+          if (status.isReady) {
+            console.log('✅ Transaction is ready in pool');
+            await frequency.chain.newBlock();
+            // Now create a block to process the transaction
+          }
+
+          if (status.isInBlock) {
+            console.log('✅ Transaction is in block');
+
+            if (dispatchError) {
+              if (dispatchError.isModule) {
+                const decoded = frequency.api.registry.findMetaError(dispatchError.asModule);
+                console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
+              } else {
+                console.log('❌ Dispatch error:', dispatchError.toString());
+              }
+              unsub();
+              reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
+              return;
+            }
+
+            console.log('✅ Transaction successful, unsubscribing...');
+            unsub();
+            resolve(true);
+          }
+        });
       });
+    } catch (error) {
+      console.log('error', error);
+    }
 
-    await frequency.chain.newBlock();
-    await assetHub.chain.newBlock();
+    // await frequency.chain.newBlock();
+    // await assetHub.chain.newBlock();
 
     await checkSystemEvents(frequency).toMatchSnapshot('frequency-events-after-xcm');
     await checkSystemEvents(assetHub).toMatchSnapshot('assethub-after-xcm-events');
@@ -194,145 +243,3 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
     // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
   });
 });
-
-// '{
-//       V5: [
-//         {
-//           WithdrawAsset: [
-//             {
-//               id: { parents: 0, interior: "here" },
-//               fun: { Fungible: $freq }
-//             },
-//             {
-//               id: { parents: 1, interior: "here" },
-//               fun: { Fungible: $dot }
-//             }
-//           ]
-//         },
-//         {
-//           InitiateTransfer: {
-//             destination: {
-//               parents: 1,
-//               interior: { X1: [ { Parachain: 1000 } ] }
-//             },
-//             remoteFees: {
-//               ReserveWithdraw: {
-//                 Definite: [
-//                   {
-//                     id: { parents: 1, interior: "here" },
-//                     fun: { Fungible: $dot }
-//                   }
-//                 ]
-//               }
-//             },
-//             preserveOrigin: false,
-//             assets: [
-//               {
-//                 Teleport: {
-//                   Definite: [
-//                     {
-//                       id: { parents: 0, interior: "here" },
-//                       fun: { Fungible: $freq }
-//                     }
-//                   ]
-//                 }
-//               }
-//             ],
-//             remoteXcm: [
-//               {
-//                 BuyExecution: {
-//                   fees: {
-//                     id: { parents: 1, interior: "Here" },
-//                     fun: { Fungible: $dot }
-//                   },
-//                   weightLimit: "Unlimited"
-//                 }
-//               },
-//               {
-//                 DepositAsset: {
-//                   assets: { Wild: { AllCounted: 2 } },
-//                   beneficiary: {
-//                     parents: 0,
-//                     interior: {
-//                       X1: [
-//                         {
-//                           AccountId32: {
-//                             network: null,
-//                             id: $recipient
-//                           }
-//                         }
-//                       ]
-//                     }
-//                   }
-//                 }
-//               }
-//             ]
-//           }
-//         }
-//       ]
-//     }')
-
-// {
-//     refTime: 8000000000,
-//     proofSize: 200000
-//   }
-
-// fn execute_xcm_frequency_to_asset_hub(t: FrequencyToAssetHubTest) -> DispatchResult {
-// 	let assets: Assets = t.args.assets.clone();
-
-// 	let local_teleportable_asset: Asset =
-// 		non_fee_asset(&assets, t.args.fee_asset_item as usize).unwrap().into();
-// 	// TODO(https://github.com/paritytech/polkadot-sdk/issues/6197): dry-run to get exact fees.
-// 	// For now )just use half the fees locally, half on dest
-
-// 	// Use half of the fees to cover remote execution and the
-// 	// remainding to cover delivery fees
-// 	let mut remote_execution_fee_asset: Asset =
-// 		fee_asset(&assets, t.args.fee_asset_item as usize).unwrap().into();
-// 	if let Fungible(fees_amount) = remote_execution_fee_asset.fun {
-// 		remote_execution_fee_asset.fun = Fungible(fees_amount / 2);
-// 	}
-
-// 	let xcm_on_dest = Xcm(vec![
-// 		RefundSurplus,
-// 		DepositAsset { assets: Wild(All), beneficiary: t.args.beneficiary },
-// 	]);
-
-// 	let xcm = Xcm::<()>(vec![
-// 		WithdrawAsset(assets),
-// 		// PayFees { asset: remote_fees.clone() },
-// 		InitiateTransfer {
-// 			destination: t.args.dest,
-// 			remote_fees: Some(AssetTransferFilter::ReserveWithdraw(
-// 				remote_execution_fee_asset.into(),
-// 			)),
-// 			preserve_origin: false,
-// 			assets: BoundedVec::truncate_from(vec![AssetTransferFilter::Teleport(
-// 				local_teleportable_asset.into(),
-// 			)]),
-// 			remote_xcm: xcm_on_dest,
-// 		},
-// 		RefundSurplus,
-// 		DepositAsset {
-// 			assets: Wild(All),
-// 			beneficiary: AccountId32Junction {
-// 				network: None,
-// 				id: FrequencyWestendSender::get().into(),
-// 			}
-// 			.into(),
-// 		},
-// 	]);
-
-// 	<FrequencyWestend as FrequencyWestendPallet>::PolkadotXcm::execute(
-// 		t.signed_origin,
-// 		bx!(staging_xcm::VersionedXcm::from(xcm.into())),
-// 		Weight::MAX,
-// 	)
-// 	.unwrap();
-// 	Ok(())
-// }
-
-// function teleportXfrqcyToAssethubWithDotFee() {
-//   const { alice, bob } = testingPairs();
-
-// }

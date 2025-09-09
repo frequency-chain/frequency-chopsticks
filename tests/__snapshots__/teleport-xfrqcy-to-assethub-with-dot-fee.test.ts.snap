@@ -8,8 +8,8 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
         "class": "Mandatory",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
+          "proofSize": 0,
+          "refTime": "(rounded 130000000)",
         },
       },
     },
@@ -22,8 +22,8 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
         "class": "Mandatory",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 130000000)",
+          "proofSize": "(rounded 1500)",
+          "refTime": "(rounded 280000000)",
         },
       },
     },
@@ -31,17 +31,6 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
     "section": "system",
   },
 ]
-`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > check-foreign-assets-account 1`] = `
-{
-  "balance": 120000000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
-}
 `;
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-check-foreign-assets-account 1`] = `
@@ -85,6 +74,58 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
     "method": "ExtrinsicSuccess",
     "section": "system",
   },
+  {
+    "data": {
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 3200000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 720000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 2500000)",
+      "tip": 0,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": {
+        "Module": {
+          "error": "0x18000000",
+          "index": 72,
+        },
+      },
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 1200000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
 ]
 `;
 
@@ -115,46 +156,5 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   "nonce": 0,
   "providers": 1,
   "sufficients": 0,
-}
-`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": 0,
-    "free": 100000000000,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 2`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": 0,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 3`] = `
-{
-  "balance": 120000000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
 }
 `;
