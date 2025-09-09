@@ -1,6 +1,26 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
+exports[`XCM > AssetHub send DOT to Frequency > AssetHub chain xcm events 1`] = `
+[
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Sibling": 1000,
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 4800)",
+        "refTime": "(rounded 480000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
+exports[`XCM > AssetHub send DOT to Frequency > assethhub-initial-events 1`] = `
 [
   {
     "data": {
