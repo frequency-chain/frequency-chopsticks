@@ -7,6 +7,7 @@ Smoldot is a lightweight alternative client for Substrate-based blockchains, des
 ## Core Components Architecture
 
 ### 1. Multi-Component Structure
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Smoldot Ecosystem                       │
@@ -34,6 +35,7 @@ Smoldot is a lightweight alternative client for Substrate-based blockchains, des
 ```
 
 ### 2. Internal Module Architecture
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Smoldot Core (lib/src/)                      │
@@ -71,6 +73,7 @@ Smoldot is a lightweight alternative client for Substrate-based blockchains, des
 ## Deep Dive: WASM Execution Engine
 
 ### Virtual Machine Architecture
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                   Smoldot WASM Execution Flow                    │
@@ -139,6 +142,7 @@ Smoldot is a lightweight alternative client for Substrate-based blockchains, des
 ```
 
 ### Runtime Call Lifecycle
+
 ```
 User Transaction/Query
          │
@@ -222,6 +226,7 @@ User Transaction/Query
 ## Consensus Algorithm Support
 
 ### Supported Consensus Mechanisms
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                 Smoldot Consensus Support                        │
@@ -276,6 +281,7 @@ User Transaction/Query
 ## Network Layer Architecture
 
 ### libp2p Integration
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Smoldot Network Stack                         │
@@ -323,6 +329,7 @@ User Transaction/Query
 ```
 
 ### Peer Discovery and Management
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                     Peer Management Flow                         │
@@ -373,6 +380,7 @@ User Transaction/Query
 ## Synchronization Strategies
 
 ### Light Client Sync Methods
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                  Smoldot Sync Strategies                         │
@@ -429,6 +437,7 @@ User Transaction/Query
 ## Light Client vs Full Node Comparison
 
 ### Capabilities Matrix
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                   Feature Comparison                             │
@@ -455,6 +464,7 @@ User Transaction/Query
 ```
 
 ### Performance Characteristics
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Performance Profile                           │
@@ -498,6 +508,7 @@ User Transaction/Query
 ## Security Model and Attack Vectors
 
 ### Trust and Verification Model
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                   Smoldot Security Model                         │
@@ -556,7 +567,7 @@ Smoldot represents a sophisticated approach to light client architecture that ba
 
 - **Functionality**: Core blockchain interaction capabilities
 - **Performance**: Minimal resource footprint
-- **Security**: Cryptographic verification with known trade-offs  
+- **Security**: Cryptographic verification with known trade-offs
 - **Portability**: Cross-platform WASM-based execution
 - **Usability**: Simple APIs for developers
 

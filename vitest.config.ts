@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -12,7 +12,7 @@ export default defineConfig({
     reporters: ['verbose', 'json'],
     outputFile: {
       json: './test-results.json',
-      verbose: './test-output.log'
-    }
-  }
-})
+      verbose: './test-output.log',
+    },
+  },
+});

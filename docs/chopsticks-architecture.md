@@ -179,9 +179,10 @@ Chopsticks Fork:
 ```
 
 These diagrams show:
+
 1. **High-level**: How Chopsticks sits between live chains and developers
 2. **Components**: Internal architecture with CLI, plugins, core engine
 3. **Block Flow**: Step-by-step transaction processing
-4. **XCM Setup**: Multi-chain testing configuration  
+4. **XCM Setup**: Multi-chain testing configuration
 5. **Fork/Resume**: How state persistence works
 6. **Storage**: Layered storage architecture for performance

@@ -11,7 +11,10 @@
     "fork:asset-hub": "npx @acala-network/chopsticks --config=configs/asset-hub.yml",
     "fork:clean": "rm -f ./db/*.sqlite || true",
     "fork:xcm": "npm run -s fork:clean && POLKADOT_BLOCK_NUMBER=27409884 STATEMINT_BLOCK_NUMBER=9525342 FREQUENCY_BLOCK_NUMBER=9117938 npx @acala-network/chopsticks xcm -r ./configs/polkadot.yml -p ./configs/asset-hub.yml -p ./configs/frequency.yml",
-    "start": "node --loader ts-node/esm index.ts"
+    "start": "node --loader ts-node/esm index.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "prettier --check . && npm run format"
   },
   "devDependencies": {
     "@acala-network/chopsticks": "^1.2.2",
@@ -20,6 +23,7 @@
     "@polkadot/types": "^12.0.0",
     "@polkadot/util": "^13.0.0",
     "@polkadot/util-crypto": "^13.0.0",
+    "prettier": "^3.0.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0",
     "vitest": "^2.0.0"

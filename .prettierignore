@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Database files
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Test snapshots (optional - you might want to format these)
+# tests/__snapshots__/
+
+# Generated files
+.papi/
+
+# OS generated files
+.DS_Store
+Thumbs.db

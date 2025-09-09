@@ -105,6 +105,7 @@ When Chopsticks forks a blockchain, it creates a **local parallel reality** that
 ### 1. **Core Execution Engine** (`smoldot::executor`)
 
 **What Chopsticks Uses:**
+
 ```rust
 use smoldot::{
     executor::{
@@ -117,12 +118,14 @@ use smoldot::{
 ```
 
 **Purpose:**
+
 - **HostVmPrototype**: Creates the WASM virtual machine instance
 - **RuntimeCall**: Executes runtime functions like `Core_execute_block`
 - **TrieDiff**: Tracks storage changes between blocks
 - **CoreVersionRef**: Extracts runtime version information
 
 **How It Works:**
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                Smoldot Executor in Chopsticks                    │
@@ -198,6 +201,7 @@ use smoldot::{
 ### 2. **Trie and Proof System** (`smoldot::trie`)
 
 **What Chopsticks Uses:**
+
 ```rust
 use smoldot::{
     trie::{
@@ -211,12 +215,14 @@ use smoldot::{
 ```
 
 **Purpose:**
+
 - **Proof Verification**: Validate storage proofs from live chain
 - **Trie Construction**: Build local state tries
 - **Storage Diff**: Track changes between blocks
 - **Root Calculation**: Compute state roots
 
 **Storage Proof Flow:**
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                  Storage Proof Processing                        │
@@ -262,6 +268,7 @@ use smoldot::{
 ### 3. **JSON-RPC Infrastructure** (`smoldot::json_rpc`)
 
 **What Chopsticks Uses:**
+
 ```rust
 use smoldot::{
     json_rpc::methods::{HashHexString, HexString},
@@ -269,6 +276,7 @@ use smoldot::{
 ```
 
 **Purpose:**
+
 - **Data Encoding**: Consistent hex string formatting
 - **Type Safety**: Strongly typed hash and hex values
 - **RPC Compatibility**: Standard Substrate RPC format
@@ -280,6 +288,7 @@ use smoldot::{
 **The Problem:** Development tools often use simplified or mock execution environments that don't match production behavior.
 
 **Smoldot's Solution:**
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Execution Fidelity                           │
@@ -318,6 +327,7 @@ use smoldot::{
 ```
 
 **Key Benefits:**
+
 - **Bug Detection**: Catches issues that would only appear in production
 - **Realistic Testing**: Exact same execution environment as live chains
 - **State Transition Accuracy**: Perfect reproduction of runtime logic
@@ -328,19 +338,20 @@ use smoldot::{
 
 **Smoldot's Solution:**
 
-| Resource | Full Node | Smoldot | Chopsticks Benefit |
-|----------|-----------|---------|-------------------|
-| **Storage** | 100GB-1TB | None | Fast setup, no disk space |
-| **Memory** | 4-16GB | 50-200MB | Runs on developer laptops |
-| **Network** | Full P2P sync | Light proofs only | Quick sync, low bandwidth |
-| **CPU** | Consensus overhead | Execution only | Focus on development tasks |
-| **Setup Time** | Hours to days | Seconds | Instant development iteration |
+| Resource       | Full Node          | Smoldot           | Chopsticks Benefit            |
+| -------------- | ------------------ | ----------------- | ----------------------------- |
+| **Storage**    | 100GB-1TB          | None              | Fast setup, no disk space     |
+| **Memory**     | 4-16GB             | 50-200MB          | Runs on developer laptops     |
+| **Network**    | Full P2P sync      | Light proofs only | Quick sync, low bandwidth     |
+| **CPU**        | Consensus overhead | Execution only    | Focus on development tasks    |
+| **Setup Time** | Hours to days      | Seconds           | Instant development iteration |
 
 ### 3. **Cross-Platform Compatibility**
 
 **The Problem:** Blockchain development tools are often platform-specific or require complex setups.
 
 **Smoldot's Solution:**
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                  Universal Deployment                           │
@@ -427,6 +438,7 @@ use smoldot::{
 ### **Shared Philosophy**
 
 Both projects prioritize:
+
 - **Lightweight over Heavy**: Minimal resource usage
 - **Accurate over Approximate**: Correct execution behavior
 - **Simple over Complex**: Easy developer adoption
@@ -440,6 +452,6 @@ Chopsticks + Smoldot creates a development environment that is:
 ✅ **Fast**: Instant setup and rapid iteration  
 ✅ **Accessible**: Runs anywhere, no infrastructure required  
 ✅ **Reliable**: Cryptographically verified state and proofs  
-✅ **Comprehensive**: Full blockchain simulation for testing  
+✅ **Comprehensive**: Full blockchain simulation for testing
 
 This combination gives developers **production-level accuracy** with **development-level convenience** - the best of both worlds for building and testing Substrate-based applications.

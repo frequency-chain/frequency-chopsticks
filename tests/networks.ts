@@ -1,7 +1,7 @@
-import { type SetupOption, setupContext, setupNetworks } from '@acala-network/chopsticks-testing'
-import { config as dotenvConfig } from 'dotenv'
+import { type SetupOption, setupContext, setupNetworks } from '@acala-network/chopsticks-testing';
+import { config as dotenvConfig } from 'dotenv';
 
-dotenvConfig()
+dotenvConfig();
 
 const endpoints = {
   polkadot: ['wss://rpc.ibp.network/polkadot'],
@@ -11,17 +11,17 @@ const endpoints = {
   // assetHub: ['wss://statemint.api.onfinality.io/public-ws'],
   assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
   // assetHub: ['wss://pas-rpc.stakeworld.io/assethub']
-}
+};
 
 const toNumber = (value: string | undefined): number | undefined => {
   if (value === undefined) {
-    return undefined
+    return undefined;
   }
 
-  return Number(value)
-}
+  return Number(value);
+};
 
-export type Network = Awaited<ReturnType<typeof setupContext>>
+export type Network = Awaited<ReturnType<typeof setupContext>>;
 
 export default {
   polkadot: (options?: Partial<SetupOption>) => {
@@ -30,14 +30,14 @@ export default {
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 14500000,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
-    })
+    });
     return setupContext({
       wasmOverride: process.env.POLKADOT_WASM || undefined,
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 14500000,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
       ...options,
-    })
+    });
   },
   frequency: (options?: Partial<SetupOption>) => {
     return setupContext({
@@ -48,7 +48,7 @@ export default {
       runtimeLogLevel: 5,
       processQueuedMessages: true,
       ...options,
-    })
+    });
   },
   assetHub: (options?: Partial<SetupOption>) => {
     const config = {
@@ -62,8 +62,8 @@ export default {
       ...options,
     };
 
-    console.log('Setting up AssetHub network with options:', config)
+    console.log('Setting up AssetHub network with options:', config);
 
-    return setupContext(config)
+    return setupContext(config);
   },
-}
+};

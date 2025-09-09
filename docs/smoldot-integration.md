@@ -13,20 +13,26 @@ Smoldot is a lightweight Substrate/Polkadot client written in Rust that serves a
 
 ## Smoldot's Role in Chopsticks
 
-### 1. **WASM Runtime Execution** 
+### 1. **WASM Runtime Execution**
+
 Location: `executor/src/lib.rs:4`
+
 - Executes Substrate runtime WASM blobs
 - Handles runtime calls and state transitions
 - Provides the same execution environment as live chains
 
 ### 2. **Proof Generation and Validation**
-Location: `executor/src/proof.rs:1` 
+
+Location: `executor/src/proof.rs:1`
+
 - Generates Merkle proofs for storage verification
 - Validates storage proofs from live chains
 - Ensures state consistency between fork and live chain
 
 ### 3. **Core VM Operations**
+
 Location: `executor/src/task.rs:4`
+
 - Block validation and execution through smoldot's VM
 - Memory management for WASM execution
 - Runtime call orchestration with execution hints
@@ -34,6 +40,7 @@ Location: `executor/src/task.rs:4`
 ## Architecture Integration
 
 ### High-Level Architecture
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Chopsticks                              │
@@ -56,6 +63,7 @@ Location: `executor/src/task.rs:4`
 ```
 
 ### Detailed Component Flow
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Chopsticks Execution Flow                     │
@@ -98,6 +106,7 @@ Location: `executor/src/task.rs:4`
 ```
 
 ### Smoldot Integration Points
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                     Smoldot in Chopsticks                      │
@@ -130,6 +139,7 @@ Location: `executor/src/task.rs:4`
 ## Technical Implementation Details
 
 ### Cargo Dependencies
+
 ```toml
 # executor/Cargo.toml
 [dependencies]
@@ -140,6 +150,7 @@ std = ["smoldot/std"]
 ```
 
 ### Git Submodule Structure
+
 ```
 chopsticks/
 ├── vendor/
@@ -156,6 +167,7 @@ chopsticks/
 ### Key Integration Points
 
 #### 1. Runtime Execution (`executor/src/task.rs`)
+
 ```rust
 use smoldot::{
     executor::vm::ExecHint,
@@ -167,6 +179,7 @@ exec_hint: smoldot::executor::vm::ExecHint::ValidateAndExecuteOnce,
 ```
 
 #### 2. Proof Generation (`executor/src/proof.rs`)
+
 ```rust
 use smoldot::{
     trie::TrieEntryVersion,
@@ -175,6 +188,7 @@ use smoldot::{
 ```
 
 #### 3. Main Library Interface (`executor/src/lib.rs`)
+
 ```rust
 use smoldot::{
     json_rpc::methods::{HashHexString, HexString},
@@ -185,45 +199,50 @@ use smoldot::{
 ## Benefits of Smoldot Integration
 
 ### **Accuracy**
+
 - **Identical Runtime Execution**: Uses the same WASM execution environment as live chains
 - **State Transition Fidelity**: Guarantees that local execution matches production behavior
 - **Proof Verification**: Ensures forked state is cryptographically valid
 
-### **Performance** 
+### **Performance**
+
 - **Lightweight**: No full node overhead (consensus, networking, storage)
 - **WASM Optimized**: Built specifically for efficient WASM execution
 - **Memory Efficient**: Minimal memory footprint for runtime operations
 
 ### **Cross-Platform Compatibility**
+
 - **Browser Support**: Runs in web environments via WASM
 - **Node.js Compatible**: Works in server environments
 - **Embedded Ready**: Can run in resource-constrained environments
 
 ### **Developer Experience**
+
 - **Fast Iteration**: Quick runtime execution without blockchain overhead
 - **Deterministic**: Consistent execution results across environments
 - **Debuggable**: Clear separation between execution and orchestration layers
 
 ## Comparison: Chopsticks vs Full Node
 
-| Component | Full Substrate Node | Chopsticks + Smoldot |
-|-----------|-------------------|---------------------|
-| **Consensus** | Full consensus (BABE/GRANDPA) | Mocked (instant finality) |
-| **Networking** | P2P networking stack | None (RPC client only) |
-| **Storage** | RocksDB + complex caching | SQLite + simple cache |
-| **Runtime Execution** | Smoldot or native | **Smoldot WASM** |
-| **RPC Interface** | Full Substrate RPC | Subset + dev extensions |
-| **Resource Usage** | High (GB RAM, storage) | Low (MB RAM, storage) |
-| **Setup Time** | Minutes to hours | Seconds |
-| **Use Case** | Production validator | Development & testing |
+| Component             | Full Substrate Node           | Chopsticks + Smoldot      |
+| --------------------- | ----------------------------- | ------------------------- |
+| **Consensus**         | Full consensus (BABE/GRANDPA) | Mocked (instant finality) |
+| **Networking**        | P2P networking stack          | None (RPC client only)    |
+| **Storage**           | RocksDB + complex caching     | SQLite + simple cache     |
+| **Runtime Execution** | Smoldot or native             | **Smoldot WASM**          |
+| **RPC Interface**     | Full Substrate RPC            | Subset + dev extensions   |
+| **Resource Usage**    | High (GB RAM, storage)        | Low (MB RAM, storage)     |
+| **Setup Time**        | Minutes to hours              | Seconds                   |
+| **Use Case**          | Production validator          | Development & testing     |
 
 ## Conclusion
 
 Smoldot serves as the **critical execution core** that makes Chopsticks possible. By leveraging Smoldot's lightweight yet accurate runtime execution capabilities, Chopsticks can provide a realistic blockchain development environment without the complexity and resource requirements of running a full Substrate node.
 
 This architecture allows developers to:
+
 - **Test with confidence** knowing execution matches production
-- **Iterate quickly** without blockchain infrastructure overhead  
+- **Iterate quickly** without blockchain infrastructure overhead
 - **Debug effectively** with clear separation of concerns
 - **Deploy anywhere** thanks to WASM portability
 
