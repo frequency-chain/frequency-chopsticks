@@ -32,14 +32,21 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
         Account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
       },
       ForeignAssets: {
-        Asset: [[[{ parents: 1, interior: 'Here' }], { supply: 1000e10, owner: alice.address, isSufficient: true }]],
+        Asset: [
+          [
+            [{ parents: 1, interior: 'Here' }],
+            { supply: 1000e10, owner: alice.address, isSufficient: true },
+          ],
+        ],
         Account: [
           [
-            [
-              { parents: 1, interior: 'Here' },
-              alice.address,
-            ],
-            { balance: 100 * 1e12, status: { Liquid: null }, reason: { Consumer: null }, extra: null },
+            [{ parents: 1, interior: 'Here' }, alice.address],
+            {
+              balance: 100 * 1e12,
+              status: { Liquid: null },
+              reason: { Consumer: null },
+              extra: null,
+            },
           ],
         ],
       },
@@ -62,18 +69,21 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
     const paraId = 2091;
     const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
     console.log('siblingSovereignAccount', siblingSovereignAccount);
-    const sib = "5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk";
+    const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
     // const souvereignAccount = await assetHub.api.;
     // console.log('souvereignAccount', souvereignAccount.toHuman());
 
     await setStorage(assetHub.chain, {
       System: {
         // seed sovereign account
-        Account: [[[alice.address], { data: { free: 1000 * 1e12 } }], [[sib], { data: { free: 1000 * 1e12 } }]],
+        Account: [
+          [[alice.address], { data: { free: 1000 * 1e12 } }],
+          [[sib], { data: { free: 1000 * 1e12 } }],
+        ],
         // Account: [[[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }]],
       },
     });
-    
+
     await frequency.chain.newBlock();
     await assetHub.chain.newBlock();
 
@@ -85,12 +95,13 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
         V3: { parents: 1, interior: { X1: { Parachain: 1000 } } },
       },
       {
-        V3: { parents: 0, interior: { X1: { AccountId32: { network: null, id: bob.addressRaw } } } },
+        V3: {
+          parents: 0,
+          interior: { X1: { AccountId32: { network: null, id: bob.addressRaw } } },
+        },
       },
       {
-        V3: [
-          { id: { Concrete: { parents: 1, interior: 'Here' } }, fun: { Fungible: 8 * 1e12 } },
-        ],
+        V3: [{ id: { Concrete: { parents: 1, interior: 'Here' } }, fun: { Fungible: 8 * 1e12 } }],
       },
       0,
       'Unlimited'
@@ -104,7 +115,9 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
 
     await assetHub.chain.newBlock();
 
-    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('assethub-receive-chain-xcm events');
+    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+      'assethub-receive-chain-xcm events'
+    );
     // await checkHrmp(assetHub).toMatchSnapshot('assetHubinbound-hrmp-messages');
 
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();

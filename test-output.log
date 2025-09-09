@@ -27018,3 +27018,842 @@ The following conflicting packages were found:
   }
 ]
 [2025-09-09T20:42:22.362Z] [LOG] XCM Results: []
+[2025-09-09T21:27:23.169Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:27:23.170Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:27:23.170Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:27:23.495Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:23.495Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:23.496Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:27:23.496Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:27:23.497Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:23.498Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:23.501Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:23.502Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.176Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.177Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.183Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.195Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.196Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.197Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.201Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.390Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.391Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.393Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.394Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.394Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.396Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.397Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.398Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.398Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:27:24.399Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.400Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.400Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:27:24.400Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:27:24.402Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:27:24.411Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-09T21:27:24.413Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-09T21:27:24.443Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-09T21:27:26.557Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:27:26.618Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:27:26.624Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:27:29.796Z] [LOG] siblingSovereignAccount 0x7369626c2b080000000000000000000000000000000000000000000000000000
+[2025-09-09T21:27:31.366Z] [LOG] siblingSovereignAccount 0x7369626c2b080000000000000000000000000000000000000000000000000000
+[2025-09-09T21:28:40.564Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:28:41.349Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:28:41.361Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:41.362Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:28:41.363Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:41.366Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:41.473Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:28:41.473Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:41.474Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:28:41.474Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:28:41.474Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:28:41.475Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:41.475Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:41.477Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:28:41.479Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:28:41.480Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:41.480Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:41.482Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:28:41.488Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[2025-09-09T21:28:43.255Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:28:47.462Z] [LOG] siblingSovereignAccount 0x7369626c2b080000000000000000000000000000000000000000000000000000
+[2025-09-09T21:28:48.111Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:28:48.889Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:28:48.902Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:48.903Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:28:48.903Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:48.907Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:49.007Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:28:49.007Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:49.008Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:28:49.008Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:28:49.008Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:28:49.009Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:49.009Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:49.011Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:28:49.013Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:28:49.014Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:28:49.014Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:28:49.016Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:28:49.022Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[2025-09-09T21:28:50.750Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:28:55.316Z] [LOG] siblingSovereignAccount 0x7369626c2b080000000000000000000000000000000000000000000000000000
+[2025-09-09T21:31:53.829Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-09T21:31:54.671Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:31:54.689Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+[2025-09-09T21:31:54.689Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+[2025-09-09T21:31:54.690Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+[2025-09-09T21:31:54.693Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:31:54.861Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-09T21:31:54.862Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:31:54.862Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-09T21:31:54.862Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:31:54.862Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+[2025-09-09T21:31:54.863Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+[2025-09-09T21:31:54.863Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+[2025-09-09T21:31:54.865Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-provider/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-09T21:31:54.867Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types/
+[2025-09-09T21:31:54.868Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-create/
+[2025-09-09T21:31:54.868Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-core/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-codec/
+[2025-09-09T21:31:54.870Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/types-known/
+[2025-09-09T21:31:54.876Z] [LOG] [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[2025-09-09T21:31:57.098Z] [LOG] Setting up AssetHub network with options: {
+  "runtimeLogLevel": 5,
+  "blockNumber": 9651100,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}
+[2025-09-09T21:32:01.467Z] [LOG] siblingSovereignAccount 0x7369626c2b080000000000000000000000000000000000000000000000000000
