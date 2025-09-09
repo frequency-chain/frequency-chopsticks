@@ -47,6 +47,179 @@ exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
   },
   {
     "data": {
+      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+      "freeBalance": 500000000000,
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 500000000000,
+      "from": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+      "to": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "used": {
+            "proofSize": "(rounded 6200)",
+            "refTime": "(rounded 310000000)",
+          },
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "amount": "(rounded 300000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Burned",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 300000000)",
+      "who": "14xmwinmCEz6oRrFdczHKqHgWNMiCysE2KrA4jXXAAM1Eogk",
+    },
+    "method": "Minted",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "fees": [
+        {
+          "fun": {
+            "Fungible": "(rounded 300000000)",
+          },
+          "id": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      ],
+      "paying": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": "Polkadot",
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "FeesPaid",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "messageHash": "(hash)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "destination": {
+        "interior": {
+          "X1": [
+            {
+              "Parachain": "(rounded 2100)",
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "message": [
+        {
+          "ReserveAssetDeposited": [
+            {
+              "fun": {
+                "Fungible": 500000000000,
+              },
+              "id": {
+                "interior": "Here",
+                "parents": 1,
+              },
+            },
+          ],
+        },
+        "ClearOrigin",
+        {
+          "BuyExecution": {
+            "fees": {
+              "fun": {
+                "Fungible": 500000000000,
+              },
+              "id": {
+                "interior": "Here",
+                "parents": 1,
+              },
+            },
+            "weightLimit": "Unlimited",
+          },
+        },
+        {
+          "DepositAsset": {
+            "assets": {
+              "Wild": {
+                "AllCounted": 1,
+              },
+            },
+            "beneficiary": {
+              "interior": {
+                "X1": [
+                  {
+                    "AccountId32": {
+                      "id": "(hash)",
+                      "network": null,
+                    },
+                  },
+                ],
+              },
+              "parents": 0,
+            },
+          },
+        },
+      ],
+      "messageId": "(hash)",
+      "origin": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": "Polkadot",
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "Sent",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
       "amount": "(rounded 17000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
@@ -64,12 +237,6 @@ exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
   },
   {
     "data": {
-      "dispatchError": {
-        "Module": {
-          "error": "0x18000000",
-          "index": 31,
-        },
-      },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
@@ -79,7 +246,7 @@ exports[`XCM > AssetHub send DOT to Frequency > initial-events 1`] = `
         },
       },
     },
-    "method": "ExtrinsicFailed",
+    "method": "ExtrinsicSuccess",
     "section": "system",
   },
 ]
@@ -194,7 +361,83 @@ exports[`XCM > AssetHub send DOT to Frequency > initial-events-force-subscribe-v
 ]
 `;
 
-exports[`XCM > AssetHub send DOT to Frequency > outbound-hrmp-messages 1`] = `[]`;
+exports[`XCM > AssetHub send DOT to Frequency > outbound-hrmp-messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v3": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 500000000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "here": null,
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 500000000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "here": null,
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 1,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
+                      "network": null,
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "(redacted)",
+          },
+        ],
+      },
+    ],
+    "recipient": 2091,
+  },
+]
+`;
 
 exports[`XCM > AssetHub send DOT to Frequency 1`] = `
 {

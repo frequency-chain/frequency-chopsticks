@@ -126,7 +126,7 @@ describe('XCM', async () => {
                   interior: "Here" 
                 } 
               }, 
-              fun: { Fungible: 50 } 
+              fun: { Fungible: 50 * 1e10 } 
             }
           ] 
         },
