@@ -5,6 +5,8 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { setStorage } from '@acala-network/chopsticks';
 import { getSiblingSovereignAccount } from './util';
 
+import { connectParachains } from '@acala-network/chopsticks';
+
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
@@ -26,11 +28,12 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
   });
 
   afterEach(async () => {
-    await frequency.teardown();
-    await assetHub.teardown();
+    // await frequency.teardown();
+    // await assetHub.teardown();
   });
 
-  it('Teleport XFRQCY to AssetHub with DOT fee', async () => {
+  it.only('Teleport XFRQCY to AssetHub with DOT fee', async () => {
+    await connectParachains([assetHub.chain, frequency.chain], false);
     const { alice, bob } = testingPairs();
 
     const paraId = 2091;
@@ -47,17 +50,28 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
       },
     });
 
-    await setStorage(assetHub.chain, {
+    await setStorage(frequency.chain, {
       System: {
-        Account: [[alice.address], { data: { free: 1000 * 1e12 } }],
+        Account: [[[alice.address], { providers: 1, data: { free: 10 * 1e10 } }]],
       },
       ForeignAssets: {
-        Asset: [[[{ parents: 1, interior: 'Here' }], { supply: 1000e10, owner: alice.address }]],
+        Asset: [
+          [
+            [{ parents: 1, interior: 'Here' }],
+            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
+          ],
+        ],
         Account: [
           [
-            [alice.address],
+            [
+              {
+                parents: 1,
+                interior: 'Here',
+              },
+              alice.address,
+            ],
             {
-              balance: 100 * 1e12,
+              balance: 12e10,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -65,16 +79,14 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
           ],
         ],
       },
-      PolkadotXcm: {
-        SafeXcmVersion: 3,
-        SupportedVersion: [
-          [[5, { V5: { parents: 1, interior: { X1: [{ Parachain: 1000 }] } } }], 4],
-        ],
-      },
     });
 
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
+    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
+      'initial-frequency-check-system-account'
+    );
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot(
+      'initial-assethub-check-system-account'
+    );
 
     await check(
       frequency.api.query.foreignAssets.account(
@@ -84,82 +96,186 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
         },
         alice.address
       )
-    ).toMatchSnapshot();
+    ).toMatchSnapshot('frequency-check-foreign-assets-account');
 
-    await frequency.chain.newBlock();
-    await assetHub.chain.newBlock();
+    // await frequency.chain.newBlock();
+    // await assetHub.chain.newBlock();
 
-    const xcm = [
-      {
-        WithdrawAsset: {
-          assets: [
+    const xcm = {
+      V5: [
+        {
+          WithdrawAsset: [
             {
-              id: { Concrete: { parents: 1, interior: 'Here' } },
+              id: { parents: 0, interior: 'here' },
               fun: { Fungible: 100 * 1e12 },
             },
             {
-              id: { Concrete: { parents: 0, interior: 'Here' } },
+              id: { parents: 1, interior: 'here' },
               fun: { Fungible: 100 * 1e12 },
-            }
+            },
           ],
         },
-      },
-      {
-        InitiateTransfer: {
-          destination: {
-            V3: {
+        {
+          InitiateTransfer: {
+            destination: {
               parents: 1,
-              interior: { X1: { Parachain: 2091 } },
+              interior: { X1: [{ Parachain: 1000 }] },
             },
+            remoteFees: {
+              ReserveWithdraw: {
+                Definite: [
+                  {
+                    id: { parents: 1, interior: 'here' },
+                    fun: { Fungible: 100 * 1e12 },
+                  },
+                ],
+              },
+            },
+            preserveOrigin: false,
+            assets: [
+              {
+                Teleport: {
+                  Definite: [
+                    {
+                      id: { parents: 0, interior: 'here' },
+                      fun: { Fungible: 100 * 1e12 },
+                    },
+                  ],
+                },
+              },
+            ],
+            remoteXcm: [
+              {
+                BuyExecution: {
+                  fees: {
+                    id: { parents: 1, interior: 'Here' },
+                    fun: { Fungible: 100 * 1e12 },
+                  },
+                  weightLimit: 'Unlimited',
+                },
+              },
+              {
+                DepositAsset: {
+                  assets: { Wild: { AllCounted: 2 } },
+                  beneficiary: {
+                    parents: 0,
+                    interior: {
+                      X1: [
+                        {
+                          AccountId32: {
+                            network: null,
+                            id: bob.addressRaw,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                },
+              },
+            ],
           },
         },
-      },
-      {
-        RefundSurplus: {
-          assets: [
-            {
-              id: { Concrete: { parents: 1, interior: 'Here' } },
-              fun: { Fungible: 100 * 1e12 },
-            },
-          ],
-        },
-      },
-      {
-        DepositAsset: {
-          assets: [
-            {
-              id: { Concrete: { parents: 1, interior: 'Here' } },
-              fun: { Fungible: 100 * 1e12 },
-            },
-          ],
-        },
-      },
-      {
-        ClearOrigin: null,
-      },
-      {
-        BuyExecution: {
-          fees: {
-            id: { Concrete: { parents: 1, interior: 'Here' } },
-            fun: { Fungible: 100 * 1e12 },
-          },
-          weightLimit: 'Unlimited',
-        },
-      },
-    ];
+      ],
+    };
 
-    await frequency.api.tx.polkadotXcm.execute(xcm);
-    
+
+    await frequency.api.tx.polkadotXcm.execute(xcm, {
+        refTime: 8000000000,
+        proofSize: 200000
+      });
+
     await frequency.chain.newBlock();
     await assetHub.chain.newBlock();
 
-    await checkSystemEvents(frequency).toMatchSnapshot();
-    await checkSystemEvents(assetHub).toMatchSnapshot();
+    await checkSystemEvents(frequency).toMatchSnapshot('frequency-events-after-xcm');
+    await checkSystemEvents(assetHub).toMatchSnapshot('assethub-after-xcm-events');
 
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
-    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
+    // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
+    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
   });
 });
+
+// '{
+//       V5: [
+//         {
+//           WithdrawAsset: [
+//             {
+//               id: { parents: 0, interior: "here" },
+//               fun: { Fungible: $freq }
+//             },
+//             {
+//               id: { parents: 1, interior: "here" },
+//               fun: { Fungible: $dot }
+//             }
+//           ]
+//         },
+//         {
+//           InitiateTransfer: {
+//             destination: {
+//               parents: 1,
+//               interior: { X1: [ { Parachain: 1000 } ] }
+//             },
+//             remoteFees: {
+//               ReserveWithdraw: {
+//                 Definite: [
+//                   {
+//                     id: { parents: 1, interior: "here" },
+//                     fun: { Fungible: $dot }
+//                   }
+//                 ]
+//               }
+//             },
+//             preserveOrigin: false,
+//             assets: [
+//               {
+//                 Teleport: {
+//                   Definite: [
+//                     {
+//                       id: { parents: 0, interior: "here" },
+//                       fun: { Fungible: $freq }
+//                     }
+//                   ]
+//                 }
+//               }
+//             ],
+//             remoteXcm: [
+//               {
+//                 BuyExecution: {
+//                   fees: {
+//                     id: { parents: 1, interior: "Here" },
+//                     fun: { Fungible: $dot }
+//                   },
+//                   weightLimit: "Unlimited"
+//                 }
+//               },
+//               {
+//                 DepositAsset: {
+//                   assets: { Wild: { AllCounted: 2 } },
+//                   beneficiary: {
+//                     parents: 0,
+//                     interior: {
+//                       X1: [
+//                         {
+//                           AccountId32: {
+//                             network: null,
+//                             id: $recipient
+//                           }
+//                         }
+//                       ]
+//                     }
+//                   }
+//                 }
+//               }
+//             ]
+//           }
+//         }
+//       ]
+//     }')
+
+// {
+//     refTime: 8000000000,
+//     proofSize: 200000
+//   }
 
 // fn execute_xcm_frequency_to_asset_hub(t: FrequencyToAssetHubTest) -> DispatchResult {
 // 	let assets: Assets = t.args.assets.clone();

@@ -1,0 +1,160 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub-after-xcm-events 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 1500)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 130000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > check-foreign-assets-account 1`] = `
+{
+  "balance": 120000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-check-foreign-assets-account 1`] = `
+{
+  "balance": 120000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-events-after-xcm 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > initial-assethub-check-system-account 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 0,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > initial-frequency-check-system-account 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 100000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 100000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 2`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 0,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee 3`] = `
+{
+  "balance": 120000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;

@@ -62,7 +62,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-            { supply: 1000e10, owner: alice.address, isSufficient: true },
+            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
           ],
         ],
         Account: [
