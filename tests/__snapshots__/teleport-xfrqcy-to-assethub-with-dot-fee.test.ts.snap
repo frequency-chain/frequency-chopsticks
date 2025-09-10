@@ -1,36 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub xcm chain events 1`] = `[]`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub-after-xcm-events 1`] = `
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub xcm chain events 1`] = `
 [
   {
     "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 130000000)",
-        },
+      "id": "(hash)",
+      "origin": {
+        "Sibling": "(rounded 2100)",
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 14000)",
+        "refTime": "(rounded 630000000)",
       },
     },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
@@ -245,7 +230,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "actualFee": "(rounded 2600000)",
+      "actualFee": "(rounded 2700000)",
       "tip": 0,
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
@@ -269,9 +254,97 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 ]
 `;
 
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-inbound-hrmp-messages 1`] = `[]`;
-
-exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-outbound-hrmp-messages 1`] = `[]`;
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-outbound-hrmp-messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v5": [
+          {
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 9000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            ],
+          },
+          {
+            "payFees": {
+              "asset": {
+                "fun": {
+                  "fungible": 9000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            },
+          },
+          {
+            "receiveTeleportedAsset": [
+              {
+                "fun": {
+                  "fungible": 100000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "x1": [
+                      {
+                        "parachain": 2091,
+                      },
+                    ],
+                  },
+                  "parents": 1,
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 2,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
+                        "network": null,
+                      },
+                    },
+                  ],
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "(redacted)",
+          },
+        ],
+      },
+    ],
+    "recipient": 1000,
+  },
+]
+`;
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > initial-assethub-check-system-account 1`] = `
 {

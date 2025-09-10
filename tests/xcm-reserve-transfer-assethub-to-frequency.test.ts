@@ -190,9 +190,6 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
     } catch (error) {
       console.log('error', error);
     }
-    // await assetHub.chain.newBlock()
-    await sendTransaction(assetHubTx.signAsync(charlie));
-    // await assetHubTx.signAndSend(charlie);
 
     await checkHrmp(assetHub)
       .redact({ redactKeys: /setTopic/ })

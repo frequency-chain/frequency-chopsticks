@@ -1,4 +1,4 @@
-import { testingPairs } from '@acala-network/chopsticks-testing';
+import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import networks, { type Network } from './networks';
 import { describe, it, expect } from 'vitest';
 import { withExpect } from '@acala-network/chopsticks-testing';
@@ -9,7 +9,7 @@ import { connectParachains } from '@acala-network/chopsticks';
 
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
-describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
+describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
   let frequency: Network;
   let assetHub: Network;
 
@@ -32,8 +32,8 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
     await assetHub.teardown();
   });
 
-  it.only('Teleport XFRQCY to AssetHub with DOT fee', async () => {
-    await connectParachains([assetHub.chain, frequency.chain], false);
+  it('Teleport XFRQCY to AssetHub with DOT fee', async () => {
+    await connectParachains([frequency.chain, assetHub.chain], false);
     const { alice, bob } = testingPairs();
 
     const paraId = 2091;
@@ -73,20 +73,20 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
         //   ],
         // ],
       },
-      PolkadotXcm: {
-        SafeXcmVersion: 3,
-        SupportedVersion: [
-          [
-            [
-              5,
-              {
-                V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-              },
-            ],
-            4,
-          ],
-        ],
-      },
+    //   PolkadotXcm: {
+    //     SafeXcmVersion: 3,
+    //     SupportedVersion: [
+    //       [
+    //         [
+    //           5,
+    //           {
+    //             V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+    //           },
+    //         ],
+    //         4,
+    //       ],
+    //     ],
+    //   },
     });
 
     await setStorage(frequency.chain, {
@@ -151,9 +151,6 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
         alice.address
       )
     ).toMatchSnapshot('frequency-check-foreign-assets-account');
-
-    // await frequency.chain.newBlock();
-    // await assetHub.chain.newBlock();
 
     const xcm = {
       V5: [
@@ -229,8 +226,14 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
             ],
           },
         },
+        {
+          RefundSurplus: null,
+        }
       ],
     };
+
+    // i am not sure why we need to create a block here
+    await frequency.chain.newBlock();
 
     const tx = await frequency.api.tx.polkadotXcm.execute(xcm, {
       refTime: 8000000000,
@@ -287,7 +290,9 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
     //   console.log('error', error);
     // }
 
-    await tx.signAndSend(alice);
+    await sendTransaction(tx.signAsync(alice));
+
+    // await tx.signAndSend(alice);
 
     await frequency.chain.newBlock();
 
