@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub xcm chain events 1`] = `[]`;
+
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub-after-xcm-events 1`] = `
 [
   {
@@ -35,7 +37,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-check-foreign-assets-account 1`] = `
 {
-  "balance": 120000000000,
+  "balance": 100000000000000,
   "extra": null,
   "reason": {
     "consumer": null,
@@ -83,7 +85,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "amount": "(rounded 3200000)",
+      "amount": "(rounded 3100000)",
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Withdraw",
@@ -91,7 +93,151 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "amount": "(rounded 720000)",
+      "amount": 100000000000000,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Burned",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "assetId": {
+        "interior": "Here",
+        "parents": 1,
+      },
+      "balance": 10000000000000,
+      "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Burned",
+    "section": "foreignAssets",
+  },
+  {
+    "data": {
+      "account": "f6a1KBtrm86y6VuseUyS6Nuyq5SEpHX8ScccbsgW322f4ZZZw",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "f6a1KBtrm86y6VuseUyS6Nuyq5SEpHX8ScccbsgW322f4ZZZw",
+      "freeBalance": 100000000000000,
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 100000000000000,
+      "who": "f6a1KBtrm86y6VuseUyS6Nuyq5SEpHX8ScccbsgW322f4ZZZw",
+    },
+    "method": "Minted",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 31000000000)",
+      "assetId": {
+        "interior": "Here",
+        "parents": 1,
+      },
+      "owner": "f6a1KBtrm86y5y1uxmbmEg14HDpaTTo9ww6JLdZhNPNXMJkUY",
+    },
+    "method": "Issued",
+    "section": "foreignAssets",
+  },
+  {
+    "data": {
+      "messageHash": "(hash)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "destination": {
+        "interior": {
+          "X1": [
+            {
+              "Parachain": 1000,
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "message": [],
+      "messageId": "(hash)",
+      "origin": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": {
+                  "ByGenesis": "(hash)",
+                },
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "Sent",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "assets": {
+        "V5": [
+          {
+            "fun": {
+              "Fungible": "(rounded 970000000000)",
+            },
+            "id": {
+              "interior": "Here",
+              "parents": 1,
+            },
+          },
+        ],
+      },
+      "hash_": "(hash)",
+      "origin": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": {
+                  "ByGenesis": "(hash)",
+                },
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "AssetsTrapped",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "used": {
+            "proofSize": "(rounded 25000)",
+            "refTime": "(rounded 3300000000)",
+          },
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "amount": "(rounded 480000)",
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Deposit",
@@ -99,7 +245,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "actualFee": "(rounded 2500000)",
+      "actualFee": "(rounded 2600000)",
       "tip": 0,
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
@@ -108,33 +254,31 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "dispatchError": {
-        "Module": {
-          "error": "0x18000000",
-          "index": 72,
-        },
-      },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
           "proofSize": 0,
-          "refTime": "(rounded 1200000000)",
+          "refTime": "(rounded 3600000000)",
         },
       },
     },
-    "method": "ExtrinsicFailed",
+    "method": "ExtrinsicSuccess",
     "section": "system",
   },
 ]
 `;
 
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-inbound-hrmp-messages 1`] = `[]`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-outbound-hrmp-messages 1`] = `[]`;
+
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > initial-assethub-check-system-account 1`] = `
 {
   "consumers": 0,
   "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": 0,
+    "flags": 0,
+    "free": 1000000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -149,7 +293,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 100000000000,
+    "free": 1000000000000000,
     "frozen": 0,
     "reserved": 0,
   },

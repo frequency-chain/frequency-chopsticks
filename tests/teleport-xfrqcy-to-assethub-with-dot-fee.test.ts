@@ -28,8 +28,8 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
   });
 
   afterEach(async () => {
-    // await frequency.teardown();
-    // await assetHub.teardown();
+    await frequency.teardown();
+    await assetHub.teardown();
   });
 
   it.only('Teleport XFRQCY to AssetHub with DOT fee', async () => {
@@ -41,24 +41,63 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
     console.log('siblingSovereignAccount', siblingSovereignAccount);
     const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
 
-    await setStorage(frequency.chain, {
+    await setStorage(assetHub.chain, {
       System: {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 } }],
           [[sib], { data: { free: 1000 * 1e12 } }],
         ],
       },
+      ForeignAssets: {
+        Asset: [
+          [
+            [{ parents: 1, interior: { X1: [{ Parachain: 2091 }] } }],
+            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
+          ],
+        ],
+        // Account: [
+        //   [
+        //     [
+        //       {
+        //         parents: 1,
+        //         interior: { X1: [{ Parachain: 2091 }] },
+        //       },
+        //       alice.address,
+        //     ],
+        //     {
+        //       balance: 1000 * 1e12,
+        //       status: { Liquid: null },
+        //       reason: { Consumer: null },
+        //       extra: null,
+        //     },
+        //   ],
+        // ],
+      },
+      PolkadotXcm: {
+        SafeXcmVersion: 3,
+        SupportedVersion: [
+          [
+            [
+              5,
+              {
+                V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+              },
+            ],
+            4,
+          ],
+        ],
+      },
     });
 
     await setStorage(frequency.chain, {
       System: {
-        Account: [[[alice.address], { providers: 1, data: { free: 10 * 1e10 } }]],
+        Account: [[[alice.address], { providers: 1, data: { free: 1000 * 1e12 } }]],
       },
       ForeignAssets: {
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
+            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
           ],
         ],
         Account: [
@@ -71,7 +110,7 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
               alice.address,
             ],
             {
-              balance: 12e10,
+              balance: 100 * 1e12,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -79,6 +118,21 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
           ],
         ],
       },
+      PolkadotXcm: {
+        SafeXcmVersion: 4,
+        SupportedVersion: [
+          [
+            [
+              5,
+              {
+                V5: { parents: 1, interior: { X1: [{ Parachain: 1000 }] } },
+              },
+            ],
+            5,
+          ],
+        ],
+      },
+
     });
 
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
@@ -111,7 +165,7 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
             },
             {
               id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 100 * 1e12 },
+              fun: { Fungible: 10 * 1e12 },
             },
           ],
         },
@@ -126,7 +180,7 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
                 Definite: [
                   {
                     id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 100 * 1e12 },
+                    fun: { Fungible: 9 * 1e12 },
                   },
                 ],
               },
@@ -145,15 +199,15 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
               },
             ],
             remoteXcm: [
-              {
-                BuyExecution: {
-                  fees: {
-                    id: { parents: 1, interior: 'Here' },
-                    fun: { Fungible: 100 * 1e12 },
-                  },
-                  weightLimit: 'Unlimited',
-                },
-              },
+            //   {
+            //     BuyExecution: {
+            //       fees: {
+            //         id: { parents: 1, interior: 'Here' },
+            //         fun: { Fungible: 11 * 1e12 },
+            //       },
+            //       weightLimit: 'Unlimited',
+            //     },
+            //   },
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
@@ -183,63 +237,68 @@ describe.only('Teleport XFRQCY to AssetHub with DOT fee', () => {
       proofSize: 200000,
     });
 
-    try {
-      await new Promise(async (resolve, reject) => {
-        const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
-          console.log(`Transaction status: ${status.type}`);
+    // try {
+    //   await new Promise(async (resolve, reject) => {
+    //     const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
+    //       console.log(`Transaction status: ${status.type}`);
 
-          if (status.isInvalid) {
-            console.log('❌ Transaction is invalid');
-            unsub();
-            reject(new Error('Transaction is invalid'));
-            return;
-          }
+    //       if (status.isInvalid) {
+    //         console.log('❌ Transaction is invalid');
+    //         unsub();
+    //         reject(new Error('Transaction is invalid'));
+    //         return;
+    //       }
 
-          if (status.isDropped) {
-            console.log('❌ Transaction is dropped');
-            unsub();
-            reject(new Error('Transaction is dropped'));
-            return;
-          }
+    //       if (status.isDropped) {
+    //         console.log('❌ Transaction is dropped');
+    //         unsub();
+    //         reject(new Error('Transaction is dropped'));
+    //         return;
+    //       }
 
-          if (status.isReady) {
-            console.log('✅ Transaction is ready in pool');
-            await frequency.chain.newBlock();
-            // Now create a block to process the transaction
-          }
+    //       if (status.isReady) {
+    //         console.log('✅ Transaction is ready in pool');
+    //         await frequency.chain.newBlock();
+    //         // Now create a block to process the transaction
+    //       }
 
-          if (status.isInBlock) {
-            console.log('✅ Transaction is in block');
+    //       if (status.isInBlock) {
+    //         console.log('✅ Transaction is in block');
 
-            if (dispatchError) {
-              if (dispatchError.isModule) {
-                const decoded = frequency.api.registry.findMetaError(dispatchError.asModule);
-                console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
-              } else {
-                console.log('❌ Dispatch error:', dispatchError.toString());
-              }
-              unsub();
-              reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
-              return;
-            }
+    //         if (dispatchError) {
+    //           if (dispatchError.isModule) {
+    //             const decoded = frequency.api.registry.findMetaError(dispatchError.asModule);
+    //             console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
+    //           } else {
+    //             console.log('❌ Dispatch error:', dispatchError.toString());
+    //           }
+    //           unsub();
+    //           reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
+    //           return;
+    //         }
 
-            console.log('✅ Transaction successful, unsubscribing...');
-            unsub();
-            resolve(true);
-          }
-        });
-      });
-    } catch (error) {
-      console.log('error', error);
-    }
+    //         console.log('✅ Transaction successful, unsubscribing...');
+    //         unsub();
+    //         resolve(true);
+    //       }
+    //     });
+    //   });
+    // } catch (error) {
+    //   console.log('error', error);
+    // }
 
-    // await frequency.chain.newBlock();
-    // await assetHub.chain.newBlock();
+    await tx.signAndSend(alice);
 
+    await frequency.chain.newBlock();
+
+    await checkHrmp(frequency)
+      .redact({ redactKeys: /setTopic/ })
+      .toMatchSnapshot('frequency-outbound-hrmp-messages');
+    
     await checkSystemEvents(frequency).toMatchSnapshot('frequency-events-after-xcm');
-    await checkSystemEvents(assetHub).toMatchSnapshot('assethub-after-xcm-events');
 
-    // await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
-    // await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
+    await assetHub.chain.newBlock();
+
+    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('assethub xcm chain events')
   });
 });
