@@ -38,7 +38,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
 
     const paraId = 2091;
     const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
-    console.log('siblingSovereignAccount', siblingSovereignAccount);
     const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
 
     await setStorage(assetHub.chain, {
@@ -240,59 +239,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
       proofSize: 200000,
     });
 
-    // try {
-    //   await new Promise(async (resolve, reject) => {
-    //     const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
-    //       console.log(`Transaction status: ${status.type}`);
-
-    //       if (status.isInvalid) {
-    //         console.log('❌ Transaction is invalid');
-    //         unsub();
-    //         reject(new Error('Transaction is invalid'));
-    //         return;
-    //       }
-
-    //       if (status.isDropped) {
-    //         console.log('❌ Transaction is dropped');
-    //         unsub();
-    //         reject(new Error('Transaction is dropped'));
-    //         return;
-    //       }
-
-    //       if (status.isReady) {
-    //         console.log('✅ Transaction is ready in pool');
-    //         await frequency.chain.newBlock();
-    //         // Now create a block to process the transaction
-    //       }
-
-    //       if (status.isInBlock) {
-    //         console.log('✅ Transaction is in block');
-
-    //         if (dispatchError) {
-    //           if (dispatchError.isModule) {
-    //             const decoded = frequency.api.registry.findMetaError(dispatchError.asModule);
-    //             console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
-    //           } else {
-    //             console.log('❌ Dispatch error:', dispatchError.toString());
-    //           }
-    //           unsub();
-    //           reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
-    //           return;
-    //         }
-
-    //         console.log('✅ Transaction successful, unsubscribing...');
-    //         unsub();
-    //         resolve(true);
-    //       }
-    //     });
-    //   });
-    // } catch (error) {
-    //   console.log('error', error);
-    // }
-
     await sendTransaction(tx.signAsync(alice));
-
-    // await tx.signAndSend(alice);
 
     await frequency.chain.newBlock();
 
@@ -305,5 +252,35 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     await assetHub.chain.newBlock();
 
     await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('assethub xcm chain events')
+
+    // check final balance of alice in frequency
+    const aliceFrequencyBalance = await frequency.api.query.system.account(alice.address);
+    await check(aliceFrequencyBalance).toMatchSnapshot('frequency-final-balance');
+    let aliceBalance = parseInt((aliceFrequencyBalance.toHuman() as any).data.free.replace(/,/g, ''));
+    assert(aliceBalance < (1000 * 1e12 - 100 * 1e12), "Balance of alice in Frequency is not less than 1000 XFRQCY" );
+
+    // check final balance of alice dot on frequency
+    const aliceDotAccount = await frequency.api.query.foreignAssets.account(
+      {
+        parents: 1,
+        interior: 'Here',
+      },
+      alice.address
+    );
+    await check(aliceDotAccount).toMatchSnapshot('frequency-final-balance');
+    let aliceDotBalance = parseInt((aliceDotAccount.toHuman() as any).balance.replace(/,/g, ''));
+    assert(aliceDotBalance < 100 * 1e12, "Balance of alice dot in Frequency is not less than 100 DOT" );
+  
+    // Check final balances for receiving account
+    const bobForeignAssets = await assetHub.api.query.foreignAssets.account(
+      {
+        parents: 1,
+        interior: { X1: [{ Parachain: 2091 }] },
+      },
+      bob.address
+    );
+    await check(bobForeignAssets).toMatchSnapshot('assethub-final-balance');
+    let balance = parseInt((bobForeignAssets.toHuman() as any).balance.replace(/,/g, ''));
+    assert(balance == 100 * 1e12, "Balance of bob in AssetHub is not 100 XFRQCY" );
   });
 });

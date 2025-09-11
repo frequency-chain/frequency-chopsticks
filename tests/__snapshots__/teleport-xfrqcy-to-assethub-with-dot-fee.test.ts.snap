@@ -20,6 +20,17 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 ]
 `;
 
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub-final-balance 1`] = `
+{
+  "balance": 100000000000000,
+  "extra": null,
+  "reason": {
+    "sufficient": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-check-foreign-assets-account 1`] = `
 {
   "balance": 100000000000000,
@@ -252,6 +263,32 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
     "section": "system",
   },
 ]
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-final-balance 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 899999997348384,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-final-balance 2`] = `
+{
+  "balance": 90000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
 `;
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-outbound-hrmp-messages 1`] = `

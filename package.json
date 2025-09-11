@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "XCM testing environment for Frequency and AssetHub using Chopsticks",
   "scripts": {
-    "test": "RUST_BACKTRACE=1 VERBOSE_LOG=true RUNTIME_LOG_LEVEL=5 vitest",
+    "test": "VERBOSE_LOG=true RUNTIME_LOG_LEVEL=5 vitest run",
     "test:debug": "LOG_LEVEL=debug RUNTIME_LOG_LEVEL=5 vitest run",
     "test:trace": "LOG_LEVEL=trace RUNTIME_LOG_LEVEL=5  vitest run --reporter=verbose",
     "test:xcm": "npx @acala-network/chopsticks xcm --r polkadot --p frequency --p asset-hub",
