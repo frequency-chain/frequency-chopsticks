@@ -319,37 +319,16 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     await checkSystemEvents(assetHub).toMatchSnapshot('assethub-events-after-teleport');
 
-    //     // Process the message on Frequency
-    //     await frequency.chain.newBlock();
+    //  Process the message on Frequency
+    await frequency.chain.newBlock();
 
-    //     // Check HRMP messages on Frequency (inbound)
-    //     await checkHrmp(frequency)
-    //       .redact({ redactKeys: /setTopic/ })
-    //       .toMatchSnapshot('frequency-inbound-hrmp-messages');
+    await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+          'frequency-xcm-events-after-teleport'
+        );
 
-    //     await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
-    //       'frequency-xcm-events-after-teleport'
-    //     );
+    // Check final balances
 
-    //     // Check final balances
-    //     const aliceAssetHubBalanceAfter = await assetHub.api.query.system.account(alice.address);
-    //     const aliceFrequencyBalanceAfter = await frequency.api.query.system.account(alice.address);
-    //     const bobFrequencyBalanceAfter = await frequency.api.query.system.account(bob.address);
 
-    //     console.log('Alice AssetHub balance after:', aliceAssetHubBalanceAfter.toHuman());
-    //     console.log('Alice Frequency balance after:', aliceFrequencyBalanceAfter.toHuman());
-    //     console.log('Bob Frequency balance after:', bobFrequencyBalanceAfter.toHuman());
-
-    //     // Verify balances changed as expected
-    //     await check(aliceAssetHubBalanceAfter).toMatchSnapshot('alice-assethub-final-balance');
-    //     await check(aliceFrequencyBalanceAfter).toMatchSnapshot('alice-frequency-final-balance');
-    //     await check(bobFrequencyBalanceAfter).toMatchSnapshot('bob-frequency-final-balance');
-
-    //     // Verify XCM success/failure
-    //     const events = await frequency.api.query.system.events();
-    //     const xcmResults = events.filter(({ event }) =>
-    //       event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
-    //     );
-    //     console.log('XCM Results:', xcmResults.map((e) => `${e.event.method}: ${e.event.data}`));
+    // Verify balances changed as expected
   });
 });

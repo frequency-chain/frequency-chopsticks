@@ -352,6 +352,26 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
 ]
 `;
 
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > frequency-xcm-events-after-teleport 1`] = `
+[
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Sibling": 1000,
+      },
+      "success": false,
+      "weightUsed": {
+        "proofSize": "(rounded 4100)",
+        "refTime": "(rounded 240000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > initial-assethub-check-system-account 1`] = `
 {
   "consumers": 0,
