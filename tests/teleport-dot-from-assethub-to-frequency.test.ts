@@ -85,7 +85,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
                   V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
                 },
               ],
-              4,
+              5,
             ],
           ],
         },
@@ -121,7 +121,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         ],
       },
       PolkadotXcm: {
-        SafeXcmVersion: 4,
+        SafeXcmVersion: 5,
         SupportedVersion: [
           [
             [
@@ -151,32 +151,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           WithdrawAsset: [
             {
               id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 10 * 1e12 },
-            },
-            {
-              id: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-              fun: { Fungible: 10 * 1e12 },
-            },
-          ],
-        },
-        {
-            PayFees: {
-                asset: {
-                    id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 3 * 1e12 },
-                },
-            },
-        },
-      ],
-    };
-
-    const xcm2 = {
-      V5: [
-        {
-          WithdrawAsset: [
-            {
-              id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 10 * 1e12 },
+              fun: { Fungible: 100 * 1e12 },
             },
             {
               id: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
@@ -203,7 +178,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
                 Definite: [
                   {
                     id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 9 * 1e12 },
+                    fun: { Fungible: 9 * 1e10 },
                   },
                 ],
               },

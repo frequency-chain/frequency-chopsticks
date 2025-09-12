@@ -15,12 +15,21 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
 [
   {
     "data": {
+      "amount": "(rounded 4100)",
+      "from": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
+      "to": "13xAUHVDyG1v9LLHYtMm7XZFyKNVxoj47oWV431XQ9kjXN38",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
       "dispatchInfo": {
         "class": "Mandatory",
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 290000000)",
+          "refTime": "(rounded 280000000)",
         },
       },
     },
@@ -50,7 +59,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 110000000)",
+      "amount": "(rounded 120000000)",
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Withdraw",
@@ -58,7 +67,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": 10000000000000,
+      "amount": 100000000000000,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Burned",
@@ -84,14 +93,83 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 55000000)",
+      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+      "freeBalance": 90000000000,
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 90000000000,
+      "who": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+    },
+    "method": "Minted",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 310000000)",
+      "who": "14xmwinmCEz6oRrFdczHKqHgWNMiCysE2KrA4jXXAAM1Eogk",
+    },
+    "method": "Minted",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "messageHash": "(hash)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "destination": {
+        "interior": {
+          "X1": [
+            {
+              "Parachain": "(rounded 2100)",
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "message": [],
+      "messageId": "(hash)",
+      "origin": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": "Polkadot",
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "Sent",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "amount": "(rounded 120000000)",
     },
     "method": "Issued",
     "section": "balances",
   },
   {
     "data": {
-      "amount": "(rounded 55000000)",
+      "amount": "(rounded 120000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -103,25 +181,10 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "V5": [
           {
             "fun": {
-              "Fungible": "(rounded 10000000000000)",
+              "Fungible": "(rounded 100000000000000)",
             },
             "id": {
               "interior": "Here",
-              "parents": 1,
-            },
-          },
-          {
-            "fun": {
-              "Fungible": 10000000000000,
-            },
-            "id": {
-              "interior": {
-                "X1": [
-                  {
-                    "Parachain": "(rounded 2100)",
-                  },
-                ],
-              },
               "parents": 1,
             },
           },
@@ -150,8 +213,8 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
       "outcome": {
         "Complete": {
           "used": {
-            "proofSize": "(rounded 11000)",
-            "refTime": "(rounded 990000000)",
+            "proofSize": "(rounded 23000)",
+            "refTime": "(rounded 1700000000)",
           },
         },
       },
@@ -161,7 +224,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 95000000)",
+      "amount": "(rounded 88000000)",
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Deposit",
@@ -169,7 +232,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 20000000)",
+      "amount": "(rounded 30000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -177,7 +240,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "actualFee": "(rounded 20000000)",
+      "actualFee": "(rounded 30000000)",
       "tip": 0,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
@@ -190,8 +253,8 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 22000)",
-          "refTime": "(rounded 1600000000)",
+          "proofSize": "(rounded 34000)",
+          "refTime": "(rounded 2200000000)",
         },
       },
     },
@@ -201,7 +264,93 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
 ]
 `;
 
-exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-outbound-hrmp-messages 1`] = `[]`;
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-outbound-hrmp-messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v5": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 90000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            ],
+          },
+          {
+            "payFees": {
+              "asset": {
+                "fun": {
+                  "fungible": 90000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            },
+          },
+          {
+            "receiveTeleportedAsset": [
+              {
+                "fun": {
+                  "fungible": 10000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 0,
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 2,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
+                        "network": null,
+                      },
+                    },
+                  ],
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "(redacted)",
+          },
+        ],
+      },
+    ],
+    "recipient": 2091,
+  },
+]
+`;
 
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > initial-assethub-check-system-account 1`] = `
 {
