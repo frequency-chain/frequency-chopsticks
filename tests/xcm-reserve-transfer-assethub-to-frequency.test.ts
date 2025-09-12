@@ -8,6 +8,8 @@ const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
+// npm run test xcm-reserve-transfer-assethub-to-frequency.test.ts
+
 describe('XCM limited reserve transfer from AssetHub to Frequency', async () => {
   let frequency: Network;
   let assetHub: Network;
@@ -15,7 +17,6 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
   beforeEach(async () => {
     frequency = await networks.frequency();
     assetHub = await networks.assetHub();
-    console.log('assetHub.url', JSON.stringify(assetHub.url, null, 2));
 
     frequency.chain.setHead(frequency.chain.head);
     assetHub.chain.setHead(assetHub.chain.head);
@@ -25,11 +26,6 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
 
     const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
     assetHub.dev.setHead(blockNumberAssetHub);
-
-    // return async () => {
-    //   await frequency.teardown();
-    //   await assetHub.teardown();
-    // };
   });
 
   afterEach(async () => {
@@ -37,11 +33,12 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
     await assetHub.teardown();
   });
 
-  it('AssetHub send DOT to Frequency', async () => {
+  it('From AssetHub send DOT to Frequency', async () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
     const { alice, bob, charlie } = testingPairs();
 
+    // Seed Alice and Bob account on AssetHub
     await assetHub.dev.setStorage({
       System: {
         Account: [
@@ -51,6 +48,8 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
       },
     });
 
+    // Check balance of charlie on AssetHub
+    // Not needed anymore
     const balanceAssetHub = await assetHub.api.query.system.account(charlie.address);
     await check(balanceAssetHub).toMatchSnapshot();
 
@@ -138,79 +137,93 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
       'Unlimited'
     );
 
-    try {
-      await new Promise(async (resolve, reject) => {
-        const unsub = await assetHubTx.signAndSend(
-          alice,
-          async ({ status, events, dispatchError }) => {
-            console.log(`Transaction status: ${status.type}`);
+    // This was used to subscribe to the transaction when I could not see logs.
+    // Not needed anymore
+    // try {
+    //   await new Promise(async (resolve, reject) => {
+    //     const unsub = await assetHubTx.signAndSend(
+    //       alice,
+    //       async ({ status, events, dispatchError }) => {
+    //         console.log(`Transaction status: ${status.type}`);
 
-            if (status.isInvalid) {
-              console.log('❌ Transaction is invalid');
-              unsub();
-              reject(new Error('Transaction is invalid'));
-              return;
-            }
+    //         if (status.isInvalid) {
+    //           console.log('❌ Transaction is invalid');
+    //           unsub();
+    //           reject(new Error('Transaction is invalid'));
+    //           return;
+    //         }
 
-            if (status.isDropped) {
-              console.log('❌ Transaction is dropped');
-              unsub();
-              reject(new Error('Transaction is dropped'));
-              return;
-            }
+    //         if (status.isDropped) {
+    //           console.log('❌ Transaction is dropped');
+    //           unsub();
+    //           reject(new Error('Transaction is dropped'));
+    //           return;
+    //         }
 
-            if (status.isReady) {
-              console.log('✅ Transaction is ready in pool');
-              await assetHub.chain.newBlock();
-              // Now create a block to process the transaction
-            }
+    //         if (status.isReady) {
+    //           console.log('✅ Transaction is ready in pool');
+    //           await assetHub.chain.newBlock();
+    //           // Now create a block to process the transaction
+    //         }
 
-            if (status.isInBlock) {
-              console.log('✅ Transaction is in block');
+    //         if (status.isInBlock) {
+    //           console.log('✅ Transaction is in block');
 
-              if (dispatchError) {
-                if (dispatchError.isModule) {
-                  const decoded = assetHub.api.registry.findMetaError(dispatchError.asModule);
-                  console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
-                } else {
-                  console.log('❌ Dispatch error:', dispatchError.toString());
-                }
-                unsub();
-                reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
-                return;
-              }
+    //           if (dispatchError) {
+    //             if (dispatchError.isModule) {
+    //               const decoded = assetHub.api.registry.findMetaError(dispatchError.asModule);
+    //               console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
+    //             } else {
+    //               console.log('❌ Dispatch error:', dispatchError.toString());
+    //             }
+    //             unsub();
+    //             reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
+    //             return;
+    //           }
 
-              console.log('✅ Transaction successful, unsubscribing...');
-              unsub();
-              resolve(true);
-            }
-          }
-        );
-      });
-    } catch (error) {
-      console.log('error', error);
-    }
+    //           console.log('✅ Transaction successful, unsubscribing...');
+    //           unsub();
+    //           resolve(true);
+    //         }
+    //       }
+    //     );
+    //   });
+    // } catch (error) {
+    //   console.log('error', error);
+    // }
 
+    await sendTransaction(assetHubTx.signAsync(alice));
+
+    await assetHub.chain.newBlock();
+
+    // Check HRMP messages from AssetHub
     await checkHrmp(assetHub)
       .redact({ redactKeys: /setTopic/ })
       .toMatchSnapshot('outbound-hrmp-messages');
+
+    // Check system events from AssetHub
     await checkSystemEvents(assetHub).toMatchSnapshot('assethhub-initial-events');
 
+    // Check that the message was processed on Frequency
     await frequency.chain.newBlock();
     await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
       'AssetHub chain xcm events'
     );
 
+    // Not needed anymore because we are checking the system events
+    // This was used to verify the XCM success/failure
     // Verify XCM success/failure
-    const events = await frequency.api.query.system.events();
-    console.log('Frequency events:', events.toHuman());
-    const xcmResults = events.filter(
-      ({ event }) => event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
-    );
-    console.log(
-      'XCM Results:',
-      xcmResults.map(e => `${e.event.method}: ${e.event.data}`)
-    );
+    // const events = await frequency.api.query.system.events();
+    // console.log('Frequency events:', events.toHuman());
+    // const xcmResults = events.filter(
+    //   ({ event }) => event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
+    // );
+    // console.log(
+    //   'XCM Results:',
+    //   xcmResults.map(e => `${e.event.method}: ${e.event.data}`)
+    // );
+
+    // TODO: Check final balances
 
     // await check(assetHub.api.query.foreignAssets.account(  {
     //   parents: 1,

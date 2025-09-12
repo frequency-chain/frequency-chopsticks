@@ -16,7 +16,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   beforeEach(async () => {
     frequency = await networks.frequency();
     assetHub = await networks.assetHub();
-    
+
     frequency.chain.setHead(frequency.chain.head);
     assetHub.chain.setHead(assetHub.chain.head);
 
@@ -28,8 +28,8 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   });
 
   afterEach(async () => {
-      await frequency.teardown();
-      await assetHub.teardown();
+    await frequency.teardown();
+    await assetHub.teardown();
   });
 
   it('Teleport DOT from AssetHub to Frequency with DOT fee', async () => {
@@ -47,7 +47,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       System: {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }],
-        //   [[sib], { data: { free: 1000 * 1e12 }, providers: 1 }],
+          //   [[sib], { data: { free: 1000 * 1e12 }, providers: 1 }],
         ],
       },
       ForeignAssets: {
@@ -75,20 +75,20 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           ],
         ],
       },
-        PolkadotXcm: {
-          SafeXcmVersion: 5,
-          SupportedVersion: [
+      PolkadotXcm: {
+        SafeXcmVersion: 5,
+        SupportedVersion: [
+          [
             [
-              [
-                5,
-                {
-                  V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-                },
-              ],
               5,
+              {
+                V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+              },
             ],
+            5,
           ],
-        },
+        ],
+      },
     });
 
     await setStorage(frequency.chain, {
@@ -160,12 +160,12 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           ],
         },
         {
-            PayFees: {
-                asset: {
-                    id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 3 * 1e12 },
-                },
+          PayFees: {
+            asset: {
+              id: { parents: 1, interior: 'here' },
+              fun: { Fungible: 3 * 1e12 },
             },
+          },
         },
         {
           InitiateTransfer: {
@@ -232,7 +232,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         },
       ],
     };
-    
+
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
       'initial-frequency-check-system-account'
     );
@@ -323,11 +323,10 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     await frequency.chain.newBlock();
 
     await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
-          'frequency-xcm-events-after-teleport'
-        );
+      'frequency-xcm-events-after-teleport'
+    );
 
     // Check final balances
-
 
     // Verify balances changed as expected
   });
