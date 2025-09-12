@@ -47,11 +47,6 @@ The configuration includes pre-funded test accounts:
 - **Alice**: `5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY`
 - **Bob**: `5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty`
 
-Alice has:
-
-- 1,000,000 DOT on both chains
-- 500,000 USDC (asset ID 1337) on AssetHub
-
 ## Available Scripts
 
 - `npm test` - Run all XCM tests
@@ -61,9 +56,10 @@ Alice has:
 
 ## Test Structure
 
-- `tests/setup.ts` - Test environment setup and chain connections
+- `tests/networks.ts` - Wire up configurations for each chain
+<!-- - `tests/setup.ts` - Test environment setup and chain connections -->
 - `tests/xcm-utils.ts` - XCM utility functions and helpers
-- `tests/xcm-transfer.test.ts` - XCM transfer test cases
+- `tests/xcm-transfer.test.ts` - XCM transfer test cases (in progress)
 
 ## Configuration Files
 
