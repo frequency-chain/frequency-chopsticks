@@ -72,20 +72,20 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
         //   ],
         // ],
       },
-    //   PolkadotXcm: {
-    //     SafeXcmVersion: 3,
-    //     SupportedVersion: [
-    //       [
-    //         [
-    //           5,
-    //           {
-    //             V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-    //           },
-    //         ],
-    //         4,
-    //       ],
-    //     ],
-    //   },
+      //   PolkadotXcm: {
+      //     SafeXcmVersion: 3,
+      //     SupportedVersion: [
+      //       [
+      //         [
+      //           5,
+      //           {
+      //             V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+      //           },
+      //         ],
+      //         4,
+      //       ],
+      //     ],
+      //   },
     });
 
     await setStorage(frequency.chain, {
@@ -131,7 +131,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
           ],
         ],
       },
-
     });
 
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
@@ -195,15 +194,15 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
               },
             ],
             remoteXcm: [
-            //   {
-            //     BuyExecution: {
-            //       fees: {
-            //         id: { parents: 1, interior: 'Here' },
-            //         fun: { Fungible: 11 * 1e12 },
-            //       },
-            //       weightLimit: 'Unlimited',
-            //     },
-            //   },
+              //   {
+              //     BuyExecution: {
+              //       fees: {
+              //         id: { parents: 1, interior: 'Here' },
+              //         fun: { Fungible: 11 * 1e12 },
+              //       },
+              //       weightLimit: 'Unlimited',
+              //     },
+              //   },
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
@@ -227,7 +226,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
         },
         {
           RefundSurplus: null,
-        }
+        },
       ],
     };
 
@@ -246,18 +245,25 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     await checkHrmp(frequency)
       .redact({ redactKeys: /setTopic/ })
       .toMatchSnapshot('frequency-outbound-hrmp-messages');
-    
+
     await checkSystemEvents(frequency).toMatchSnapshot('frequency-events-after-xcm');
 
     await assetHub.chain.newBlock();
 
-    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot('assethub xcm chain events')
+    await checkSystemEvents(assetHub, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+      'assethub xcm chain events'
+    );
 
     // check final balance of alice in frequency
     const aliceFrequencyBalance = await frequency.api.query.system.account(alice.address);
     await check(aliceFrequencyBalance).toMatchSnapshot('frequency-final-balance');
-    let aliceBalance = parseInt((aliceFrequencyBalance.toHuman() as any).data.free.replace(/,/g, ''));
-    assert(aliceBalance < (1000 * 1e12 - 100 * 1e12), "Balance of alice in Frequency is not less than 1000 XFRQCY" );
+    let aliceBalance = parseInt(
+      (aliceFrequencyBalance.toHuman() as any).data.free.replace(/,/g, '')
+    );
+    assert(
+      aliceBalance < 1000 * 1e12 - 100 * 1e12,
+      'Balance of alice in Frequency is not less than 1000 XFRQCY'
+    );
 
     // check final balance of alice dot on frequency
     const aliceDotAccount = await frequency.api.query.foreignAssets.account(
@@ -269,8 +275,11 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     );
     await check(aliceDotAccount).toMatchSnapshot('frequency-final-balance');
     let aliceDotBalance = parseInt((aliceDotAccount.toHuman() as any).balance.replace(/,/g, ''));
-    assert(aliceDotBalance < 100 * 1e12, "Balance of alice dot in Frequency is not less than 100 DOT" );
-  
+    assert(
+      aliceDotBalance < 100 * 1e12,
+      'Balance of alice dot in Frequency is not less than 100 DOT'
+    );
+
     // Check final balances for receiving account
     const bobForeignAssets = await assetHub.api.query.foreignAssets.account(
       {
@@ -281,6 +290,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     );
     await check(bobForeignAssets).toMatchSnapshot('assethub-final-balance');
     let balance = parseInt((bobForeignAssets.toHuman() as any).balance.replace(/,/g, ''));
-    assert(balance == 100 * 1e12, "Balance of bob in AssetHub is not 100 XFRQCY" );
+    assert(balance == 100 * 1e12, 'Balance of bob in AssetHub is not 100 XFRQCY');
   });
 });

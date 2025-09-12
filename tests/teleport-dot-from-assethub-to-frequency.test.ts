@@ -16,11 +16,20 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   beforeEach(async () => {
     frequency = await networks.frequency();
     assetHub = await networks.assetHub();
+    
+    frequency.chain.setHead(frequency.chain.head);
+    assetHub.chain.setHead(assetHub.chain.head);
 
-    return async () => {
+    const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber();
+    frequency.dev.setHead(blockNumberFrequency);
+
+    const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
+    assetHub.dev.setHead(blockNumberAssetHub);
+  });
+
+  afterEach(async () => {
       await frequency.teardown();
       await assetHub.teardown();
-    };
   });
 
   it('Teleport DOT from AssetHub to Frequency with DOT fee', async () => {
@@ -28,17 +37,17 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     const { alice, bob } = testingPairs();
 
-    const paraId = 2091;
-    const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
-    console.log('siblingSovereignAccount', siblingSovereignAccount);
-    const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
+    // const paraId = 2091;
+    // const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
+    // console.log('siblingSovereignAccount', siblingSovereignAccount);
+    // const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
 
     // Setup AssetHub with DOT balance for alice
     await setStorage(assetHub.chain, {
       System: {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }],
-          [[sib], { data: { free: 1000 * 1e12 }, providers: 1 }],
+        //   [[sib], { data: { free: 1000 * 1e12 }, providers: 1 }],
         ],
       },
       ForeignAssets: {
@@ -58,7 +67,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               alice.address,
             ],
             {
-              balance: 1000 * 1e12,
+              balance: 100 * 1e12,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -66,22 +75,21 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           ],
         ],
       },
-    //   PolkadotXcm: {
-    //     SafeXcmVersion: 5,
-    //     SupportedVersion: [
-    //       [
-    //         [
-    //           5,
-    //           {
-    //             V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-    //           },
-    //         ],
-    //         4,
-    //       ],
-    //     ],
-    //   },
+        PolkadotXcm: {
+          SafeXcmVersion: 5,
+          SupportedVersion: [
+            [
+              [
+                5,
+                {
+                  V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+                },
+              ],
+              4,
+            ],
+          ],
+        },
     });
-
 
     await setStorage(frequency.chain, {
       System: {
@@ -128,17 +136,17 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       },
     });
 
-
     // Check initial balances
-    const aliceAssetHubBalanceBefore = await assetHub.api.query.system.account(alice.address);
-    const aliceFrequencyBalanceBefore = await frequency.api.query.system.account(alice.address);
-    const bobFrequencyBalanceBefore = await frequency.api.query.system.account(bob.address);
+    // const aliceAssetHubBalanceBefore = await assetHub.api.query.system.account(alice.address);
+    // const aliceFrequencyBalanceBefore = await frequency.api.query.system.account(alice.address);
+    // const bobFrequencyBalanceBefore = await frequency.api.query.system.account(bob.address);
 
-    console.log('Alice AssetHub balance before:', aliceAssetHubBalanceBefore.toHuman());
-    console.log('Alice Frequency balance before:', aliceFrequencyBalanceBefore.toHuman());
-    console.log('Bob Frequency balance before:', bobFrequencyBalanceBefore.toHuman());
+    // console.log('Alice AssetHub balance before:', aliceAssetHubBalanceBefore.toHuman());
+    // console.log('Alice Frequency balance before:', aliceFrequencyBalanceBefore.toHuman());
+    // console.log('Bob Frequency balance before:', bobFrequencyBalanceBefore.toHuman());
 
-    const xcm ={V5: [
+    const xcm = {
+      V5: [
         {
           WithdrawAsset: [
             {
@@ -152,13 +160,46 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           ],
         },
         {
+            PayFees: {
+                asset: {
+                    id: { parents: 1, interior: 'here' },
+                    fun: { Fungible: 3 * 1e12 },
+                },
+            },
+        },
+      ],
+    };
+
+    const xcm2 = {
+      V5: [
+        {
+          WithdrawAsset: [
+            {
+              id: { parents: 1, interior: 'here' },
+              fun: { Fungible: 10 * 1e12 },
+            },
+            {
+              id: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
+              fun: { Fungible: 10 * 1e12 },
+            },
+          ],
+        },
+        {
+            PayFees: {
+                asset: {
+                    id: { parents: 1, interior: 'here' },
+                    fun: { Fungible: 3 * 1e12 },
+                },
+            },
+        },
+        {
           InitiateTransfer: {
             destination: {
               parents: 1,
               interior: { X1: [{ Parachain: 2091 }] },
             },
             remoteFees: {
-              ReserveWithdraw: {
+              ReserveDeposit: {
                 Definite: [
                   {
                     id: { parents: 1, interior: 'here' },
@@ -181,15 +222,15 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               },
             ],
             remoteXcm: [
-            //   {
-            //     BuyExecution: {
-            //       fees: {
-            //         id: { parents: 1, interior: 'Here' },
-            //         fun: { Fungible: 11 * 1e12 },
-            //       },
-            //       weightLimit: 'Unlimited',
-            //     },
-            //   },
+              //   {
+              //     BuyExecution: {
+              //       fees: {
+              //         id: { parents: 1, interior: 'Here' },
+              //         fun: { Fungible: 11 * 1e12 },
+              //       },
+              //       weightLimit: 'Unlimited',
+              //     },
+              //   },
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
@@ -213,9 +254,26 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         },
         {
           RefundSurplus: null,
-        }
-    ]}
+        },
+      ],
+    };
+    
+    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
+      'initial-frequency-check-system-account'
+    );
+    await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot(
+      'initial-assethub-check-system-account'
+    );
 
+    await check(
+      assetHub.api.query.foreignAssets.account(
+        {
+          parents: 1,
+          interior: { X1: [{ Parachain: 2091 }] },
+        },
+        alice.address
+      )
+    ).toMatchSnapshot('assethub-check-foreign-assets-account');
 
     // Create a block to ensure proper state
     await assetHub.chain.newBlock();
@@ -224,6 +282,8 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       refTime: 8000000000,
       proofSize: 200000,
     });
+
+    console.log('tx', tx.toHex());
 
     // Send transaction and wait for it to be included
     // await new Promise(async (resolve, reject) => {
@@ -284,37 +344,37 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     await checkSystemEvents(assetHub).toMatchSnapshot('assethub-events-after-teleport');
 
-//     // Process the message on Frequency
-//     await frequency.chain.newBlock();
+    //     // Process the message on Frequency
+    //     await frequency.chain.newBlock();
 
-//     // Check HRMP messages on Frequency (inbound)
-//     await checkHrmp(frequency)
-//       .redact({ redactKeys: /setTopic/ })
-//       .toMatchSnapshot('frequency-inbound-hrmp-messages');
+    //     // Check HRMP messages on Frequency (inbound)
+    //     await checkHrmp(frequency)
+    //       .redact({ redactKeys: /setTopic/ })
+    //       .toMatchSnapshot('frequency-inbound-hrmp-messages');
 
-//     await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
-//       'frequency-xcm-events-after-teleport'
-//     );
+    //     await checkSystemEvents(frequency, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+    //       'frequency-xcm-events-after-teleport'
+    //     );
 
-//     // Check final balances
-//     const aliceAssetHubBalanceAfter = await assetHub.api.query.system.account(alice.address);
-//     const aliceFrequencyBalanceAfter = await frequency.api.query.system.account(alice.address);
-//     const bobFrequencyBalanceAfter = await frequency.api.query.system.account(bob.address);
+    //     // Check final balances
+    //     const aliceAssetHubBalanceAfter = await assetHub.api.query.system.account(alice.address);
+    //     const aliceFrequencyBalanceAfter = await frequency.api.query.system.account(alice.address);
+    //     const bobFrequencyBalanceAfter = await frequency.api.query.system.account(bob.address);
 
-//     console.log('Alice AssetHub balance after:', aliceAssetHubBalanceAfter.toHuman());
-//     console.log('Alice Frequency balance after:', aliceFrequencyBalanceAfter.toHuman());
-//     console.log('Bob Frequency balance after:', bobFrequencyBalanceAfter.toHuman());
+    //     console.log('Alice AssetHub balance after:', aliceAssetHubBalanceAfter.toHuman());
+    //     console.log('Alice Frequency balance after:', aliceFrequencyBalanceAfter.toHuman());
+    //     console.log('Bob Frequency balance after:', bobFrequencyBalanceAfter.toHuman());
 
-//     // Verify balances changed as expected
-//     await check(aliceAssetHubBalanceAfter).toMatchSnapshot('alice-assethub-final-balance');
-//     await check(aliceFrequencyBalanceAfter).toMatchSnapshot('alice-frequency-final-balance');
-//     await check(bobFrequencyBalanceAfter).toMatchSnapshot('bob-frequency-final-balance');
+    //     // Verify balances changed as expected
+    //     await check(aliceAssetHubBalanceAfter).toMatchSnapshot('alice-assethub-final-balance');
+    //     await check(aliceFrequencyBalanceAfter).toMatchSnapshot('alice-frequency-final-balance');
+    //     await check(bobFrequencyBalanceAfter).toMatchSnapshot('bob-frequency-final-balance');
 
-//     // Verify XCM success/failure
-//     const events = await frequency.api.query.system.events();
-//     const xcmResults = events.filter(({ event }) =>
-//       event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
-//     );
-//     console.log('XCM Results:', xcmResults.map((e) => `${e.event.method}: ${e.event.data}`));
+    //     // Verify XCM success/failure
+    //     const events = await frequency.api.query.system.events();
+    //     const xcmResults = events.filter(({ event }) =>
+    //       event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
+    //     );
+    //     console.log('XCM Results:', xcmResults.map((e) => `${e.event.method}: ${e.event.data}`));
   });
 });

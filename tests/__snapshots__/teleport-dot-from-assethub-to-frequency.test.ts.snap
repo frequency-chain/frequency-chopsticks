@@ -1,5 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-check-foreign-assets-account 1`] = `
+{
+  "balance": 100000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-events-after-teleport 1`] = `
 [
   {
@@ -9,7 +20,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
+          "refTime": "(rounded 290000000)",
         },
       },
     },
@@ -39,7 +50,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 120000000)",
+      "amount": "(rounded 110000000)",
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Withdraw",
@@ -47,15 +58,40 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 90000000)",
+      "amount": 10000000000000,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
-    "method": "Deposit",
+    "method": "Burned",
     "section": "balances",
   },
   {
     "data": {
-      "amount": "(rounded 27000000)",
+      "assetId": {
+        "interior": {
+          "X1": [
+            {
+              "Parachain": "(rounded 2100)",
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "balance": 10000000000000,
+      "owner": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Burned",
+    "section": "foreignAssets",
+  },
+  {
+    "data": {
+      "amount": "(rounded 55000000)",
+    },
+    "method": "Issued",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 55000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -63,7 +99,85 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "actualFee": "(rounded 27000000)",
+      "assets": {
+        "V5": [
+          {
+            "fun": {
+              "Fungible": "(rounded 10000000000000)",
+            },
+            "id": {
+              "interior": "Here",
+              "parents": 1,
+            },
+          },
+          {
+            "fun": {
+              "Fungible": 10000000000000,
+            },
+            "id": {
+              "interior": {
+                "X1": [
+                  {
+                    "Parachain": "(rounded 2100)",
+                  },
+                ],
+              },
+              "parents": 1,
+            },
+          },
+        ],
+      },
+      "hash_": "(hash)",
+      "origin": {
+        "interior": {
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": "Polkadot",
+              },
+            },
+          ],
+        },
+        "parents": 0,
+      },
+    },
+    "method": "AssetsTrapped",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "used": {
+            "proofSize": "(rounded 11000)",
+            "refTime": "(rounded 990000000)",
+          },
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+  {
+    "data": {
+      "amount": "(rounded 95000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 20000000)",
+      "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 20000000)",
       "tip": 0,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
@@ -72,25 +186,49 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "dispatchError": {
-        "Module": {
-          "error": "0x18000000",
-          "index": 31,
-        },
-      },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 31000)",
-          "refTime": "(rounded 2000000000)",
+          "proofSize": "(rounded 22000)",
+          "refTime": "(rounded 1600000000)",
         },
       },
     },
-    "method": "ExtrinsicFailed",
+    "method": "ExtrinsicSuccess",
     "section": "system",
   },
 ]
 `;
 
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-outbound-hrmp-messages 1`] = `[]`;
+
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > initial-assethub-check-system-account 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 1000000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > initial-frequency-check-system-account 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 1000000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;

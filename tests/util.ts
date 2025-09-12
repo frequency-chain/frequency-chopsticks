@@ -20,7 +20,7 @@ export async function getSiblingSovereignAccount(paraId: number): Promise<string
   accountId[1] = 0x61; // 'ra'
   accountId[2] = 0x72; // 'r'
   accountId[3] = 0x61; // 'a'
-  
+
   // Copy the para ID bytes
   for (let i = 0; i < 4; i++) {
     accountId[4 + i] = paraIdBytes[i];
