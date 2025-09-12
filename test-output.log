@@ -77008,3 +77008,103 @@ The following conflicting packages were found:
   }
 ]
 [2025-09-12T22:17:59.487Z] [LOG] XCM Results: []
+[2025-09-12T22:23:21.725Z] [LOG] Test setup initialized - logging to test-output.log
+[2025-09-12T22:23:22.779Z] [WARN] @polkadot/types-codec has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/node_modules/@polkadot/types-codec/
+	esm 12.4.2	node_modules/@polkadot/rpc-core/node_modules/@polkadot/types-codec/
+	esm 12.4.2	node_modules/@polkadot/api-derive/node_modules/@polkadot/types-codec/
+	esm 12.4.2	node_modules/@polkadot/api/node_modules/@polkadot/types-codec/
+	esm 16.4.6	node_modules/@polkadot/types-codec/
+[2025-09-12T22:23:22.782Z] [WARN] @polkadot/types has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/node_modules/@polkadot/types/
+	esm 12.4.2	node_modules/@polkadot/api-derive/node_modules/@polkadot/types/
+	esm 12.4.2	node_modules/@polkadot/api/node_modules/@polkadot/types/
+	esm 16.4.6	node_modules/@polkadot/types/
+[2025-09-12T22:23:22.787Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@polkadot/types/node_modules/@polkadot/types-create/
+[2025-09-12T22:23:22.794Z] [WARN] @polkadot/types-create has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@polkadot/types/node_modules/@polkadot/types-create/
+	esm 16.4.6	node_modules/@polkadot/types-known/node_modules/@polkadot/types-create/
+[2025-09-12T22:23:22.798Z] [WARN] @polkadot/rpc-provider has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/node_modules/@polkadot/rpc-provider/
+	esm 16.4.6	node_modules/@polkadot/rpc-provider/
+[2025-09-12T22:23:24.106Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@polkadot/api-augment/node_modules/@polkadot/rpc-augment/
+[2025-09-12T22:23:24.696Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+[2025-09-12T22:23:24.696Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@polkadot/api-augment/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+[2025-09-12T22:23:24.697Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+[2025-09-12T22:23:24.698Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+[2025-09-12T22:23:24.699Z] [WARN] @polkadot/types-known has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/node_modules/@polkadot/types-known/
+	esm 16.4.6	node_modules/@polkadot/types-known/
+[2025-09-12T22:23:24.706Z] [WARN] @polkadot/api has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api/
+[2025-09-12T22:23:24.706Z] [WARN] @polkadot/rpc-augment has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@polkadot/api-augment/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-augment/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-augment/
+[2025-09-12T22:23:24.707Z] [WARN] @polkadot/api-derive has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/api-derive/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/api-derive/
+[2025-09-12T22:23:24.707Z] [WARN] @polkadot/rpc-core has multiple versions, ensure that there is only one installed.
+Either remove and explicitly install matching versions or dedupe using your package manager.
+The following conflicting packages were found:
+	esm 12.4.2	node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks/node_modules/@polkadot/rpc-core/
+	esm 16.4.6	node_modules/@acala-network/chopsticks-utils/node_modules/@polkadot/rpc-core/
+[2025-09-12T22:23:24.777Z] [LOG] [dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[2025-09-12T22:23:29.688Z] [LOG] Setting up AssetHub network with options: {
+  "wasmOverride": "./wasm/asset_hub_polkadot_runtime.compact.compressed.wasm",
+  "runtimeLogLevel": 5,
+  "blockNumber": 9669797,
+  "port": 8001,
+  "endpoint": [
+    "wss://polkadot-asset-hub-rpc.polkadot.io"
+  ],
+  "db": "assethub-db.sqlite",
+  "processQueuedMessages": true
+}

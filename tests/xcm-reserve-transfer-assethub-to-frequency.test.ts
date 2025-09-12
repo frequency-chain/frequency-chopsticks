@@ -54,9 +54,11 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
     await check(balanceAssetHub).toMatchSnapshot();
 
     await setStorage(frequency.chain, {
+      // Seed Alice account on Frequency
       System: {
         Account: [[[alice.address], { providers: 1, data: { free: 10 * 1e10 } }]],
       },
+      // Create DOT asset on Frequency with Alice as owner
       ForeignAssets: {
         Asset: [
           [
@@ -64,6 +66,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
             { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
           ],
         ],
+        // Give Alice DOT balance on Frequency
         Account: [
           [
             [
@@ -86,6 +89,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
 
     await assetHub.chain.newBlock();
 
+    // Not needed anymore this was me checking that the asset was created on Frequency
     await check(
       frequency.api.query.foreignAssets.account(
         {
@@ -194,6 +198,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
 
     await sendTransaction(assetHubTx.signAsync(alice));
 
+    // Process the message on AssetHub
     await assetHub.chain.newBlock();
 
     // Check HRMP messages from AssetHub
