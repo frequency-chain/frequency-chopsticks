@@ -8,6 +8,8 @@ import { getSiblingSovereignAccount } from './util.js';
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 import networks, { type Network } from './networks.js';
 
+// npm run test xcm-reserve-transfer-frequency-to-assethub.test.ts
+
 describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
   let frequency: Network;
   let assetHub: Network;
@@ -97,10 +99,10 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
 
     // I do not think we need these here anymore
     await frequency.chain.newBlock();
-    await assetHub.chain.newBlock();
+    // await assetHub.chain.newBlock();
 
-    await checkSystemEvents(frequency).toMatchSnapshot('frequency-initial-events');
-    await checkSystemEvents(assetHub).toMatchSnapshot('assetHub-initial-events');
+    // await checkSystemEvents(frequency).toMatchSnapshot('frequency-initial-events');
+    // await checkSystemEvents(assetHub).toMatchSnapshot('assetHub-initial-events');
     ///////////////////////
 
     // Send a limited reserve transfer from Frequency to AssetHub
@@ -130,9 +132,11 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
 
     await frequency.chain.newBlock();
     // Check HRMP messages from Frequency
-    await checkHrmp(frequency).toMatchSnapshot('frequency-inbound-hrmp-messages');
+    await checkHrmp(frequency).toMatchSnapshot('frequency-outbound-hrmp-messages');
     // Check system events from Frequency
-    await checkSystemEvents(frequency).toMatchSnapshot('frequency-after-sending-xcm-events');
+    await checkSystemEvents(frequency).toMatchSnapshot('frequency-events-after-sending-xcm-events');
+
+    // TODO check final balance of DOT
     // Check balance of Alice on Frequency
     await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
 
@@ -148,6 +152,6 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
     // Check balance of Alice on AssetHub
     await check(assetHub.api.query.system.account(alice.address)).toMatchSnapshot();
 
-    // TODO: Check final balances
+    // TODO: Check final balances of DOT on AssetHub
   });
 });

@@ -1,39 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`XCM > transfers assets from frequency to assethub > assetHub-initial-events 1`] = `
-[
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 130000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM > transfers assets from frequency to assethub > assethub-receive-chain-xcm events 1`] = `
+exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > assethub-receive-chain-xcm events 1`] = `
 [
   {
     "data": {
@@ -53,7 +20,7 @@ exports[`XCM > transfers assets from frequency to assethub > assethub-receive-ch
 ]
 `;
 
-exports[`XCM > transfers assets from frequency to assethub > frequency-after-sending-xcm-events 1`] = `
+exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-after-sending-xcm-events 1`] = `
 [
   {
     "data": {
@@ -312,214 +279,7 @@ exports[`XCM > transfers assets from frequency to assethub > frequency-after-sen
 ]
 `;
 
-exports[`XCM > transfers assets from frequency to assethub > frequency-inbound-hrmp-messages 1`] = `
-[
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v4": [
-          {
-            "withdrawAsset": [
-              {
-                "fun": {
-                  "fungible": 8000000000000,
-                },
-                "id": {
-                  "interior": {
-                    "here": null,
-                  },
-                  "parents": 1,
-                },
-              },
-            ],
-          },
-          {
-            "clearOrigin": null,
-          },
-          {
-            "buyExecution": {
-              "fees": {
-                "fun": {
-                  "fungible": 8000000000000,
-                },
-                "id": {
-                  "interior": {
-                    "here": null,
-                  },
-                  "parents": 1,
-                },
-              },
-              "weightLimit": {
-                "unlimited": null,
-              },
-            },
-          },
-          {
-            "depositAsset": {
-              "assets": {
-                "wild": {
-                  "allCounted": 1,
-                },
-              },
-              "beneficiary": {
-                "interior": {
-                  "x1": [
-                    {
-                      "accountId32": {
-                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
-                        "network": null,
-                      },
-                    },
-                  ],
-                },
-                "parents": 0,
-              },
-            },
-          },
-          {
-            "setTopic": "0xd000b4079e51b05959c8d9648e4271c0811afb21c2af3d35e94a23750d900859",
-          },
-        ],
-      },
-    ],
-    "recipient": 1000,
-  },
-]
-`;
-
-exports[`XCM > transfers assets from frequency to assethub > frequency-initial-events 1`] = `
-[
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 2000)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 98000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM > transfers assets from frequency to assethub 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": 999999998084206,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`XCM > transfers assets from frequency to assethub 2`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": 999999998084206,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`XCM > transfers assets from frequency to assethub 3`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": 0,
-    "free": 1000000000000000,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > assetHub-initial-events 1`] = `
-[
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 130000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > assethub-receive-chain-xcm events 1`] = `
-[
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Sibling": "(rounded 2100)",
-      },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 330000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
-  },
-]
-`;
-
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-after-sending-xcm-events 1`] = `
+exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-events-after-sending-xcm-events 1`] = `
 [
   {
     "data": {
@@ -854,35 +614,78 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
 ]
 `;
 
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-initial-events 1`] = `
+exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-outbound-hrmp-messages 1`] = `
 [
   {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 2000)",
-          "refTime": "(rounded 280000000)",
-        },
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v4": [
+          {
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 8000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 8000000000000,
+                },
+                "id": {
+                  "interior": {
+                    "here": null,
+                  },
+                  "parents": 1,
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 1,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
+                        "network": null,
+                      },
+                    },
+                  ],
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "0xd000b4079e51b05959c8d9648e4271c0811afb21c2af3d35e94a23750d900859",
+          },
+        ],
       },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 98000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
+    ],
+    "recipient": 1000,
   },
 ]
 `;
