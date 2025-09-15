@@ -1,0 +1,121 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-frequency 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 10000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-frequency-dot-foreign-assets 1`] = `
+{
+  "balance": 100000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-polkadot 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 1000000000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`] = `
+[
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 1900000)",
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "actualFee": "(rounded 1900000)",
+      "tip": 0,
+      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+    },
+    "method": "TransactionFeePaid",
+    "section": "transactionPayment",
+  },
+  {
+    "data": {
+      "dispatchError": {
+        "Module": {
+          "error": "0x18000000",
+          "index": 72,
+        },
+      },
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 1300000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events 1`] = `[]`;
