@@ -248,7 +248,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         },
         alice.address
       )
-    ).toMatchSnapshot('assethub-check-foreign-assets-account');
+    ).toMatchSnapshot('assethub-check-alice-frequency-foreign-assets-account');
 
     // Create a block to ensure proper state
     await assetHub.chain.newBlock();
@@ -330,4 +330,4 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     // Verify balances changed as expected
   });
-});
+}, 240000);

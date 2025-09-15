@@ -1251,6 +1251,17 @@ exports[`XCM limited reserve transfer from AssetHub to Frequency > From AssetHub
 ]
 `;
 
+exports[`XCM limited reserve transfer from AssetHub to Frequency > From AssetHub send DOT to Frequency > assethub-check-foreign-assets-account 1`] = `
+{
+  "balance": 120000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`XCM limited reserve transfer from AssetHub to Frequency > From AssetHub send DOT to Frequency > initial-events-force-subscribe-version-notify 1`] = `
 [
   {

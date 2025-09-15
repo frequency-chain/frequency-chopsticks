@@ -1,5 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-check-alice-frequency-foreign-assets-account 1`] = `
+{
+  "balance": 100000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-check-foreign-assets-account 1`] = `
 {
   "balance": 100000000000000,

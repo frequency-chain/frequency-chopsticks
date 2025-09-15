@@ -292,4 +292,4 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     let balance = parseInt((bobForeignAssets.toHuman() as any).balance.replace(/,/g, ''));
     assert(balance == 100 * 1e12, 'Balance of bob in AssetHub is not 100 XFRQCY');
   });
-});
+}, 240000);

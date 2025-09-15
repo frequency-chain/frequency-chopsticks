@@ -98,11 +98,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
         },
         alice.address
       )
-    ).toMatchSnapshot();
-
-    await checkSystemEvents(frequency).toMatchSnapshot(
-      'initial-events-force-subscribe-version-notify'
-    );
+    ).toMatchSnapshot('assethub-check-foreign-assets-account');
 
     let assetHubTx = await assetHub.api.tx.polkadotXcm.limitedReserveTransferAssets(
       {

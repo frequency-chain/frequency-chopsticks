@@ -181,4 +181,4 @@ describe('XCM', async () => {
     // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
     // await checkSystemEvents(polkadot).toMatchSnapshot()
   });
-}, 240000);
+});
