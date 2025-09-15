@@ -27,7 +27,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     assetHub.dev.setHead(blockNumberAssetHub);
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await frequency.teardown();
     await assetHub.teardown();
   });

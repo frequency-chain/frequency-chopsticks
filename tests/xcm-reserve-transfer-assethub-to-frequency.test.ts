@@ -27,7 +27,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
     assetHub.dev.setHead(blockNumberAssetHub);
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await frequency.teardown();
     await assetHub.teardown();
   });

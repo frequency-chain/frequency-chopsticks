@@ -18,7 +18,7 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', async () => {
     assetHub = await networks.assetHub();
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await frequency.teardown();
     await assetHub.teardown();
   });

@@ -4,7 +4,7 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
 
-const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
+const { check, checkSystemEvents, checkHrmp, checkUmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
@@ -100,19 +100,10 @@ describe('XCM', async () => {
       0
     );
 
-    console.log('transaction--------------------------------', tx.toHex());
-
-    const sendResult = await sendTransaction(tx.signAsync(alice));
-    console.log('result', sendResult);
+    await sendTransaction(tx.signAsync(alice));
 
     await polkadot.chain.newBlock();
     await checkSystemEvents(polkadot).toMatchSnapshot('polkadot-events');
-
-    await checkSystemEvents(polkadot).value();
-
-    // let upward = await checkUmp(polkadot).value();
-    // console.log('taco-Upward:', upward)
-
 
     // Frequency should receive the downward message
     await frequency.chain.newBlock();

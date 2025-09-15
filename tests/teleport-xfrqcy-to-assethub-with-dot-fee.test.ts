@@ -27,7 +27,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     assetHub.dev.setHead(blockNumberAssetHub);
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await frequency.teardown();
     await assetHub.teardown();
   });
