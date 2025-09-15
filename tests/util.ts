@@ -1,6 +1,5 @@
 import { u8aToHex } from '@polkadot/util';
 
-
 // https://substrate.stackexchange.com/questions/1200/how-to-calculate-sovereignaccount-for-parachain/1210
 /**
  * Get the sibling sovereign account for a parachain
@@ -16,7 +15,7 @@ export async function getSiblingSovereignAccount(paraId: number): Promise<string
   paraIdBytes[3] = (paraId >> 24) & 0xff;
 
   // 0x70617261
-  
+
   // Create the account ID using the standard derivation
   // This is a simplified version - in practice you'd use the full Substrate derivation
   // sibl 73 69 62 6c

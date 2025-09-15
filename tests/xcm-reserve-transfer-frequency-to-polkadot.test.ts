@@ -40,9 +40,15 @@ describe('XCM', async () => {
 
     await setStorage(frequency.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+        Account: [[[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
       },
       ForeignAssets: {
+        Asset: [
+          [
+            [{ parents: 1, interior: 'Here' }],
+            { supply: 100 * 1e12, owner: alice.address, isSufficient: true },
+          ],
+        ],
         Account: [
           [
             [
@@ -53,7 +59,7 @@ describe('XCM', async () => {
               alice.address,
             ],
             {
-              balance: 10e10,
+              balance: 100 * 1e12,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -65,12 +71,16 @@ describe('XCM', async () => {
 
     await setStorage(polkadot.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+        Account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
       },
     });
 
-    await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot();
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
+    await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot(
+      'alice-starting-balance-polkadot'
+    );
+    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
+      'alice-starting-balance-frequency'
+    );
     await check(
       frequency.api.query.foreignAssets.account(
         {
@@ -79,42 +89,50 @@ describe('XCM', async () => {
         },
         alice.address
       )
-    ).toMatchSnapshot();
+    ).toMatchSnapshot('alice-starting-balance-frequency-dot-foreign-assets');
 
-    const tx = await frequency.api.tx.polkadotXcm
-      .limitedReserveTransferAssets(
-        {
-            V5: {
-                parents: 1,
-                interior: null,
-            }
-
+    const tx = await frequency.api.tx.polkadotXcm.limitedReserveTransferAssets(
+      {
+        V5: {
+          parents: 1,
+          interior: null,
         },
+      },
       {
         V5: {
           parents: 0,
           interior: {
-            X1: [{
-              AccountId32: {
-                network: null,
-                id: bob.addressRaw,
+            X1: [
+              {
+                AccountId32: {
+                  network: null,
+                  id: bob.addressRaw,
+                },
               },
-            }],
+            ],
           },
         },
       },
       {
-        V5: [{ id: { Concrete: { parents: 1, interior: 'Here' } }, fun: { Fungible: 10e10 } }],
+        V5: [
+          {
+            id: { Concrete: { parents: 1, interior: 'Here' } },
+            fun: { Fungible: 100 * 1e11 },
+          },
+        ],
       },
       0,
       'Unlimited'
     );
 
-
     await sendTransaction(tx.signAsync(alice));
 
-    await frequency.chain.newBlock()
-    await checkSystemEvents(frequency).toMatchSnapshot()
+    await frequency.chain.newBlock();
+    await checkSystemEvents(frequency).toMatchSnapshot('frequency-events');
+
+    await checkUmp(frequency).toMatchSnapshot('frequency-ump-events');
+
+    await polkadot.chain.newBlock();
 
     // await polkadot.chain.newBlock()
 
