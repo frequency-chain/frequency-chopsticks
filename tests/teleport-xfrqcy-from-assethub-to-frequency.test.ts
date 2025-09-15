@@ -260,54 +260,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     console.log('tx', tx.toHex());
 
-    // Send transaction and wait for it to be included
-    // await new Promise(async (resolve, reject) => {
-    //   const unsub = await tx.signAndSend(alice, async ({ status, events, dispatchError }) => {
-    //     console.log(`Transaction status: ${status.type}`);
-
-    //     if (status.isInvalid) {
-    //       console.log('❌ Transaction is invalid');
-    //       unsub();
-    //       reject(new Error('Transaction is invalid'));
-    //       return;
-    //     }
-
-    //     if (status.isDropped) {
-    //       console.log('❌ Transaction is dropped');
-    //       unsub();
-    //       reject(new Error('Transaction is dropped'));
-    //       return;
-    //     }
-
-    //     if (status.isReady) {
-    //       console.log('✅ Transaction is ready in pool');
-    //       // Create block to process the transaction
-    //       await assetHub.chain.newBlock();
-    //       console.log('✅ Block created to process transaction');
-    //     }
-
-    //     if (status.isInBlock) {
-    //       console.log('✅ Transaction is in block');
-
-    //       if (dispatchError) {
-    //         if (dispatchError.isModule) {
-    //           const decoded = assetHub.api.registry.findMetaError(dispatchError.asModule);
-    //           console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
-    //         } else {
-    //           console.log('❌ Dispatch error:', dispatchError.toString());
-    //         }
-    //         unsub();
-    //         reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
-    //         return;
-    //       }
-
-    //       console.log('✅ Transaction successful, unsubscribing...');
-    //       unsub();
-    //       resolve(true);
-    //     }
-    //   });
-    // });
-
     await sendTransaction(tx.signAsync(alice));
 
     await assetHub.chain.newBlock();

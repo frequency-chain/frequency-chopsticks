@@ -137,61 +137,6 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
       'Unlimited'
     );
 
-    // This was used to subscribe to the transaction when I could not see logs.
-    // Not needed anymore
-    // try {
-    //   await new Promise(async (resolve, reject) => {
-    //     const unsub = await assetHubTx.signAndSend(
-    //       alice,
-    //       async ({ status, events, dispatchError }) => {
-    //         console.log(`Transaction status: ${status.type}`);
-
-    //         if (status.isInvalid) {
-    //           console.log('❌ Transaction is invalid');
-    //           unsub();
-    //           reject(new Error('Transaction is invalid'));
-    //           return;
-    //         }
-
-    //         if (status.isDropped) {
-    //           console.log('❌ Transaction is dropped');
-    //           unsub();
-    //           reject(new Error('Transaction is dropped'));
-    //           return;
-    //         }
-
-    //         if (status.isReady) {
-    //           console.log('✅ Transaction is ready in pool');
-    //           await assetHub.chain.newBlock();
-    //           // Now create a block to process the transaction
-    //         }
-
-    //         if (status.isInBlock) {
-    //           console.log('✅ Transaction is in block');
-
-    //           if (dispatchError) {
-    //             if (dispatchError.isModule) {
-    //               const decoded = assetHub.api.registry.findMetaError(dispatchError.asModule);
-    //               console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
-    //             } else {
-    //               console.log('❌ Dispatch error:', dispatchError.toString());
-    //             }
-    //             unsub();
-    //             reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
-    //             return;
-    //           }
-
-    //           console.log('✅ Transaction successful, unsubscribing...');
-    //           unsub();
-    //           resolve(true);
-    //         }
-    //       }
-    //     );
-    //   });
-    // } catch (error) {
-    //   console.log('error', error);
-    // }
-
     await sendTransaction(assetHubTx.signAsync(alice));
 
     // Process the message on AssetHub

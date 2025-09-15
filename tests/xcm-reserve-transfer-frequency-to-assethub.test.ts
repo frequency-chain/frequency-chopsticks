@@ -60,8 +60,8 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
         // SafeXcmVersion is the version of the XCM protocol that we support
         // I do not think for test we need it but it should be 5
         SafeXcmVersion: 3,
-      // To be able to send XCM messages to AssetHub we need to know the supported versions of AssetHub otherwise
-      // for testing it will fail. In production, will queue the message and wait for the supported version to be updated.
+        // To be able to send XCM messages to AssetHub we need to know the supported versions of AssetHub otherwise
+        // for testing it will fail. In production, will queue the message and wait for the supported version to be updated.
         SupportedVersion: [
           [
             [
@@ -89,7 +89,7 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', () => {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 } }],
           // Sovereign account on AssetHub we need to seed this otherwise
-          // will fail when sending a reserve transfer to AssetHub because it will not 
+          // will fail when sending a reserve transfer to AssetHub because it will not
           // find the sovereign account which is updated when sending money out from AssetHub.
           [[sib], { data: { free: 1000 * 1e12 } }],
         ],
