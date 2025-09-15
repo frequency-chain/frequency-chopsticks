@@ -27,13 +27,13 @@ export default {
   polkadot: (options?: Partial<SetupOption>) => {
     console.log('Setting up Polkadot network with options:', {
       wasmOverride: process.env.POLKADOT_WASM || undefined,
-      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 14500000,
+      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
     });
     return setupContext({
       wasmOverride: process.env.POLKADOT_WASM || undefined,
-      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 14500000,
+      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
       ...options,

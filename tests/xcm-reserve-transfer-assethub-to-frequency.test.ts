@@ -9,7 +9,6 @@ const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 import networks, { type Network } from './networks.js';
 
 // npm run test xcm-reserve-transfer-assethub-to-frequency.test.ts
-
 describe('XCM limited reserve transfer from AssetHub to Frequency', async () => {
   let frequency: Network;
   let assetHub: Network;

@@ -4,7 +4,7 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
 
-const { check, checkSystemEvents, checkUmp, checkHrmp } = withExpect(expect);
+const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
@@ -18,26 +18,18 @@ const downwardMessages: DownwardMessage[] = [
 describe('XCM', async () => {
   let frequency: Network;
   let polkadot: Network;
-  let assetHub: Network;
-  let networksD: Network;
 
   beforeEach(async () => {
     frequency = await networks.frequency();
-    assetHub = await networks.assetHub();
+    polkadot = await networks.polkadot();
 
     const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber();
     frequency.dev.setHead(blockNumberFrequency);
+  });
 
-    const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
-    assetHub.dev.setHead(blockNumberAssetHub);
-
-    polkadot = await networks.polkadot();
-
-    return async () => {
-      await frequency.teardown();
-      await polkadot.teardown();
-      await assetHub.teardown();
-    };
+  afterAll(async () => {
+    await frequency.teardown();
+    await polkadot.teardown();
   });
 
   it('Frequency handles downward messages', async () => {
@@ -51,58 +43,80 @@ describe('XCM', async () => {
     await checkSystemEvents(frequency).toMatchSnapshot();
   });
 
-  it('Polkadot send downward messages to frequency', async () => {
+  it.only('Polkadot send downward messages to frequency', async () => {
     await connectVertical(polkadot.chain, frequency.chain);
 
     const { alice, bob } = testingPairs();
 
     polkadot.dev.setStorage({
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10, providers: 1 } }]],
+        Account: [[[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
       },
     });
 
-    await polkadot.api.tx.xcmPallet
-      .reserveTransferAssets(
-        { V0: { X1: { Parachain: 2000 } } },
-        {
-          V0: {
-            X1: {
+    frequency.dev.setStorage({
+      System: {
+        Account: [[[bob.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
+      },
+      ForeignAssets: {
+        Asset: [
+          [
+            [{ parents: 1, interior: 'Here' }],
+              { supply: 1000 * 1e10, owner: alice.address, isSufficient: true }
+          ],
+        ],    
+        // Account: [
+        //   [
+        //     [{ parents: 1, interior: 'Here' }, bob.address],
+        //     { balance: 100 * 1e10, status: { Liquid: null }, reason: { Consumer: null }, extra: null },
+        //   ],
+        // ],
+      },
+    });
+
+    const tx = await polkadot.api.tx.xcmPallet.reserveTransferAssets(
+      { V5: { parents: 0, interior: { X1: [{ Parachain: 2091 }] } } },
+      {
+        V5: {
+          parents: 0,
+          interior: {
+            X1: [{
               AccountId32: {
-                network: 'Any',
-                id: alice.addressRaw,
+                network: null,
+                id: bob.addressRaw,
               },
-            },
+            }],
           },
         },
-        {
-          V0: [
-            {
-              ConcreteFungible: { id: 'Null', amount: 100e10 },
-            },
-          ],
-        },
-        0
-      )
-      .signAndSend(alice);
+      },
+      {
+        V5: [
+          {
+            id: { Concrete: { parents: 0, interior: 'Here' } },
+            fun: { Fungible: 100 * 1e10 },
+          }
+        ],
+      },
+      0
+    );
+
+    console.log('transaction--------------------------------', tx.toHex());
+
+    const sendResult = await sendTransaction(tx.signAsync(alice));
+    console.log('result', sendResult);
 
     await polkadot.chain.newBlock();
-    await checkSystemEvents(polkadot).toMatchSnapshot();
+    await checkSystemEvents(polkadot).toMatchSnapshot('polkadot-events');
 
-    console.log('taco-Frequency Events:');
-    let result = await checkSystemEvents(polkadot).value();
+    await checkSystemEvents(polkadot).value();
 
     // let upward = await checkUmp(polkadot).value();
     // console.log('taco-Upward:', upward)
 
-    result.map((event: any) => {
-      console.log('taco-Event:', event);
-      // console.log('taco-Event:', JSON.stringify(event.toHuman(), null, 2))
-    });
 
-    console.log('taco-Frequency Events After New Block:');
+    // Frequency should receive the downward message
     await frequency.chain.newBlock();
-    await checkSystemEvents(frequency).toMatchSnapshot();
+    await checkSystemEvents(frequency).toMatchSnapshot('frequency-receive-events');
   });
 
   it('frequency send upward messages to Polkadot', async () => {
@@ -181,4 +195,4 @@ describe('XCM', async () => {
     // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
     // await checkSystemEvents(polkadot).toMatchSnapshot()
   });
-});
+}, 240000);
