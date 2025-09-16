@@ -45,8 +45,8 @@ describe('XCM', async () => {
       ForeignAssets: {
         Asset: [
           [
-            [{ parents: 1, interior: 'Here' }],
-            { supply: 100 * 1e12, owner: alice.address, isSufficient: true },
+            [{ parents: 1, interior: 'here' }],
+            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
           ],
         ],
         Account: [
@@ -95,7 +95,7 @@ describe('XCM', async () => {
       {
         V5: {
           parents: 1,
-          interior: null,
+          interior: "here",
         },
       },
       {
@@ -116,7 +116,7 @@ describe('XCM', async () => {
       {
         V5: [
           {
-            id: { Concrete: { parents: 1, interior: 'Here' } },
+            id: { parents: 1, interior: 'here'  },
             fun: { Fungible: 100 * 1e11 },
           },
         ],
@@ -134,9 +134,7 @@ describe('XCM', async () => {
 
     await polkadot.chain.newBlock();
 
-    // await polkadot.chain.newBlock()
-
     // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
-    // await checkSystemEvents(polkadot).toMatchSnapshot()
+    await checkSystemEvents(polkadot).toMatchSnapshot('polkadot-events');
   });
 }, 240000);
