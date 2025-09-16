@@ -8,11 +8,7 @@ export default defineConfig({
     teardownTimeout: 30000,
     globals: true,
     environment: 'node',
-    setupFiles: ['./tests/setup.ts'],
-    reporters: ['verbose', 'json'],
-    outputFile: {
-      json: './test-results.json',
-      verbose: './test-output.log',
-    },
+    // setupFiles: ['./tests/setup.ts'],
+    // reporters: ['verbose', 'json'],
   },
 });

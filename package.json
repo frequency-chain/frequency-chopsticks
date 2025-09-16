@@ -8,7 +8,7 @@
     "test:trace": "LOG_LEVEL=trace RUNTIME_LOG_LEVEL=5  vitest run --reporter=verbose",
     "test:xcm": "npx @acala-network/chopsticks xcm --r polkadot --p frequency --p asset-hub",
     "fork:frequency": "npx @acala-network/chopsticks --config=configs/frequency.yml",
-    "fork:asset-hub": "npx @acala-network/chopsticks --config=configs/asset-hub.yml",
+    "fork:assethub": "npx @acala-network/chopsticks --config=configs/asset-hub.yml",
     "fork:clean": "rm -f ./db/*.sqlite || true",
     "fork:xcm": "npm run -s fork:clean && POLKADOT_BLOCK_NUMBER=27409884 STATEMINT_BLOCK_NUMBER=9525342 FREQUENCY_BLOCK_NUMBER=9117938 npx @acala-network/chopsticks xcm -r ./configs/polkadot.yml -p ./configs/asset-hub.yml -p ./configs/frequency.yml",
     "start": "node --loader ts-node/esm index.ts",

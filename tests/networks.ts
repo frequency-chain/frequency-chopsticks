@@ -29,13 +29,13 @@ export default {
       wasmOverride: process.env.POLKADOT_WASM || undefined,
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/polkadot-db.sqlite' : undefined,
     });
     return setupContext({
       wasmOverride: process.env.POLKADOT_WASM || undefined,
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'polkadot-db.sqlite' : undefined,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/polkadot-db.sqlite' : undefined,
       ...options,
     });
   },
@@ -44,7 +44,7 @@ export default {
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
       endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'frequency-db.sqlite' : undefined,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/frequency-db.sqlite' : undefined,
       runtimeLogLevel: 5,
       processQueuedMessages: true,
       ...options,
@@ -57,7 +57,7 @@ export default {
       blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9669797,
       port: 8001,
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
-      db: !process.env.RUN_TESTS_WITHOUT_DB ? 'assethub-db.sqlite' : undefined,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/assethub-db.sqlite' : undefined,
       processQueuedMessages: true,
       ...options,
     };
