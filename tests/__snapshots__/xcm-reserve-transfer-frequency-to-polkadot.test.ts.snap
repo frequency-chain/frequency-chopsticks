@@ -361,21 +361,56 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
   },
   {
     "data": {
-      "error": "FailedToTransactAsset",
-      "messageId": "(hash)",
-      "origin": {
-        "interior": {
-          "X1": [
-            {
-              "Parachain": "(rounded 2100)",
-            },
-          ],
-        },
-        "parents": 0,
-      },
+      "who": "13YMK2dyjeWEiCk1t1jn71fyRUN2uaz2G14S783BCR3LvvaD",
     },
-    "method": "ProcessXcmError",
-    "section": "xcmPallet",
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 10000000000000,
+      "who": "13YMK2dyjeWEiCk1t1jn71fyRUN2uaz2G14S783BCR3LvvaD",
+    },
+    "method": "Burned",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "account": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
+    },
+    "method": "NewAccount",
+    "section": "system",
+  },
+  {
+    "data": {
+      "account": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
+      "freeBalance": "(rounded 10000000000000)",
+    },
+    "method": "Endowed",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 10000000000000)",
+      "who": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
+    },
+    "method": "Minted",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 23000000)",
+    },
+    "method": "Issued",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 23000000)",
+      "who": "12WRpiUFDZ1GjksnpmBL3EzT2jz2TZ7QHhUTqoubhYPQ7PAZ",
+    },
+    "method": "Deposit",
+    "section": "balances",
   },
   {
     "data": {
@@ -385,86 +420,10 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
           "Para": "(rounded 2100)",
         },
       },
-      "success": false,
+      "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 3600)",
-        "refTime": "(rounded 150000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 260000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 2,
-          "refTime": "(rounded 130000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM > frequency send upward messages to Polkadot > system events 1`] = `
-[
-  {
-    "data": {
-      "deactivated": "(rounded 130000000000000000)",
-      "reactivated": "(rounded 130000000000000000)",
-    },
-    "method": "UpdatedInactive",
-    "section": "treasury",
-  },
-  {
-    "data": {
-      "error": "FailedToTransactAsset",
-      "messageId": "(hash)",
-      "origin": {
-        "interior": {
-          "X1": [
-            {
-              "Parachain": "(rounded 2100)",
-            },
-          ],
-        },
-        "parents": 0,
-      },
-    },
-    "method": "ProcessXcmError",
-    "section": "xcmPallet",
-  },
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Ump": {
-          "Para": "(rounded 2100)",
-        },
-      },
-      "success": false,
-      "weightUsed": {
-        "proofSize": "(rounded 3600)",
-        "refTime": "(rounded 150000000)",
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 290000000)",
       },
     },
     "method": "Processed",

@@ -38,9 +38,14 @@ describe('XCM', async () => {
 
     const { alice, bob } = testingPairs();
 
+    const childSovereignAccount = await getChildSovereignAccount(2091);
+    console.log("childSovereignAccount", childSovereignAccount);
+
     await setStorage(frequency.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
+        Account: [
+            [[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }],
+        ],
       },
       ForeignAssets: {
         Asset: [
@@ -71,7 +76,10 @@ describe('XCM', async () => {
 
     await setStorage(polkadot.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
+        Account: [
+            [[alice.address], { data: { free: 1000 * 1e12 } }],
+            [[childSovereignAccount], { data: { free: 1000 * 1e12 }, providers: 1 }],
+        ],
       },
     });
 
