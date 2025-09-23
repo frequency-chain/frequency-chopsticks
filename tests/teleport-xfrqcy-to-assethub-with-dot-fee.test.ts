@@ -16,15 +16,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
   beforeEach(async () => {
     frequency = await networks.frequency();
     assetHub = await networks.assetHub();
-
-    frequency.chain.setHead(frequency.chain.head);
-    assetHub.chain.setHead(assetHub.chain.head);
-
-    const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber();
-    frequency.dev.setHead(blockNumberFrequency);
-
-    const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
-    assetHub.dev.setHead(blockNumberAssetHub);
   });
 
   afterAll(async () => {

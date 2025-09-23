@@ -1,13 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { setStorage } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing';
-import { setupContext, testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
+import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectParachains } from '@acala-network/chopsticks';
 
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
-import { getSiblingSovereignAccount } from './util.js';
 
 describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   let frequency: Network;
@@ -16,15 +15,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   beforeEach(async () => {
     frequency = await networks.frequency();
     assetHub = await networks.assetHub();
-
-    frequency.chain.setHead(frequency.chain.head);
-    assetHub.chain.setHead(assetHub.chain.head);
-
-    const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber();
-    frequency.dev.setHead(blockNumberFrequency);
-
-    const blockNumberAssetHub = (await assetHub.api.rpc.chain.getHeader()).number.toNumber();
-    assetHub.dev.setHead(blockNumberAssetHub);
   });
 
   afterAll(async () => {
@@ -36,18 +26,21 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
     const { alice, bob } = testingPairs();
+    
+    // Check initial balances
+    // const aliceAssetHubBalanceBefore = await assetHub.api.query.system.account(alice.address);
+    // const aliceFrequencyBalanceBefore = await frequency.api.query.system.account(alice.address);
+    // const bobFrequencyBalanceBefore = await frequency.api.query.system.account(bob.address);
 
-    // const paraId = 2091;
-    // const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
-    // console.log('siblingSovereignAccount', siblingSovereignAccount);
-    // const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
+    // console.log('Alice AssetHub balance before:', aliceAssetHubBalanceBefore.toHuman());
+    // console.log('Alice Frequency balance before:', aliceFrequencyBalanceBefore.toHuman());
+    // console.log('Bob Frequency balance before:', bobFrequencyBalanceBefore.toHuman());
 
     // Setup AssetHub with DOT balance for alice
     await setStorage(assetHub.chain, {
       System: {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }],
-          //   [[sib], { data: { free: 1000 * 1e12 }, providers: 1 }],
         ],
       },
       ForeignAssets: {
@@ -136,14 +129,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       },
     });
 
-    // Check initial balances
-    // const aliceAssetHubBalanceBefore = await assetHub.api.query.system.account(alice.address);
-    // const aliceFrequencyBalanceBefore = await frequency.api.query.system.account(alice.address);
-    // const bobFrequencyBalanceBefore = await frequency.api.query.system.account(bob.address);
-
-    // console.log('Alice AssetHub balance before:', aliceAssetHubBalanceBefore.toHuman());
-    // console.log('Alice Frequency balance before:', aliceFrequencyBalanceBefore.toHuman());
-    // console.log('Bob Frequency balance before:', bobFrequencyBalanceBefore.toHuman());
 
     const xcm = {
       V5: [

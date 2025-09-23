@@ -23,9 +23,6 @@ describe('XCM', async () => {
   beforeEach(async () => {
     frequency = await networks.frequency();
     polkadot = await networks.polkadot();
-
-    const blockNumberFrequency = (await frequency.api.rpc.chain.getHeader()).number.toNumber();
-    frequency.dev.setHead(blockNumberFrequency);
   });
 
   afterAll(async () => {

@@ -4,7 +4,7 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
 
-const { check, checkSystemEvents, checkHrmp, checkUmp } = withExpect(expect);
+const { check, checkSystemEvents } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
