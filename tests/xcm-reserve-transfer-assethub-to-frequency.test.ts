@@ -35,7 +35,7 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
   it('From AssetHub send DOT to Frequency', async () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
-    const { alice, bob, charlie } = testingPairs();
+    const { alice, bob, charlie }: { alice: any; bob: any; charlie: any } = testingPairs();
 
     // Seed Alice and Bob account on AssetHub
     await assetHub.dev.setStorage({

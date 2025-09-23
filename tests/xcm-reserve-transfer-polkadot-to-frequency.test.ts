@@ -62,9 +62,9 @@ describe('XCM', async () => {
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-              { supply: 1000 * 1e10, owner: alice.address, isSufficient: true }
+            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
           ],
-        ],    
+        ],
         // Account: [
         //   [
         //     [{ parents: 1, interior: 'Here' }, bob.address],
@@ -80,12 +80,14 @@ describe('XCM', async () => {
         V5: {
           parents: 0,
           interior: {
-            X1: [{
-              AccountId32: {
-                network: null,
-                id: bob.addressRaw,
+            X1: [
+              {
+                AccountId32: {
+                  network: null,
+                  id: bob.addressRaw,
+                },
               },
-            }],
+            ],
           },
         },
       },
@@ -94,7 +96,7 @@ describe('XCM', async () => {
           {
             id: { Concrete: { parents: 0, interior: 'Here' } },
             fun: { Fungible: 100 * 1e10 },
-          }
+          },
         ],
       },
       0

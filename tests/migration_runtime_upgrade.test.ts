@@ -3,8 +3,9 @@ import { setupContext, testingPairs } from '@acala-network/chopsticks-testing';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { count } from 'node:console';
+import type { NetworkEndpoints } from './networks.js';
 
-const endpoints = {
+const endpoints: Pick<NetworkEndpoints, 'frequency'> = {
   frequency: ['wss://0.rpc.testnet.amplica.io'],
 };
 
@@ -13,7 +14,7 @@ describe('runtime upgrade', async () => {
   const { api, dev, chain, teardown } = await setupContext({
     endpoint: endpoints.frequency,
     timeout: 300_000,
-    wasmOverride: "./wasm/frequency-paseo_runtime-v176.v1.17.4.compact.compressed.wasm",
+    wasmOverride: './wasm/frequency-paseo_runtime-v176.v1.17.4.compact.compressed.wasm',
     blockNumber: 6087413,
     allowUnresolvedImports: true,
     db: './db/frequency-upgrade.sqlite',
@@ -40,7 +41,7 @@ describe('runtime upgrade', async () => {
 
   // Execution hook before runtime upgrade. To test storage migrations, set up the storage items
   // via transactions, set storage etc.
-  const beforeUpgrade = async () => { };
+  const beforeUpgrade = async () => {};
 
   // Execution hook after runtime upgrade. To verify storage migrations work, query the migrated
   // storage items or send transactions that interact with them.

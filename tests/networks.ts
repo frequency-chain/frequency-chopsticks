@@ -1,9 +1,16 @@
-import { type SetupOption, setupContext, setupNetworks } from '@acala-network/chopsticks-testing';
+import { type SetupOption, setupContext } from '@acala-network/chopsticks-testing';
 import { config as dotenvConfig } from 'dotenv';
 
 dotenvConfig();
 
-const endpoints = {
+// Type for network endpoints
+export type NetworkEndpoints = {
+  polkadot: string[];
+  frequency: string[];
+  assetHub: string[];
+};
+
+const endpoints: NetworkEndpoints = {
   polkadot: ['wss://rpc.ibp.network/polkadot'],
   frequency: ['wss://0.rpc.frequency.xyz'],
   // assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
@@ -24,7 +31,7 @@ const toNumber = (value: string | undefined): number | undefined => {
 export type Network = Awaited<ReturnType<typeof setupContext>>;
 
 export default {
-  polkadot: (options?: Partial<SetupOption>) => {
+  polkadot: (options?: Partial<SetupOption>): Promise<Network> => {
     console.log('Setting up Polkadot network with options:', {
       wasmOverride: process.env.POLKADOT_WASM || undefined,
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
@@ -39,7 +46,7 @@ export default {
       ...options,
     });
   },
-  frequency: (options?: Partial<SetupOption>) => {
+  frequency: (options?: Partial<SetupOption>): Promise<Network> => {
     return setupContext({
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
@@ -50,8 +57,8 @@ export default {
       ...options,
     });
   },
-  assetHub: (options?: Partial<SetupOption>) => {
-    const config = {
+  assetHub: (options?: Partial<SetupOption>): Promise<Network> => {
+    const config: SetupOption = {
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
       runtimeLogLevel: 5,
       blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9669797,

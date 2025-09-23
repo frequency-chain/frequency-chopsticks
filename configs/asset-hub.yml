@@ -3,7 +3,6 @@ mock-signature-host: true
 block: ${env.STATEMINT_BLOCK_NUMBER}
 db: ./db/assethub.sqlite
 
-
 wasm-override: ./wasm/frequency_runtime.wasm
 
 import-storage:
