@@ -2,18 +2,7 @@
 
 exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-check-alice-frequency-foreign-assets-account 1`] = `
 {
-  "balance": 100000000000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
-}
-`;
-
-exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT from AssetHub to Frequency with DOT fee > assethub-check-foreign-assets-account 1`] = `
-{
-  "balance": 100000000000000,
+  "balance": 10000000000,
   "extra": null,
   "reason": {
     "consumer": null,
@@ -78,7 +67,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": 100000000000000,
+      "amount": 100000000000,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Burned",
@@ -96,7 +85,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         },
         "parents": 1,
       },
-      "balance": 10000000000000,
+      "balance": 1000000000,
       "owner": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Burned",
@@ -112,14 +101,14 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   {
     "data": {
       "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
-      "freeBalance": 90000000000,
+      "freeBalance": 30000000000,
     },
     "method": "Endowed",
     "section": "balances",
   },
   {
     "data": {
-      "amount": 90000000000,
+      "amount": 30000000000,
       "who": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
     },
     "method": "Minted",
@@ -192,7 +181,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "V5": [
           {
             "fun": {
-              "Fungible": "(rounded 100000000000000)",
+              "Fungible": "(rounded 70000000000)",
             },
             "id": {
               "interior": "Here",
@@ -243,7 +232,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 30000000)",
+      "amount": "(rounded 29000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -251,7 +240,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "actualFee": "(rounded 30000000)",
+      "actualFee": "(rounded 29000000)",
       "tip": 0,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
@@ -286,7 +275,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
             "reserveAssetDeposited": [
               {
                 "fun": {
-                  "fungible": 90000000000,
+                  "fungible": 30000000000,
                 },
                 "id": {
                   "interior": {
@@ -301,7 +290,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
             "payFees": {
               "asset": {
                 "fun": {
-                  "fungible": 90000000000,
+                  "fungible": 30000000000,
                 },
                 "id": {
                   "interior": {
@@ -316,7 +305,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
             "receiveTeleportedAsset": [
               {
                 "fun": {
-                  "fungible": 10000000000000,
+                  "fungible": 1000000000,
                 },
                 "id": {
                   "interior": {
@@ -388,7 +377,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 1000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -403,7 +392,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 100000000000,
     "frozen": 0,
     "reserved": 0,
   },
