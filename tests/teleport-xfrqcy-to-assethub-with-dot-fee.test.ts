@@ -28,14 +28,13 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     const { alice, bob } = testingPairs();
 
     const paraId = 2091;
-    const siblingSovereignAccount = await getSiblingSovereignAccount(paraId);
-    const sib = '5Eg2fnsixbRfQGTeUNds5WBdpL3gvhUzF9yPCnaKX43Pc7Dk';
+    const frequencySovereignAccount = await getSiblingSovereignAccount(paraId);
 
     await setStorage(assetHub.chain, {
       System: {
         Account: [
           [[alice.address], { data: { free: 1000 * 1e12 } }],
-          [[sib], { data: { free: 1000 * 1e12 } }],
+          [[frequencySovereignAccount], { data: { free: 1000 * 1e12 } }],
         ],
       },
       ForeignAssets: {
@@ -45,38 +44,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
             { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
           ],
         ],
-        // Account: [
-        //   [
-        //     [
-        //       {
-        //         parents: 1,
-        //         interior: { X1: [{ Parachain: 2091 }] },
-        //       },
-        //       alice.address,
-        //     ],
-        //     {
-        //       balance: 1000 * 1e12,
-        //       status: { Liquid: null },
-        //       reason: { Consumer: null },
-        //       extra: null,
-        //     },
-        //   ],
-        // ],
       },
-      //   PolkadotXcm: {
-      //     SafeXcmVersion: 3,
-      //     SupportedVersion: [
-      //       [
-      //         [
-      //           5,
-      //           {
-      //             V5: { parents: 1, interior: { X1: [{ Parachain: 2091 }] } },
-      //           },
-      //         ],
-      //         4,
-      //       ],
-      //     ],
-      //   },
     });
 
     await setStorage(frequency.chain, {
