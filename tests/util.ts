@@ -67,3 +67,64 @@ export async function getChildSovereignAccount(paraId: number): Promise<string> 
 
   return u8aToHex(accountId);
 }
+
+// Send transaction and wait for it to be included
+export async function sendTransactionAndWait(tx: any, alice: any, chain: any): Promise<boolean> {
+  return await new Promise(async (resolve, reject) => {
+    const unsub = await tx.signAndSend(
+      alice,
+      async ({
+        status,
+        events,
+        dispatchError,
+      }: {
+        status: any;
+        events: any;
+        dispatchError: any;
+      }) => {
+        console.log(`Transaction status: ${status.toString()}`);
+
+        if (status.isInvalid) {
+          console.log('❌ Transaction is invalid');
+          unsub();
+          reject(new Error('Transaction is invalid'));
+          return;
+        }
+
+        if (status.isDropped) {
+          console.log('❌ Transaction is dropped');
+          unsub();
+          reject(new Error('Transaction is dropped'));
+          return;
+        }
+
+        if (status.isReady) {
+          console.log('✅ Transaction is ready in pool');
+          // Create block to process the transaction
+          await chain.chain.newBlock();
+          console.log('✅ Block created to process transaction');
+        }
+
+        if (status.isInBlock) {
+          console.log('✅ Transaction is in block');
+
+          if (dispatchError) {
+            if (dispatchError.isModule) {
+              const decoded = chain.api.registry.findMetaError(dispatchError.asModule);
+              console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
+            } else {
+              console.log('❌ Dispatch error:', dispatchError.toString());
+            }
+            unsub();
+            reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
+            return;
+          }
+
+          console.log('✅ Transaction successful, unsubscribing...');
+          unsub();
+          resolve(true);
+        }
+      }
+    );
+  });
+}

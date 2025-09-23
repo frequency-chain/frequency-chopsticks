@@ -13,11 +13,7 @@ export type NetworkEndpoints = {
 const endpoints: NetworkEndpoints = {
   polkadot: ['wss://rpc.ibp.network/polkadot'],
   frequency: ['wss://0.rpc.frequency.xyz'],
-  // assetHub: ['wss://asset-hub-polkadot-rpc.n.dwellir.com'],
-  // assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io']
-  // assetHub: ['wss://statemint.api.onfinality.io/public-ws'],
   assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
-  // assetHub: ['wss://pas-rpc.stakeworld.io/assethub']
 };
 
 const toNumber = (value: string | undefined): number | undefined => {

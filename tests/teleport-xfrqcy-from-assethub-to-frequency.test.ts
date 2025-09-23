@@ -26,7 +26,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
     const { alice, bob } = testingPairs();
-    
+
     // Check initial balances
     // const aliceAssetHubBalanceBefore = await assetHub.api.query.system.account(alice.address);
     // const aliceFrequencyBalanceBefore = await frequency.api.query.system.account(alice.address);
@@ -39,9 +39,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     // Setup AssetHub with DOT balance for alice
     await setStorage(assetHub.chain, {
       System: {
-        Account: [
-          [[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }],
-        ],
+        Account: [[[alice.address], { data: { free: 1000 * 1e12 }, providers: 1 }]],
       },
       ForeignAssets: {
         Asset: [
@@ -128,7 +126,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         ],
       },
     });
-
 
     const xcm = {
       V5: [
