@@ -1,3 +1,9 @@
 node_modules
 .env
 db/*
+test-output.log
+test-results.json
+
+*.log
+
+notes.txt

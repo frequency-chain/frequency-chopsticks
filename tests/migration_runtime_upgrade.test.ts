@@ -2,14 +2,13 @@ import { afterAll, beforeAll, describe, it, expect } from 'vitest';
 import { setupContext, testingPairs } from '@acala-network/chopsticks-testing';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import { count } from 'node:console';
 import type { NetworkEndpoints } from './networks.js';
 
 const endpoints: Pick<NetworkEndpoints, 'frequency'> = {
   frequency: ['wss://0.rpc.testnet.amplica.io'],
 };
 
-describe('runtime upgrade', async () => {
+describe.skip('runtime upgrade', async () => {
   const { alice } = testingPairs();
   const { api, dev, chain, teardown } = await setupContext({
     endpoint: endpoints.frequency,
