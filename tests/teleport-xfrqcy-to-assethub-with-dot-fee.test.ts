@@ -26,22 +26,29 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
   it('Teleport XFRQCY to AssetHub with DOT fee', async () => {
     await connectParachains([frequency.chain, assetHub.chain], false);
     const { alice, bob } = testingPairs();
+    
+    const FREQUENCY_PARA_ID: number = 2091;
+    const ASSETHUB_PARA_ID: number = 1000;
 
-    const paraId = 2091;
-    const frequencySovereignAccount = await getSiblingSovereignAccount(paraId);
+    const DOT_DOLLAR_UNIT = 10_000_000_000n; // 1 DOT (10 decimals)
+    const FREQUENCY_DOLLAR_UNIT = 100_000_000n; // 1 Frequency (8 decimals)
+
+    const FREQUENCY_SUPPLY = 10000n * FREQUENCY_DOLLAR_UNIT;
+
+    const frequencySovereignAccount = await getSiblingSovereignAccount(FREQUENCY_PARA_ID);
 
     await setStorage(assetHub.chain, {
       System: {
         Account: [
-          [[alice.address], { data: { free: 1000 * 1e12 } }],
-          [[frequencySovereignAccount], { data: { free: 1000 * 1e12 } }],
+          [[alice.address], { data: { free: 1000n * DOT_DOLLAR_UNIT } }],
+          [[frequencySovereignAccount], { data: { free: 1000n * DOT_DOLLAR_UNIT } }],
         ],
       },
       ForeignAssets: {
         Asset: [
           [
-            [{ parents: 1, interior: { X1: [{ Parachain: 2091 }] } }],
-            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
+            [{ parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }],
+            { supply: FREQUENCY_SUPPLY, owner: alice.address, isSufficient: true },
           ],
         ],
       },
@@ -49,13 +56,15 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
 
     await setStorage(frequency.chain, {
       System: {
-        Account: [[[alice.address], { providers: 1, data: { free: 1000 * 1e12 } }]],
+        Account: [
+          [[alice.address], { providers: 1, data: { free: 1000n * FREQUENCY_DOLLAR_UNIT } }],
+        ],
       },
       ForeignAssets: {
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
+            { supply: 1000n * DOT_DOLLAR_UNIT, owner: alice.address, isSufficient: true },
           ],
         ],
         Account: [
@@ -68,7 +77,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
               alice.address,
             ],
             {
-              balance: 100 * 1e12,
+              balance: 100n * DOT_DOLLAR_UNIT,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -83,7 +92,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
             [
               5,
               {
-                V5: { parents: 1, interior: { X1: [{ Parachain: 1000 }] } },
+                V5: { parents: 1, interior: { X1: [{ Parachain: ASSETHUB_PARA_ID }] } },
               },
             ],
             5,
@@ -115,11 +124,11 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
           WithdrawAsset: [
             {
               id: { parents: 0, interior: 'here' },
-              fun: { Fungible: 100 * 1e12 },
+              fun: { Fungible: 100n * FREQUENCY_DOLLAR_UNIT },
             },
             {
               id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 10 * 1e12 },
+              fun: { Fungible: 10n * DOT_DOLLAR_UNIT },
             },
           ],
         },
@@ -127,14 +136,14 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
           InitiateTransfer: {
             destination: {
               parents: 1,
-              interior: { X1: [{ Parachain: 1000 }] },
+              interior: { X1: [{ Parachain: ASSETHUB_PARA_ID }] },
             },
             remoteFees: {
               ReserveWithdraw: {
                 Definite: [
                   {
                     id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 9 * 1e12 },
+                    fun: { Fungible: 3n * DOT_DOLLAR_UNIT },
                   },
                 ],
               },
@@ -146,22 +155,13 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
                   Definite: [
                     {
                       id: { parents: 0, interior: 'here' },
-                      fun: { Fungible: 100 * 1e12 },
+                      fun: { Fungible: 100n * FREQUENCY_DOLLAR_UNIT },
                     },
                   ],
                 },
               },
             ],
             remoteXcm: [
-              //   {
-              //     BuyExecution: {
-              //       fees: {
-              //         id: { parents: 1, interior: 'Here' },
-              //         fun: { Fungible: 11 * 1e12 },
-              //       },
-              //       weightLimit: 'Unlimited',
-              //     },
-              //   },
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
@@ -189,7 +189,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
       ],
     };
 
-    // i am not sure why we need to create a block here
     await frequency.chain.newBlock();
 
     const tx = await frequency.api.tx.polkadotXcm.execute(xcm, {
@@ -235,7 +234,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     await check(aliceDotAccount).toMatchSnapshot('frequency-final-balance');
     let aliceDotBalance = parseInt((aliceDotAccount.toHuman() as any).balance.replace(/,/g, ''));
     assert(
-      aliceDotBalance < 100 * 1e12,
+      aliceDotBalance < 100n * DOT_DOLLAR_UNIT,
       'Balance of alice dot in Frequency is not less than 100 DOT'
     );
 
@@ -243,12 +242,12 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     const bobForeignAssets = await assetHub.api.query.foreignAssets.account(
       {
         parents: 1,
-        interior: { X1: [{ Parachain: 2091 }] },
+        interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] },
       },
       bob.address
     );
     await check(bobForeignAssets).toMatchSnapshot('assethub-final-balance');
     let balance = parseInt((bobForeignAssets.toHuman() as any).balance.replace(/,/g, ''));
-    assert(balance == 100 * 1e12, 'Balance of bob in AssetHub is not 100 XFRQCY');
+    assert(BigInt(balance) == 100n * FREQUENCY_DOLLAR_UNIT, 'Balance of bob in AssetHub is not 100 XFRQCY');
   });
 }, 240000);

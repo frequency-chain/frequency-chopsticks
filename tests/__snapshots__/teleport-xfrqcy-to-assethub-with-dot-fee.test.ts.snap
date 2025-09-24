@@ -22,7 +22,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > assethub-final-balance 1`] = `
 {
-  "balance": 100000000000000,
+  "balance": 10000000000,
   "extra": null,
   "reason": {
     "sufficient": null,
@@ -33,7 +33,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-check-foreign-assets-account 1`] = `
 {
-  "balance": 100000000000000,
+  "balance": 1000000000000,
   "extra": null,
   "reason": {
     "consumer": null,
@@ -89,7 +89,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "amount": 100000000000000,
+      "amount": 10000000000,
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -101,7 +101,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
         "interior": "Here",
         "parents": 1,
       },
-      "balance": 10000000000000,
+      "balance": 100000000000,
       "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -117,14 +117,14 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   {
     "data": {
       "account": "f6a1KBtrm86y6VuseUyS6Nuyq5SEpHX8ScccbsgW322f4ZZZw",
-      "freeBalance": 100000000000000,
+      "freeBalance": 10000000000,
     },
     "method": "Endowed",
     "section": "balances",
   },
   {
     "data": {
-      "amount": 100000000000000,
+      "amount": 10000000000,
       "who": "f6a1KBtrm86y6VuseUyS6Nuyq5SEpHX8ScccbsgW322f4ZZZw",
     },
     "method": "Minted",
@@ -188,7 +188,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
         "V5": [
           {
             "fun": {
-              "Fungible": "(rounded 970000000000)",
+              "Fungible": "(rounded 39000000000)",
             },
             "id": {
               "interior": "Here",
@@ -241,7 +241,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   },
   {
     "data": {
-      "actualFee": "(rounded 2700000)",
+      "actualFee": "(rounded 2600000)",
       "tip": 0,
       "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
@@ -270,7 +270,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 899999997348384,
+    "free": 89997388384,
     "frozen": 0,
     "reserved": 0,
   },
@@ -282,7 +282,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
 
 exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub with DOT fee > frequency-final-balance 2`] = `
 {
-  "balance": 90000000000000,
+  "balance": 900000000000,
   "extra": null,
   "reason": {
     "consumer": null,
@@ -302,7 +302,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
             "withdrawAsset": [
               {
                 "fun": {
-                  "fungible": 9000000000000,
+                  "fungible": 30000000000,
                 },
                 "id": {
                   "interior": {
@@ -317,7 +317,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
             "payFees": {
               "asset": {
                 "fun": {
-                  "fungible": 9000000000000,
+                  "fungible": 30000000000,
                 },
                 "id": {
                   "interior": {
@@ -332,7 +332,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
             "receiveTeleportedAsset": [
               {
                 "fun": {
-                  "fungible": 100000000000000,
+                  "fungible": 10000000000,
                 },
                 "id": {
                   "interior": {
@@ -388,7 +388,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -403,7 +403,7 @@ exports[`Teleport XFRQCY to AssetHub with DOT fee > Teleport XFRQCY to AssetHub 
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 100000000000,
     "frozen": 0,
     "reserved": 0,
   },
