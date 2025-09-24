@@ -26,6 +26,8 @@ const toNumber = (value: string | undefined): number | undefined => {
 
 export type Network = Awaited<ReturnType<typeof setupContext>>;
 
+// use frequency mainnet state with the compiled wasm that has the bridging feature.
+// use assethub mainnet state with compiled wasm for the logging
 export default {
   polkadot: (options?: Partial<SetupOption>): Promise<Network> => {
     console.log('Setting up Polkadot network with options:', {

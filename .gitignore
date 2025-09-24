@@ -3,6 +3,7 @@ node_modules
 db/*
 test-output.log
 test-results.json
+*.sqlite
 
 *.log
 
