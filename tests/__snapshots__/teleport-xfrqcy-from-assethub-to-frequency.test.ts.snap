@@ -360,10 +360,10 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
       "origin": {
         "Sibling": 1000,
       },
-      "success": false,
+      "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 4100)",
-        "refTime": "(rounded 240000000)",
+        "proofSize": "(rounded 14000)",
+        "refTime": "(rounded 1100000000)",
       },
     },
     "method": "Processed",

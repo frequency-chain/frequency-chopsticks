@@ -4,6 +4,7 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectParachains } from '@acala-network/chopsticks';
 import { KeyringPair } from '@polkadot/keyring/types';
+import { checkingAccount } from './util.js';
 
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
@@ -25,6 +26,7 @@ interface FrequencySetupConfig {
   foreignAssetSupply: BigInt; // Total supply of foreign asset
   foreignAssetParaId: number; // AssetHub parachain ID
   xcmVersion?: number; // XCM version (default: 5)
+  checkingAccountBalance?: BigInt; // Checking account
 }
 
 describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
@@ -65,9 +67,12 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const FREQUENCY_BALANCE: BigInt = 100n * FREQUENCY_DOLLAR_UNIT;
     const ASSETHUB_PARA_ID: number = 1000;
 
+    const bobFrequencyBalance = await frequency.api.query.system.account(bob.address);
+    console.log('bobFrequencyBalance', bobFrequencyBalance);
+
     // Setup AssetHub with DOT balance for alice
     await setupAssetHubStorage(assetHub.chain, alice, {
-      nativeBalance: DOT_AMOUNT ,
+      nativeBalance: DOT_AMOUNT,
       foreignAssetBalance: FREQUENCY_BALANCE,
       foreignAssetSupply: FREQUENCY_SUPPLY,
       foreignAssetParaId: FREQUENCY_PARA_ID,
@@ -78,6 +83,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       foreignAssetBalance: DOT_AMOUNT,
       foreignAssetSupply: DOT_AMOUNT * 10n,
       foreignAssetParaId: ASSETHUB_PARA_ID,
+      checkingAccountBalance: FREQUENCY_SUPPLY,
     });
 
     const xcm = {
@@ -211,7 +217,15 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       'frequency-xcm-events-after-teleport'
     );
 
-    // Check final balances
+    const frequencyFinalBalance = (
+      await frequency.api.query.system.account(bob.address)
+    ).data.free.toBigInt();
+
+    const expectedFrequencyFinalBalance = 10n * FREQUENCY_DOLLAR_UNIT;
+    assert(
+      frequencyFinalBalance === expectedFrequencyFinalBalance,
+      'Bobs Frequency final balance is not correct'
+    );
 
     // Verify balances changed as expected
   });
@@ -324,6 +338,10 @@ const setupFrequencyStorage = async (
             providers: ACCOUNT_PROVIDERS,
             data: { free: config.nativeBalance },
           },
+        ],
+        [
+          [checkingAccount()],
+          { data: { free: config.checkingAccountBalance }, providers: ACCOUNT_PROVIDERS },
         ],
       ],
     },

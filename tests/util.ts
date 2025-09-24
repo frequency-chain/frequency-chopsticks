@@ -38,6 +38,40 @@ export async function getSiblingSovereignAccount(paraId: number): Promise<string
   return u8aToHex(accountId);
 }
 
+export function checkingAccount(): string {
+  const prefix = new Uint8Array(4);
+  prefix[0] = 0x6d; // m
+  prefix[1] = 0x6f; // o
+  prefix[2] = 0x64; // d
+  prefix[3] = 0x6c; // l
+
+  const palletId = new Uint8Array(8);
+  palletId[0] = 0x70; // p
+  palletId[1] = 0x79; // y
+  palletId[2] = 0x2f; // /
+  palletId[3] = 0x78; // x
+  palletId[4] = 0x63; // c
+  palletId[5] = 0x6d; // m
+  palletId[6] = 0x63; // c
+  palletId[7] = 0x68; // h
+
+  let accountId = new Uint8Array(32);
+
+  for (let i = 0; i < 4; i++) {
+    accountId[i] = prefix[i];
+  }
+
+  for (let i = 0; i < 8; i++) {
+    accountId[i + 4] = palletId[i];
+  }
+
+  for (let i = 0; i < 32; i++) {
+    accountId[i + 12] = 0;
+  }
+
+  return u8aToHex(accountId);
+}
+
 export async function getChildSovereignAccount(paraId: number): Promise<string> {
   // The sibling sovereign account is derived from the parachain ID
   // Format: ParaId(paraId).into_account_truncating()
