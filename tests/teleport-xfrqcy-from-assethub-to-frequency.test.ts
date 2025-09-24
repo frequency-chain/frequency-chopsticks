@@ -69,9 +69,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const FREQUENCY_BALANCE: BigInt = 100n * FREQUENCY_DOLLAR_UNIT;
     const ASSETHUB_PARA_ID: number = 1000;
 
-    const bobFrequencyBalance = await frequency.api.query.system.account(bob.address);
-    console.log('bobFrequencyBalance', bobFrequencyBalance);
-
     // Setup AssetHub with DOT balance for alice
     await setupAssetHubStorage(assetHub.chain, alice, {
       nativeBalance: DOT_AMOUNT,
@@ -87,6 +84,13 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       foreignAssetParaId: ASSETHUB_PARA_ID,
       checkingAccountBalance: FREQUENCY_SUPPLY,
     });
+
+    const bobFrequencyBalance = (
+      await frequency.api.query.system.account(bob.address)
+    ).data.free.toBigInt();
+    assert(bobFrequencyBalance === 0n, 'Bob should have 0 Frequency');
+
+    // assert(bobsDotBalanceOnFrequency === 0n, 'Bob should have 0 DOT on Frequency');
 
     const xcm = {
       V5: [
@@ -106,7 +110,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           PayFees: {
             asset: {
               id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 5n * DOT_DOLLAR_UNIT },
+              fun: { Fungible: 2n * DOT_DOLLAR_UNIT },
             },
           },
         },
@@ -140,15 +144,11 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               },
             ],
             remoteXcm: [
-              //   {
-              //     BuyExecution: {
-              //       fees: {
-              //         id: { parents: 1, interior: 'Here' },
-              //         fun: { Fungible: 11 * 1e12 },
-              //       },
-              //       weightLimit: 'Unlimited',
-              //     },
-              //   },
+              // The DOT is refunded to Bob along with the deposit of Frequency alice sent to Bob.
+              // We can adjust this to return the DOT fee to alice on Frequency
+              {
+                RefundSurplus: null,
+              },
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
@@ -172,6 +172,24 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
         },
         {
           RefundSurplus: null,
+        },
+        {
+          DepositAsset: {
+            assets: { Wild: { AllCounted: 1 } },
+            beneficiary: {
+              parents: 0,
+              interior: {
+                X1: [
+                  {
+                    AccountId32: {
+                      network: null,
+                      id: alice.addressRaw,
+                    },
+                  },
+                ],
+              },
+            },
+          },
         },
       ],
     };
