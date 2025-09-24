@@ -46,11 +46,13 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   /**
    * Tests teleporting DOT from AssetHub to Frequency with DOT fee payment.
    * This test verifies the XCM teleport functionality between parachains.
+   * Alice from AssetHub sends Frequency to Bob on Frequency.
+   * Note that bob started with 0 Frequency.
    *
    * Expected behavior:
    * - Alice teleports DOT from AssetHub to Frequency
    * - DOT fee is paid for the teleport operation
-   * - Bob receives the teleported DOT on Frequency
+   * - Bob receives the teleported Native on Frequency
    */
   it('Teleport DOT from AssetHub to Frequency with DOT fee', async () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
@@ -217,17 +219,17 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       'frequency-xcm-events-after-teleport'
     );
 
+    // Check that bob received the teleported Frequency
     const frequencyFinalBalance = (
       await frequency.api.query.system.account(bob.address)
     ).data.free.toBigInt();
 
+    // Bob started with 0 Frequency
     const expectedFrequencyFinalBalance = 10n * FREQUENCY_DOLLAR_UNIT;
     assert(
       frequencyFinalBalance === expectedFrequencyFinalBalance,
       'Bobs Frequency final balance is not correct'
     );
-
-    // Verify balances changed as expected
   });
 }, 240000);
 
