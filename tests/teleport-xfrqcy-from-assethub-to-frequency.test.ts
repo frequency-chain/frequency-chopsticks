@@ -59,30 +59,38 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     const { alice, bob }: { alice: KeyringPair; bob: KeyringPair } = testingPairs();
 
-    const DOT_DOLLAR_UNIT = 10_000_000_000n; // 1 DOT (10 decimals)
-    const FREQUENCY_DOLLAR_UNIT = 100_000_000n; // 1 Frequency (8 decimals)
+    // Token unit definitions (smallest units per token)
+    const DOT_UNIT = 10_000_000_000n; // 1 DOT = 10^10 smallest units
+    const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
 
-    const DOT_AMOUNT = 100n * DOT_DOLLAR_UNIT;
-    const FREQUENCY_PARA_ID: number = 2091;
+    // Parachain IDs
+    const FREQUENCY_PARA_ID = 2091;
+    const ASSETHUB_PARA_ID = 1000;
 
-    const FREQUENCY_SUPPLY = 10000n * FREQUENCY_DOLLAR_UNIT;
-    const FREQUENCY_BALANCE: BigInt = 100n * FREQUENCY_DOLLAR_UNIT;
-    const ASSETHUB_PARA_ID: number = 1000;
+    // Test amounts (in token units)
+    const DOT_AMOUNT = 100n; // 100 DOT
+    const FREQUENCY_AMOUNT = 100n; // 100 Frequency
+    const FREQUENCY_SUPPLY_AMOUNT = 10000n; // 10,000 Frequency (total supply)
+
+    // Convert to smallest units for blockchain operations
+    const DOT_AMOUNT_SMALLEST = DOT_AMOUNT * DOT_UNIT;
+    const FREQUENCY_AMOUNT_SMALLEST = FREQUENCY_AMOUNT * FREQUENCY_UNIT;
+    const FREQUENCY_SUPPLY_SMALLEST = FREQUENCY_SUPPLY_AMOUNT * FREQUENCY_UNIT;
 
     // Setup AssetHub with DOT balance for alice
     await setupAssetHubStorage(assetHub.chain, alice, {
-      nativeBalance: DOT_AMOUNT,
-      foreignAssetBalance: FREQUENCY_BALANCE,
-      foreignAssetSupply: FREQUENCY_SUPPLY,
+      nativeBalance: DOT_AMOUNT_SMALLEST,
+      foreignAssetBalance: FREQUENCY_AMOUNT_SMALLEST,
+      foreignAssetSupply: FREQUENCY_SUPPLY_SMALLEST,
       foreignAssetParaId: FREQUENCY_PARA_ID,
     });
 
     await setupFrequencyStorage(frequency.chain, alice, {
-      nativeBalance: 1000n * FREQUENCY_DOLLAR_UNIT,
-      foreignAssetBalance: DOT_AMOUNT,
-      foreignAssetSupply: DOT_AMOUNT * 10n,
+      nativeBalance: 1000n * FREQUENCY_UNIT,
+      foreignAssetBalance: DOT_AMOUNT_SMALLEST,
+      foreignAssetSupply: DOT_AMOUNT_SMALLEST * 10n,
       foreignAssetParaId: ASSETHUB_PARA_ID,
-      checkingAccountBalance: FREQUENCY_SUPPLY,
+      checkingAccountBalance: FREQUENCY_SUPPLY_SMALLEST,
     });
 
     const bobFrequencyBalance = (
@@ -92,27 +100,60 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     // assert(bobsDotBalanceOnFrequency === 0n, 'Bob should have 0 DOT on Frequency');
 
+    // Build XCM message step by step for better readability
+
+    // Step 1: Define the assets to withdraw
+    const dotAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 10n * DOT_UNIT }, // 10 DOT
+    };
+
+    const frequencyAsset = {
+      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency
+    };
+
+    // Step 2: Define fee payment
+    const feeAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 2n * DOT_UNIT }, // 2 DOT fee
+    };
+
+    // Step 3: Define remote fees (deposited on destination chain)
+    const remoteFeeAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 3n * DOT_UNIT }, // 3 DOT remote fee
+    };
+
+    // Step 4: Define teleport assets (what gets teleported)
+    const teleportAsset = {
+      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency to teleport
+    };
+
+    // Step 5: Define beneficiary (who receives the assets)
+    const beneficiary = {
+      parents: 0,
+      interior: {
+        X1: [
+          {
+            AccountId32: {
+              network: null,
+              id: bob.addressRaw,
+            },
+          },
+        ],
+      },
+    };
+
+    // Step 6: Build the complete XCM message
     const xcm = {
       V5: [
         {
-          WithdrawAsset: [
-            {
-              id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 10n * DOT_DOLLAR_UNIT },
-            },
-            {
-              id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-              fun: { Fungible: 10n * FREQUENCY_DOLLAR_UNIT },
-            },
-          ],
+          WithdrawAsset: [dotAsset, frequencyAsset],
         },
         {
-          PayFees: {
-            asset: {
-              id: { parents: 1, interior: 'here' },
-              fun: { Fungible: 2n * DOT_DOLLAR_UNIT },
-            },
-          },
+          PayFees: { asset: feeAsset },
         },
         {
           InitiateTransfer: {
@@ -122,24 +163,14 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
             },
             remoteFees: {
               ReserveDeposit: {
-                Definite: [
-                  {
-                    id: { parents: 1, interior: 'here' },
-                    fun: { Fungible: 3n * DOT_DOLLAR_UNIT },
-                  },
-                ],
+                Definite: [remoteFeeAsset],
               },
             },
             preserveOrigin: false,
             assets: [
               {
                 Teleport: {
-                  Definite: [
-                    {
-                      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-                      fun: { Fungible: 10n * FREQUENCY_DOLLAR_UNIT },
-                    },
-                  ],
+                  Definite: [teleportAsset],
                 },
               },
             ],
@@ -152,19 +183,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
-                  beneficiary: {
-                    parents: 0,
-                    interior: {
-                      X1: [
-                        {
-                          AccountId32: {
-                            network: null,
-                            id: bob.addressRaw,
-                          },
-                        },
-                      ],
-                    },
-                  },
+                  beneficiary: beneficiary,
                 },
               },
             ],
@@ -238,18 +257,26 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     );
 
     // Check that bob received the teleported Frequency
-    const frequencyFinalBalance = (
-      await frequency.api.query.system.account(bob.address)
-    ).data.free.toBigInt();
+    const bobFinalBalance = await getAccountBalance(frequency.api, bob.address);
+    const expectedBobBalance = 10n * FREQUENCY_UNIT;
 
-    // Bob started with 0 Frequency
-    const expectedFrequencyFinalBalance = 10n * FREQUENCY_DOLLAR_UNIT;
     assert(
-      frequencyFinalBalance === expectedFrequencyFinalBalance,
-      'Bobs Frequency final balance is not correct'
+      bobFinalBalance === expectedBobBalance,
+      `Bob should have ${expectedBobBalance} Frequency, but has ${bobFinalBalance}`
     );
   });
 }, 240000);
+
+/**
+ * Helper function to get account balance as BigInt
+ * @param api - Polkadot API instance
+ * @param address - Account address
+ * @returns Account balance as BigInt
+ */
+const getAccountBalance = async (api: any, address: string): Promise<bigint> => {
+  const accountData = await api.query.system.account(address);
+  return accountData.data.free.toBigInt();
+};
 
 /**
  * Sets up AssetHub storage for XCM teleport testing
