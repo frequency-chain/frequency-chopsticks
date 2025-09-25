@@ -120,7 +120,5 @@ describe('XCM', async () => {
       99n * DOT_UNIT < bobDotBalance && bobDotBalance < 100n * DOT_UNIT,
       'Bob should have 100 DOT on Frequency but has ' + bobDotBalance.toString()
     );
-
-    console.log('Alice Polkadot balance:', alicePolkadotBalance.toString());
   });
 }, 240000);

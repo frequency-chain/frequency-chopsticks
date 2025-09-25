@@ -67,7 +67,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   {
     "data": {
       "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-      "freeBalance": "(rounded 1000000000000000)",
+      "freeBalance": "(rounded 100000000000)",
     },
     "method": "Endowed",
     "section": "balances",
@@ -86,7 +86,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
         "interior": "Here",
         "parents": 1,
       },
-      "balance": 8000000000000,
+      "balance": 80000000000,
       "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -186,7 +186,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "WithdrawAsset": [
             {
               "fun": {
-                "Fungible": 8000000000000,
+                "Fungible": 80000000000,
               },
               "id": {
                 "interior": "Here",
@@ -200,7 +200,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "BuyExecution": {
             "fees": {
               "fun": {
-                "Fungible": 8000000000000,
+                "Fungible": 80000000000,
               },
               "id": {
                 "interior": "Here",
@@ -326,7 +326,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   {
     "data": {
       "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-      "freeBalance": "(rounded 1000000000000000)",
+      "freeBalance": "(rounded 100000000000)",
     },
     "method": "Endowed",
     "section": "balances",
@@ -345,7 +345,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
         "interior": "Here",
         "parents": 1,
       },
-      "balance": 8000000000000,
+      "balance": 80000000000,
       "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -445,7 +445,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "WithdrawAsset": [
             {
               "fun": {
-                "Fungible": 8000000000000,
+                "Fungible": 80000000000,
               },
               "id": {
                 "interior": "Here",
@@ -459,7 +459,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "BuyExecution": {
             "fees": {
               "fun": {
-                "Fungible": 8000000000000,
+                "Fungible": 80000000000,
               },
               "id": {
                 "interior": "Here",
@@ -549,7 +549,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "withdrawAsset": [
               {
                 "fun": {
-                  "fungible": 8000000000000,
+                  "fungible": 80000000000,
                 },
                 "id": {
                   "interior": {
@@ -567,7 +567,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "buyExecution": {
               "fees": {
                 "fun": {
-                  "fungible": 8000000000000,
+                  "fungible": 80000000000,
                 },
                 "id": {
                   "interior": {
@@ -625,7 +625,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "withdrawAsset": [
               {
                 "fun": {
-                  "fungible": 8000000000000,
+                  "fungible": 80000000000,
                 },
                 "id": {
                   "interior": {
@@ -643,7 +643,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "buyExecution": {
               "fees": {
                 "fun": {
-                  "fungible": 8000000000000,
+                  "fungible": 80000000000,
                 },
                 "id": {
                   "interior": {
@@ -680,7 +680,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             },
           },
           {
-            "setTopic": "0xd000b4079e51b05959c8d9648e4271c0811afb21c2af3d35e94a23750d900859",
+            "setTopic": "0x513fcaa50ba4ed2192f71e15941e1857c470dbbfe27d1231271bf3e330f57e96",
           },
         ],
       },
@@ -695,7 +695,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 999999998084206,
+    "free": 99998094206,
     "frozen": 0,
     "reserved": 0,
   },
@@ -710,7 +710,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 999999998084206,
+    "free": 99998094206,
     "frozen": 0,
     "reserved": 0,
   },
@@ -725,7 +725,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
