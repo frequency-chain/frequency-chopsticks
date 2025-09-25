@@ -47,15 +47,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const FREQUENCY_PARA_ID = 2091;
     const ASSETHUB_PARA_ID = 1000;
 
-    // Test amounts (in token units)
-    const DOT_AMOUNT = 100n; // 100 DOT
-    const FREQUENCY_AMOUNT = 100n; // 100 Frequency
-    const FREQUENCY_SUPPLY_AMOUNT = 10000n; // 10,000 Frequency (total supply)
-
-    // Convert to smallest units for blockchain operations
-    const DOT_AMOUNT_SMALLEST = DOT_AMOUNT * DOT_UNIT;
-    const FREQUENCY_AMOUNT_SMALLEST = FREQUENCY_AMOUNT * FREQUENCY_UNIT;
-    const FREQUENCY_SUPPLY_SMALLEST = FREQUENCY_SUPPLY_AMOUNT * FREQUENCY_UNIT;
 
     // Setup AssetHub with DOT balance for alice
     await setStorage(assetHub.chain, {
@@ -64,7 +55,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           [
             [alice.address],
             {
-              data: { free: DOT_AMOUNT_SMALLEST },
+              data: { free: 100n * DOT_UNIT },
               providers: 1,
             },
           ],
@@ -75,7 +66,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           [
             [{ parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }],
             {
-              supply: FREQUENCY_SUPPLY_SMALLEST,
+              supply: 10000n * FREQUENCY_UNIT,
               owner: alice.address,
               isSufficient: true,
             },
@@ -91,7 +82,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               alice.address,
             ],
             {
-              balance: FREQUENCY_AMOUNT_SMALLEST,
+              balance: 100n * FREQUENCY_UNIT,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -126,7 +117,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               data: { free: 1000n * FREQUENCY_UNIT },
             },
           ],
-          [[checkingAccount()], { data: { free: FREQUENCY_SUPPLY_SMALLEST }, providers: 1 }],
+          [[checkingAccount()], { data: { free: 10000n * FREQUENCY_UNIT }, providers: 1 }],
         ],
       },
       ForeignAssets: {
@@ -134,7 +125,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
           [
             [{ parents: 1, interior: 'Here' }],
             {
-              supply: DOT_AMOUNT_SMALLEST * 10n,
+              supply: 100n * DOT_UNIT * 10n,
               owner: alice.address,
               isSufficient: true,
             },
@@ -150,7 +141,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               alice.address,
             ],
             {
-              balance: DOT_AMOUNT_SMALLEST,
+              balance: 100n * DOT_UNIT,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
