@@ -3,9 +3,9 @@ import { setStorage } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
-import { getChildSovereignAccount, getAccountBalance } from './util.js';
+import { getChildSovereignAccount, getAccountBalance, getForeignAssetBalance } from './util.js';
 
-const { check, checkSystemEvents, checkUmp } = withExpect(expect);
+const { checkSystemEvents, checkUmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
@@ -84,21 +84,26 @@ describe('XCM', async () => {
       },
     });
 
-    await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot(
-      'alice-starting-balance-polkadot'
+    assert(
+      (await getAccountBalance(polkadot.api, alice.address)) === 1000n * DOT_UNIT,
+      'Alice should have 1000 DOT on Polkadot'
     );
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot(
-      'alice-starting-balance-frequency'
+    assert(
+      (await getAccountBalance(frequency.api, alice.address)) === 1000n * FREQUENCY_UNIT,
+      'Alice should have 1000 Native on Frequency'
     );
-    await check(
-      frequency.api.query.foreignAssets.account(
-        {
-          parents: 1,
-          interior: 'Here',
-        },
+    assert(
+      (await getAccountBalance(frequency.api, bob.address)) === 0n,
+      'Bob should have 0 Frequency'
+    );
+    assert(
+      (await getForeignAssetBalance(
+        frequency.api,
+        { parents: 1, interior: 'Here' },
         alice.address
-      )
-    ).toMatchSnapshot('alice-starting-balance-frequency-dot-foreign-assets');
+      )) === FREQUENCY_FOREIGN_ASSET_DOT_SUPPLY,
+      'Alice should have 1000 DOT on Frequency'
+    );
 
     // Step 1: Define the destination (Polkadot relay chain)
     const destination = {
@@ -153,11 +158,12 @@ describe('XCM', async () => {
     await polkadot.chain.newBlock();
 
     // Check final balances
-    const alicePolkadotBalance = await getAccountBalance(polkadot.api, alice.address);
     const bobPolkadotBalance = await getAccountBalance(polkadot.api, bob.address);
-
-    console.log('Alice Polkadot balance:', alicePolkadotBalance.toString());
-    console.log('Bob Polkadot balance:', bobPolkadotBalance.toString());
+    // 100 DOT was transferred to bob but about 1 DOT was used to pay the fee.
+    assert(
+      99n * DOT_UNIT < bobPolkadotBalance && bobPolkadotBalance < 100n * DOT_UNIT,
+      'Bob should have 100 DOT on Polkadot but has ' + bobPolkadotBalance.toString()
+    );
 
     await checkSystemEvents(polkadot).toMatchSnapshot('polkadot-events');
   });
