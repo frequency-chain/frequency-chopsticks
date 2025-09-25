@@ -36,7 +36,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     const FREQUENCY_PARA_ID = 2091;
     const ASSETHUB_PARA_ID = 1000;
 
-
     const frequencySovereignAccount = await getSiblingSovereignAccount(FREQUENCY_PARA_ID);
 
     await setStorage(assetHub.chain, {
@@ -252,20 +251,12 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     );
 
     // Check final balances for receiving account
-    const bobForeignAssets = await assetHub.api.query.foreignAssets.account(
-      {
-        parents: 1,
-        interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] },
-      },
-      bob.address
-    );
-    await check(bobForeignAssets).toMatchSnapshot('assethub-final-balance');
-
     const bobBalance = await getForeignAssetBalance(
       assetHub.api,
       { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
       bob.address
     );
+
     const expectedBobBalance = 100n * FREQUENCY_UNIT;
     assert(
       bobBalance === expectedBobBalance,

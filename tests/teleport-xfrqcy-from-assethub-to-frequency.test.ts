@@ -47,7 +47,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const FREQUENCY_PARA_ID = 2091;
     const ASSETHUB_PARA_ID = 1000;
 
-
     // Setup AssetHub with DOT balance for alice
     await setStorage(assetHub.chain, {
       System: {
