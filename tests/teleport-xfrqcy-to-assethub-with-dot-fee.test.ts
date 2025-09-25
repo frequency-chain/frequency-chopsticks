@@ -4,6 +4,7 @@ import { describe, it, expect } from 'vitest';
 import { withExpect } from '@acala-network/chopsticks-testing';
 import { setStorage } from '@acala-network/chopsticks';
 import { getSiblingSovereignAccount } from './util';
+import { getAccountBalance, getForeignAssetBalance } from './util';
 
 import { connectParachains } from '@acala-network/chopsticks';
 
@@ -279,27 +280,3 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     );
   });
 }, 240000);
-
-/**
- * Helper function to get account balance as BigInt
- * @param api - Polkadot API instance
- * @param address - Account address
- * @returns Account balance as BigInt
- */
-const getAccountBalance = async (api: any, address: string): Promise<bigint> => {
-  const accountData = await api.query.system.account(address);
-  return accountData.data.free.toBigInt();
-};
-
-/**
- * Helper function to get foreign asset balance as BigInt
- * @param api - Polkadot API instance
- * @param assetLocation - Asset location object
- * @param address - Account address
- * @returns Foreign asset balance as BigInt
- */
-const getForeignAssetBalance = async (api: any, assetLocation: any, address: string): Promise<bigint> => {
-  const assetAccount = await api.query.foreignAssets.account(assetLocation, address);
-  const balanceStr = (assetAccount.toHuman() as any).balance.replace(/,/g, '');
-  return BigInt(balanceStr);
-};

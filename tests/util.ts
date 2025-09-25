@@ -162,3 +162,27 @@ export async function sendTransactionAndWait(tx: any, alice: any, chain: any): P
     );
   });
 }
+
+/**
+ * Helper function to get account balance as BigInt
+ * @param api - Polkadot API instance
+ * @param address - Account address
+ * @returns Account balance as BigInt
+ */
+export const getAccountBalance = async (api: any, address: string): Promise<bigint> => {
+  const accountData = await api.query.system.account(address);
+  return accountData.data.free.toBigInt();
+};
+
+/**
+ * Helper function to get foreign asset balance as BigInt
+ * @param api - Polkadot API instance
+ * @param assetLocation - Asset location object
+ * @param address - Account address
+ * @returns Foreign asset balance as BigInt
+ */
+export const getForeignAssetBalance = async (api: any, assetLocation: any, address: string): Promise<bigint> => {
+  const assetAccount = await api.query.foreignAssets.account(assetLocation, address);
+  const balanceStr = (assetAccount.toHuman() as any).balance.replace(/,/g, '');
+  return BigInt(balanceStr);
+};

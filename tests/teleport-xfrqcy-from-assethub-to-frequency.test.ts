@@ -4,20 +4,12 @@ import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectParachains } from '@acala-network/chopsticks';
 import { KeyringPair } from '@polkadot/keyring/types';
-import { checkingAccount } from './util.js';
+import { checkingAccount, getAccountBalance } from './util.js';
 
 const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
-// Interface for AssetHub setup configuration
-interface AssetHubSetupConfig {
-  nativeBalance: BigInt; // Native DOT balance for account
-  foreignAssetBalance: BigInt; // Frequency foreign asset balance
-  foreignAssetSupply: BigInt; // Total supply of foreign asset
-  foreignAssetParaId: number; // Frequency parachain ID
-  xcmVersion?: number; // XCM version (default: 5)
-}
 
 // Interface for Frequency setup configuration
 interface FrequencySetupConfig {
@@ -63,7 +55,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const DOT_UNIT = 10_000_000_000n; // 1 DOT = 10^10 smallest units
     const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
 
-    // Parachain IDs
     const FREQUENCY_PARA_ID = 2091;
     const ASSETHUB_PARA_ID = 1000;
 
@@ -78,11 +69,61 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     const FREQUENCY_SUPPLY_SMALLEST = FREQUENCY_SUPPLY_AMOUNT * FREQUENCY_UNIT;
 
     // Setup AssetHub with DOT balance for alice
-    await setupAssetHubStorage(assetHub.chain, alice, {
-      nativeBalance: DOT_AMOUNT_SMALLEST,
-      foreignAssetBalance: FREQUENCY_AMOUNT_SMALLEST,
-      foreignAssetSupply: FREQUENCY_SUPPLY_SMALLEST,
-      foreignAssetParaId: FREQUENCY_PARA_ID,
+    await setStorage(assetHub.chain, {
+      System: {
+        Account: [
+          [
+            [alice.address],
+            {
+              data: { free: DOT_AMOUNT_SMALLEST },
+              providers: 1,
+            },
+          ],
+        ],
+      },
+      ForeignAssets: {
+        Asset: [
+          [
+            [{ parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }],
+            {
+              supply: FREQUENCY_SUPPLY_SMALLEST,
+              owner: alice.address,
+              isSufficient: true,
+            },
+          ],
+        ],
+        Account: [
+          [
+            [
+              {
+                parents: 1,
+                interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] },
+              },
+              alice.address,
+            ],
+            {
+              balance: FREQUENCY_AMOUNT_SMALLEST,
+              status: { Liquid: null },
+              reason: { Consumer: null },
+              extra: null,
+            },
+          ],
+        ],
+      },
+      PolkadotXcm: {
+        SafeXcmVersion: 5,
+        SupportedVersion: [
+          [
+            [
+              5,
+              {
+                V5: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+              },
+            ],
+            5,
+          ],
+        ],
+      },
     });
 
     await setupFrequencyStorage(frequency.chain, alice, {
@@ -102,58 +143,18 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     // Build XCM message step by step for better readability
 
-    // Step 1: Define the assets to withdraw
-    const dotAsset = {
-      id: { parents: 1, interior: 'here' },
-      fun: { Fungible: 10n * DOT_UNIT }, // 10 DOT
-    };
-
-    const frequencyAsset = {
-      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency
-    };
-
-    // Step 2: Define fee payment
-    const feeAsset = {
-      id: { parents: 1, interior: 'here' },
-      fun: { Fungible: 2n * DOT_UNIT }, // 2 DOT fee
-    };
-
-    // Step 3: Define remote fees (deposited on destination chain)
-    const remoteFeeAsset = {
-      id: { parents: 1, interior: 'here' },
-      fun: { Fungible: 3n * DOT_UNIT }, // 3 DOT remote fee
-    };
-
-    // Step 4: Define teleport assets (what gets teleported)
-    const teleportAsset = {
-      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency to teleport
-    };
-
-    // Step 5: Define beneficiary (who receives the assets)
-    const beneficiary = {
-      parents: 0,
-      interior: {
-        X1: [
-          {
-            AccountId32: {
-              network: null,
-              id: bob.addressRaw,
-            },
-          },
-        ],
-      },
-    };
 
     // Step 6: Build the complete XCM message
     const xcm = {
       V5: [
         {
-          WithdrawAsset: [dotAsset, frequencyAsset],
+          WithdrawAsset: [
+            { id: { parents: 1, interior: 'here' }, fun: { Fungible: 10n * DOT_UNIT } },
+            { id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }, fun: { Fungible: 10n * FREQUENCY_UNIT } },
+          ],
         },
         {
-          PayFees: { asset: feeAsset },
+          PayFees: { asset: { id: { parents: 1, interior: 'here' }, fun: { Fungible: 2n * DOT_UNIT } } },
         },
         {
           InitiateTransfer: {
@@ -163,14 +164,14 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
             },
             remoteFees: {
               ReserveDeposit: {
-                Definite: [remoteFeeAsset],
+                Definite: [{ id: { parents: 1, interior: 'here' }, fun: { Fungible: 3n * DOT_UNIT } }],
               },
             },
             preserveOrigin: false,
             assets: [
               {
                 Teleport: {
-                  Definite: [teleportAsset],
+                  Definite: [{ id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }, fun: { Fungible: 10n * FREQUENCY_UNIT } }],
                 },
               },
             ],
@@ -183,7 +184,19 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
-                  beneficiary: beneficiary,
+                  beneficiary: {
+                    parents: 0,
+                    interior: {
+                      X1: [
+                        {
+                          AccountId32: {
+                            network: null,
+                            id: bob.addressRaw,
+                          },
+                        },
+                      ],
+                    },
+                  },
                 },
               },
             ],
@@ -267,94 +280,6 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   });
 }, 240000);
 
-/**
- * Helper function to get account balance as BigInt
- * @param api - Polkadot API instance
- * @param address - Account address
- * @returns Account balance as BigInt
- */
-const getAccountBalance = async (api: any, address: string): Promise<bigint> => {
-  const accountData = await api.query.system.account(address);
-  return accountData.data.free.toBigInt();
-};
-
-/**
- * Sets up AssetHub storage for XCM teleport testing
- * @param chain - AssetHub chain instance
- * @param account - Account to fund (typically Alice)
- * @param config - Configuration object with balances and parachain ID
- */
-const setupAssetHubStorage = async (
-  chain: any,
-  account: KeyringPair,
-  config: AssetHubSetupConfig
-): Promise<void> => {
-  // Constants for this function
-  const XCM_VERSION = 5;
-  const ACCOUNT_PROVIDERS = 1;
-  const ASSET_STATUS = { Liquid: null };
-  const ASSET_REASON = { Consumer: null };
-  const IS_SUFFICIENT = true;
-
-  const xcmVersion = config.xcmVersion ?? XCM_VERSION;
-
-  await setStorage(chain, {
-    System: {
-      Account: [
-        [
-          [account.address],
-          {
-            data: { free: config.nativeBalance },
-            providers: ACCOUNT_PROVIDERS,
-          },
-        ],
-      ],
-    },
-    ForeignAssets: {
-      Asset: [
-        [
-          [{ parents: 1, interior: { X1: [{ Parachain: config.foreignAssetParaId }] } }],
-          {
-            supply: config.foreignAssetSupply,
-            owner: account.address,
-            isSufficient: IS_SUFFICIENT,
-          },
-        ],
-      ],
-      Account: [
-        [
-          [
-            {
-              parents: 1,
-              interior: { X1: [{ Parachain: config.foreignAssetParaId }] },
-            },
-            account.address,
-          ],
-          {
-            balance: config.foreignAssetBalance,
-            status: ASSET_STATUS,
-            reason: ASSET_REASON,
-            extra: null,
-          },
-        ],
-      ],
-    },
-    PolkadotXcm: {
-      SafeXcmVersion: xcmVersion,
-      SupportedVersion: [
-        [
-          [
-            xcmVersion,
-            {
-              V5: { parents: 1, interior: { X1: [{ Parachain: config.foreignAssetParaId }] } },
-            },
-          ],
-          xcmVersion,
-        ],
-      ],
-    },
-  });
-};
 
 /**
  * Sets up Frequency storage for XCM teleport testing
