@@ -164,29 +164,61 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       },
     });
 
-    const bobFrequencyBalance = (
-      await frequency.api.query.system.account(bob.address)
-    ).data.free.toBigInt();
+    const bobFrequencyBalance = await getAccountBalance(frequency.api, bob.address);
     assert(bobFrequencyBalance === 0n, 'Bob should have 0 Frequency');
 
-    // assert(bobsDotBalanceOnFrequency === 0n, 'Bob should have 0 DOT on Frequency');
+    // Step 1: Define the assets to withdraw
+    const dotAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 10n * DOT_UNIT }, // 10 DOT
+    };
 
-    // Build the complete XCM message
+    const frequencyAsset = {
+      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency
+    };
+
+    // Step 2: Define fee asset
+    const feeAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 2n * DOT_UNIT }, // 2 DOT fee
+    };
+
+    // Step 3: Define remote fees (deposited on destination chain)
+    const remoteFeeAsset = {
+      id: { parents: 1, interior: 'here' },
+      fun: { Fungible: 3n * DOT_UNIT }, // 3 DOT remote fee
+    };
+
+    // Step 4: Define teleport assets (what gets teleported)
+    const teleportAsset = {
+      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+      fun: { Fungible: 10n * FREQUENCY_UNIT }, // 10 Frequency to teleport
+    };
+
+    // Step 5: Define beneficiary (who receives the assets)
+    const beneficiary = {
+      parents: 0,
+      interior: {
+        X1: [
+          {
+            AccountId32: {
+              network: null,
+              id: bob.addressRaw,
+            },
+          },
+        ],
+      },
+    };
+
+    // Step 6: Build the complete XCM message
     const xcm = {
       V5: [
         {
-          WithdrawAsset: [
-            { id: { parents: 1, interior: 'here' }, fun: { Fungible: 10n * DOT_UNIT } },
-            {
-              id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-              fun: { Fungible: 10n * FREQUENCY_UNIT },
-            },
-          ],
+          WithdrawAsset: [dotAsset, frequencyAsset],
         },
         {
-          PayFees: {
-            asset: { id: { parents: 1, interior: 'here' }, fun: { Fungible: 2n * DOT_UNIT } },
-          },
+          PayFees: { asset: feeAsset },
         },
         {
           InitiateTransfer: {
@@ -196,21 +228,14 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
             },
             remoteFees: {
               ReserveDeposit: {
-                Definite: [
-                  { id: { parents: 1, interior: 'here' }, fun: { Fungible: 3n * DOT_UNIT } },
-                ],
+                Definite: [remoteFeeAsset],
               },
             },
             preserveOrigin: false,
             assets: [
               {
                 Teleport: {
-                  Definite: [
-                    {
-                      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
-                      fun: { Fungible: 10n * FREQUENCY_UNIT },
-                    },
-                  ],
+                  Definite: [teleportAsset],
                 },
               },
             ],
@@ -223,19 +248,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               {
                 DepositAsset: {
                   assets: { Wild: { AllCounted: 2 } },
-                  beneficiary: {
-                    parents: 0,
-                    interior: {
-                      X1: [
-                        {
-                          AccountId32: {
-                            network: null,
-                            id: bob.addressRaw,
-                          },
-                        },
-                      ],
-                    },
-                  },
+                  beneficiary,
                 },
               },
             ],
