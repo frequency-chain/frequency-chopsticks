@@ -1,20 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { setStorage, DownwardMessage } from '@acala-network/chopsticks-core';
+import { setStorage } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
-import { getChildSovereignAccount } from './util.js';
+import { getChildSovereignAccount, getAccountBalance } from './util.js';
 
-const { check, checkSystemEvents, checkHrmp, checkUmp } = withExpect(expect);
+const { check, checkSystemEvents, checkUmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
-
-const downwardMessages: DownwardMessage[] = [
-  {
-    sentAt: 1,
-    msg: '0x0210010400010000078155a74e390a1300010000078155a74e39010300286bee0d01000400010100c0cbffafddbe39f71f0190c2369adfc59eaa4c81a308ebcad88cdd9c400ba57c',
-  },
-];
 
 describe('XCM', async () => {
   let frequency: Network;
@@ -30,23 +23,33 @@ describe('XCM', async () => {
     await polkadot.teardown();
   });
 
-  it.only('frequency send upward messages to Polkadot', async () => {
+  it('frequency send upward messages to Polkadot', async () => {
     await connectVertical(polkadot.chain, frequency.chain);
 
     const { alice, bob } = testingPairs();
 
-    const childSovereignAccount = await getChildSovereignAccount(2091);
-    console.log('childSovereignAccount', childSovereignAccount);
+    const DOT_UNIT = 10_000_000_000n; // 1 DOT = 10^10 smallest units
+    const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
+
+    const FREQUENCY_FOREIGN_ASSET_DOT_SUPPLY = 1000n * DOT_UNIT;
+
+    const FREQUENCY_PARA_ID = 2091;
+
+    const childSovereignAccount = await getChildSovereignAccount(FREQUENCY_PARA_ID);
 
     await setStorage(frequency.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
+        Account: [[[alice.address], { data: { free: 1000n * FREQUENCY_UNIT }, providers: 1 }]],
       },
       ForeignAssets: {
         Asset: [
           [
             [{ parents: 1, interior: 'here' }],
-            { supply: 1000 * 1e12, owner: alice.address, isSufficient: true },
+            {
+              supply: FREQUENCY_FOREIGN_ASSET_DOT_SUPPLY,
+              owner: alice.address,
+              isSufficient: true,
+            },
           ],
         ],
         Account: [
@@ -59,7 +62,7 @@ describe('XCM', async () => {
               alice.address,
             ],
             {
-              balance: 100 * 1e12,
+              balance: FREQUENCY_FOREIGN_ASSET_DOT_SUPPLY,
               status: { Liquid: null },
               reason: { Consumer: null },
               extra: null,
@@ -72,8 +75,11 @@ describe('XCM', async () => {
     await setStorage(polkadot.chain, {
       System: {
         Account: [
-          [[alice.address], { data: { free: 1000 * 1e12 } }],
-          [[childSovereignAccount], { data: { free: 1000 * 1e12 }, providers: 1 }],
+          [[alice.address], { data: { free: 1000n * DOT_UNIT } }],
+          [
+            [childSovereignAccount],
+            { data: { free: FREQUENCY_FOREIGN_ASSET_DOT_SUPPLY }, providers: 1 },
+          ],
         ],
       },
     });
@@ -94,36 +100,45 @@ describe('XCM', async () => {
       )
     ).toMatchSnapshot('alice-starting-balance-frequency-dot-foreign-assets');
 
-    const tx = await frequency.api.tx.polkadotXcm.limitedReserveTransferAssets(
-      {
-        V5: {
-          parents: 1,
-          interior: 'here',
-        },
+    // Step 1: Define the destination (Polkadot relay chain)
+    const destination = {
+      V5: {
+        parents: 1,
+        interior: 'here',
       },
-      {
-        V5: {
-          parents: 0,
-          interior: {
-            X1: [
-              {
-                AccountId32: {
-                  network: null,
-                  id: bob.addressRaw,
-                },
+    };
+
+    // Step 2: Define the beneficiary (Bob on Polkadot)
+    const beneficiary = {
+      V5: {
+        parents: 0,
+        interior: {
+          X1: [
+            {
+              AccountId32: {
+                network: null,
+                id: bob.addressRaw,
               },
-            ],
-          },
+            },
+          ],
         },
       },
-      {
-        V5: [
-          {
-            id: { parents: 1, interior: 'here' },
-            fun: { Fungible: 100 * 1e11 },
-          },
-        ],
-      },
+    };
+
+    // Step 3: Define the asset to transfer (DOT)
+    const transferAsset = {
+      V5: [
+        {
+          id: { parents: 1, interior: 'here' },
+          fun: { Fungible: 100n * DOT_UNIT },
+        },
+      ],
+    };
+
+    const tx = await frequency.api.tx.polkadotXcm.limitedReserveTransferAssets(
+      destination,
+      beneficiary,
+      transferAsset,
       0,
       'Unlimited'
     );
@@ -137,7 +152,13 @@ describe('XCM', async () => {
 
     await polkadot.chain.newBlock();
 
-    // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
+    // Check final balances
+    const alicePolkadotBalance = await getAccountBalance(polkadot.api, alice.address);
+    const bobPolkadotBalance = await getAccountBalance(polkadot.api, bob.address);
+
+    console.log('Alice Polkadot balance:', alicePolkadotBalance.toString());
+    console.log('Bob Polkadot balance:', bobPolkadotBalance.toString());
+
     await checkSystemEvents(polkadot).toMatchSnapshot('polkadot-events');
   });
 }, 240000);

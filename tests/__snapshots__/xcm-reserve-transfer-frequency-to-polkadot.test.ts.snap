@@ -5,7 +5,7 @@ exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balan
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 10000000000000,
+    "free": 100000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -17,7 +17,7 @@ exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balan
 
 exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-frequency-dot-foreign-assets 1`] = `
 {
-  "balance": 100000000000000,
+  "balance": 10000000000000,
   "extra": null,
   "reason": {
     "consumer": null,
@@ -31,7 +31,7 @@ exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balan
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -92,7 +92,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`]
         "interior": "Here",
         "parents": 1,
       },
-      "balance": 10000000000000,
+      "balance": 1000000000000,
       "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -186,7 +186,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`]
           "WithdrawAsset": [
             {
               "fun": {
-                "Fungible": 10000000000000,
+                "Fungible": 1000000000000,
               },
               "id": {
                 "interior": "Here",
@@ -200,7 +200,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`]
           "BuyExecution": {
             "fees": {
               "fun": {
-                "Fungible": 10000000000000,
+                "Fungible": 1000000000000,
               },
               "id": {
                 "interior": "Here",
@@ -287,7 +287,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events
         "withdrawAsset": [
           {
             "fun": {
-              "fungible": 10000000000000,
+              "fungible": 1000000000000,
             },
             "id": {
               "interior": {
@@ -305,7 +305,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events
         "buyExecution": {
           "fees": {
             "fun": {
-              "fungible": 10000000000000,
+              "fungible": 1000000000000,
             },
             "id": {
               "interior": {
@@ -342,7 +342,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events
         },
       },
       {
-        "setTopic": "0x87ff5759c097ce746be9f54bae42ec1c678272ee4b6dc2c39625ad725155f059",
+        "setTopic": "0x8bc93def8abed952231ab1c18691ccea5e1ee4711ae651014df9eec156f19661",
       },
     ],
   },
@@ -368,7 +368,7 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
   },
   {
     "data": {
-      "amount": 10000000000000,
+      "amount": 1000000000000,
       "who": "13YMK2dyjeWEiCk1t1jn71fyRUN2uaz2G14S783BCR3LvvaD",
     },
     "method": "Burned",
@@ -384,14 +384,14 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
   {
     "data": {
       "account": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
-      "freeBalance": "(rounded 10000000000000)",
+      "freeBalance": "(rounded 1000000000000)",
     },
     "method": "Endowed",
     "section": "balances",
   },
   {
     "data": {
-      "amount": "(rounded 10000000000000)",
+      "amount": "(rounded 1000000000000)",
       "who": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
     },
     "method": "Minted",
