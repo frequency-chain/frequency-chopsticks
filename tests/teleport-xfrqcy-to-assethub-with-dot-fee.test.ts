@@ -36,11 +36,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     const FREQUENCY_PARA_ID = 2091;
     const ASSETHUB_PARA_ID = 1000;
 
-    // Test amounts (in token units)
-    const FREQUENCY_SUPPLY_AMOUNT = 10000n; // 10,000 Frequency (total supply)
-
-    // Convert to smallest units for blockchain operations
-    const FREQUENCY_SUPPLY_SMALLEST = FREQUENCY_SUPPLY_AMOUNT * FREQUENCY_UNIT;
 
     const frequencySovereignAccount = await getSiblingSovereignAccount(FREQUENCY_PARA_ID);
 
@@ -55,7 +50,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
         Asset: [
           [
             [{ parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }],
-            { supply: FREQUENCY_SUPPLY_SMALLEST, owner: alice.address, isSufficient: true },
+            { supply: 10000n * FREQUENCY_UNIT, owner: alice.address, isSufficient: true },
           ],
         ],
       },
