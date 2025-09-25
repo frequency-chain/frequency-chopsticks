@@ -464,7 +464,7 @@ exports[`XCM > AssetHub send DOT to Frequency 1`] = `
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -949,7 +949,7 @@ exports[`XCM limited reserve transfer from AssetHub to Frequency > AssetHub send
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -1454,7 +1454,7 @@ exports[`XCM limited reserve transfer from AssetHub to Frequency > From AssetHub
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 1000000000000000,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },

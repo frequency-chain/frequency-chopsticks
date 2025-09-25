@@ -1,10 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, assert } from 'vitest';
 import { setStorage } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectParachains } from '@acala-network/chopsticks';
+import { getAccountBalance, getForeignAssetBalance } from './util.js';
 
-const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
+const { checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
@@ -26,103 +27,94 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
   it('From AssetHub send DOT to Frequency', async () => {
     await connectParachains([assetHub.chain, frequency.chain], false);
 
-    const { alice, bob, charlie } = testingPairs();
+    const { alice, bob } = testingPairs();
+
+    const DOT_UNIT = 10_000_000_000n; // 1 DOT = 10^10 smallest units
+    const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
+
+    // Parachain IDs
+    const FREQUENCY_PARA_ID = 2091;
+
+    // Test amounts
+    const ALICE_INITIAL_ASSETHUB_BALANCE = 1000n * DOT_UNIT;
+    const ALICE_INITIAL_FREQUENCY_BALANCE = 10n * FREQUENCY_UNIT;
+    const TRANSFER_AMOUNT = 50n * DOT_UNIT;
 
     // Seed Alice and Bob account on AssetHub
-    await assetHub.dev.setStorage({
+    await setStorage(assetHub.chain, {
       System: {
         Account: [
-          [[alice.address], { providers: 1, data: { free: 1000 * 1e12 }, nonce: 1 }], // Give alice balance
-          [[charlie.address], { providers: 1, data: { free: 1000 * 1e12 }, nonce: 1 }],
+          [
+            [alice.address],
+            { providers: 1, data: { free: ALICE_INITIAL_ASSETHUB_BALANCE }, nonce: 1 },
+          ], // Give alice balance
         ],
       },
     });
 
-    // Check balance of charlie on AssetHub
-    // Not needed anymore
-    const balanceAssetHub = await assetHub.api.query.system.account(charlie.address);
-    await check(balanceAssetHub).toMatchSnapshot();
-
     await setStorage(frequency.chain, {
       // Seed Alice account on Frequency
       System: {
-        Account: [[[alice.address], { providers: 1, data: { free: 10 * 1e10 } }]],
+        Account: [
+          [[alice.address], { providers: 1, data: { free: ALICE_INITIAL_FREQUENCY_BALANCE } }],
+        ],
       },
       // Create DOT asset on Frequency with Alice as owner
       ForeignAssets: {
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
+            { supply: 1000n * DOT_UNIT, owner: alice.address, isSufficient: true },
           ],
         ],
-        // Give Alice DOT balance on Frequency
-        Account: [
-          [
-            [
-              {
-                parents: 1,
-                interior: 'Here',
-              },
-              alice.address,
-            ],
-            {
-              balance: 12e10,
-              status: { Liquid: null },
-              reason: { Consumer: null },
-              extra: null,
-            },
-          ],
-        ],
+        Account: [],
       },
     });
 
     await assetHub.chain.newBlock();
 
-    // Not needed anymore this was me checking that the asset was created on Frequency
-    await check(
-      frequency.api.query.foreignAssets.account(
-        {
-          parents: 1,
-          interior: 'Here',
+    // Step 1: Define the destination (Frequency parachain)
+    const destination = {
+      V3: {
+        parents: 1,
+        interior: { X1: { Parachain: FREQUENCY_PARA_ID } },
+      },
+    };
+
+    // Step 2: Define the beneficiary (Bob on Frequency)
+    const beneficiary = {
+      V3: {
+        parents: 0,
+        interior: {
+          X1: {
+            AccountId32: {
+              network: null,
+              id: bob.addressRaw,
+            },
+          },
         },
-        alice.address
-      )
-    ).toMatchSnapshot('assethub-check-foreign-assets-account');
+      },
+    };
+
+    // Step 3: Define the asset to transfer (DOT)
+    const transferAsset = {
+      V3: [
+        {
+          id: {
+            Concrete: {
+              parents: 1,
+              interior: 'Here',
+            },
+          },
+          fun: { Fungible: TRANSFER_AMOUNT },
+        },
+      ],
+    };
 
     let assetHubTx = await assetHub.api.tx.polkadotXcm.limitedReserveTransferAssets(
-      {
-        V3: {
-          parents: 1,
-          interior: { X1: { Parachain: 2091 } },
-        },
-      },
-      {
-        V3: {
-          parents: 0,
-          interior: {
-            X1: {
-              AccountId32: {
-                network: null,
-                id: bob.addressRaw,
-              },
-            },
-          },
-        },
-      },
-      {
-        V3: [
-          {
-            id: {
-              Concrete: {
-                parents: 1,
-                interior: 'Here',
-              },
-            },
-            fun: { Fungible: 50 * 1e10 },
-          },
-        ],
-      },
+      destination,
+      beneficiary,
+      transferAsset,
       0,
       'Unlimited'
     );
@@ -146,24 +138,29 @@ describe('XCM limited reserve transfer from AssetHub to Frequency', async () => 
       'AssetHub chain xcm events'
     );
 
-    // Not needed anymore because we are checking the system events
-    // This was used to verify the XCM success/failure
-    // Verify XCM success/failure
-    // const events = await frequency.api.query.system.events();
-    // console.log('Frequency events:', events.toHuman());
-    // const xcmResults = events.filter(
-    //   ({ event }) => event.section === 'xcmpQueue' && ['Success', 'Fail'].includes(event.method)
-    // );
-    // console.log(
-    //   'XCM Results:',
-    //   xcmResults.map(e => `${e.event.method}: ${e.event.data}`)
-    // );
+    // Check final balances
+    const aliceAssetHubBalance = await getAccountBalance(assetHub.api, alice.address);
+    const bobFrequencyBalance = await getForeignAssetBalance(
+      frequency.api,
+      { parents: 1, interior: 'Here' },
+      bob.address
+    );
 
-    // TODO: Check final balances
+    console.log('Alice AssetHub balance:', aliceAssetHubBalance.toString());
+    console.log('Bob Frequency balance:', bobFrequencyBalance.toString());
 
-    // await check(assetHub.api.query.foreignAssets.account(  {
-    //   parents: 1,
-    //   interior: "Here",
-    // }, bob.address)).toMatchSnapshot('frequency-final-balance')
+    // Verify Alice's AssetHub balance decreased (due to transfer + fees)
+    assert(
+      aliceAssetHubBalance < ALICE_INITIAL_ASSETHUB_BALANCE,
+      `Alice should have less than ${ALICE_INITIAL_ASSETHUB_BALANCE} DOT on AssetHub but has ${aliceAssetHubBalance}`
+    );
+
+    // Verify Bob received the transferred DOT (minus fees)
+    const expectedMinBobBalance = TRANSFER_AMOUNT - 2n * DOT_UNIT; // Account for fees
+    const expectedMaxBobBalance = TRANSFER_AMOUNT;
+    assert(
+      bobFrequencyBalance >= expectedMinBobBalance && bobFrequencyBalance <= expectedMaxBobBalance,
+      `Bob should have between ${expectedMinBobBalance} and ${expectedMaxBobBalance} DOT on Frequency but has ${bobFrequencyBalance}`
+    );
   }, 240000);
 });
