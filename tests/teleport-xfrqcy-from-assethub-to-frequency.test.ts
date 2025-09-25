@@ -11,15 +11,6 @@ const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 import networks, { type Network } from './networks.js';
 
 
-// Interface for Frequency setup configuration
-interface FrequencySetupConfig {
-  nativeBalance: BigInt; // Native balance for account
-  foreignAssetBalance: BigInt; // DOT foreign asset balance
-  foreignAssetSupply: BigInt; // Total supply of foreign asset
-  foreignAssetParaId: number; // AssetHub parachain ID
-  xcmVersion?: number; // XCM version (default: 5)
-  checkingAccountBalance?: BigInt; // Checking account
-}
 
 describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   let frequency: Network;
@@ -126,12 +117,66 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
       },
     });
 
-    await setupFrequencyStorage(frequency.chain, alice, {
-      nativeBalance: 1000n * FREQUENCY_UNIT,
-      foreignAssetBalance: DOT_AMOUNT_SMALLEST,
-      foreignAssetSupply: DOT_AMOUNT_SMALLEST * 10n,
-      foreignAssetParaId: ASSETHUB_PARA_ID,
-      checkingAccountBalance: FREQUENCY_SUPPLY_SMALLEST,
+    // Setup Frequency with native balance for alice
+    await setStorage(frequency.chain, {
+      System: {
+        Account: [
+          [
+            [alice.address],
+            {
+              providers: 1,
+              data: { free: 1000n * FREQUENCY_UNIT },
+            },
+          ],
+          [
+            [checkingAccount()],
+            { data: { free: FREQUENCY_SUPPLY_SMALLEST }, providers: 1 },
+          ],
+        ],
+      },
+      ForeignAssets: {
+        Asset: [
+          [
+            [{ parents: 1, interior: 'Here' }],
+            {
+              supply: DOT_AMOUNT_SMALLEST * 10n,
+              owner: alice.address,
+              isSufficient: true,
+            },
+          ],
+        ],
+        Account: [
+          [
+            [
+              {
+                parents: 1,
+                interior: 'Here',
+              },
+              alice.address,
+            ],
+            {
+              balance: DOT_AMOUNT_SMALLEST,
+              status: { Liquid: null },
+              reason: { Consumer: null },
+              extra: null,
+            },
+          ],
+        ],
+      },
+      PolkadotXcm: {
+        SafeXcmVersion: 5,
+        SupportedVersion: [
+          [
+            [
+              5,
+              {
+                V5: { parents: 1, interior: { X1: [{ Parachain: ASSETHUB_PARA_ID }] } },
+              },
+            ],
+            5,
+          ],
+        ],
+      },
     });
 
     const bobFrequencyBalance = (
@@ -281,84 +326,3 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 }, 240000);
 
 
-/**
- * Sets up Frequency storage for XCM teleport testing
- * @param chain - Frequency chain instance
- * @param account - Account to fund (typically Alice)
- * @param config - Configuration object with balances and parachain ID
- */
-const setupFrequencyStorage = async (
-  chain: any,
-  account: KeyringPair,
-  config: FrequencySetupConfig
-): Promise<void> => {
-  // Constants for this function
-  const XCM_VERSION = 5;
-  const ACCOUNT_PROVIDERS = 1;
-  const ASSET_STATUS = { Liquid: null };
-  const ASSET_REASON = { Consumer: null };
-  const IS_SUFFICIENT = true;
-
-  const xcmVersion = config.xcmVersion ?? XCM_VERSION;
-
-  await setStorage(chain, {
-    System: {
-      Account: [
-        [
-          [account.address],
-          {
-            providers: ACCOUNT_PROVIDERS,
-            data: { free: config.nativeBalance },
-          },
-        ],
-        [
-          [checkingAccount()],
-          { data: { free: config.checkingAccountBalance }, providers: ACCOUNT_PROVIDERS },
-        ],
-      ],
-    },
-    ForeignAssets: {
-      Asset: [
-        [
-          [{ parents: 1, interior: 'Here' }],
-          {
-            supply: config.foreignAssetSupply,
-            owner: account.address,
-            isSufficient: IS_SUFFICIENT,
-          },
-        ],
-      ],
-      Account: [
-        [
-          [
-            {
-              parents: 1,
-              interior: 'Here',
-            },
-            account.address,
-          ],
-          {
-            balance: config.foreignAssetBalance,
-            status: ASSET_STATUS,
-            reason: ASSET_REASON,
-            extra: null,
-          },
-        ],
-      ],
-    },
-    PolkadotXcm: {
-      SafeXcmVersion: xcmVersion,
-      SupportedVersion: [
-        [
-          [
-            xcmVersion,
-            {
-              V5: { parents: 1, interior: { X1: [{ Parachain: config.foreignAssetParaId }] } },
-            },
-          ],
-          xcmVersion,
-        ],
-      ],
-    },
-  });
-};
