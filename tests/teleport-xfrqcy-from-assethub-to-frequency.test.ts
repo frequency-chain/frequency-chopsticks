@@ -10,8 +10,6 @@ const { check, checkSystemEvents, checkHrmp } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
 
-
-
 describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
   let frequency: Network;
   let assetHub: Network;
@@ -128,10 +126,7 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
               data: { free: 1000n * FREQUENCY_UNIT },
             },
           ],
-          [
-            [checkingAccount()],
-            { data: { free: FREQUENCY_SUPPLY_SMALLEST }, providers: 1 },
-          ],
+          [[checkingAccount()], { data: { free: FREQUENCY_SUPPLY_SMALLEST }, providers: 1 }],
         ],
       },
       ForeignAssets: {
@@ -186,20 +181,22 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
 
     // assert(bobsDotBalanceOnFrequency === 0n, 'Bob should have 0 DOT on Frequency');
 
-    // Build XCM message step by step for better readability
-
-
-    // Step 6: Build the complete XCM message
+    // Build the complete XCM message
     const xcm = {
       V5: [
         {
           WithdrawAsset: [
             { id: { parents: 1, interior: 'here' }, fun: { Fungible: 10n * DOT_UNIT } },
-            { id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }, fun: { Fungible: 10n * FREQUENCY_UNIT } },
+            {
+              id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+              fun: { Fungible: 10n * FREQUENCY_UNIT },
+            },
           ],
         },
         {
-          PayFees: { asset: { id: { parents: 1, interior: 'here' }, fun: { Fungible: 2n * DOT_UNIT } } },
+          PayFees: {
+            asset: { id: { parents: 1, interior: 'here' }, fun: { Fungible: 2n * DOT_UNIT } },
+          },
         },
         {
           InitiateTransfer: {
@@ -209,14 +206,21 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
             },
             remoteFees: {
               ReserveDeposit: {
-                Definite: [{ id: { parents: 1, interior: 'here' }, fun: { Fungible: 3n * DOT_UNIT } }],
+                Definite: [
+                  { id: { parents: 1, interior: 'here' }, fun: { Fungible: 3n * DOT_UNIT } },
+                ],
               },
             },
             preserveOrigin: false,
             assets: [
               {
                 Teleport: {
-                  Definite: [{ id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } }, fun: { Fungible: 10n * FREQUENCY_UNIT } }],
+                  Definite: [
+                    {
+                      id: { parents: 1, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+                      fun: { Fungible: 10n * FREQUENCY_UNIT },
+                    },
+                  ],
                 },
               },
             ],
@@ -324,5 +328,3 @@ describe('Teleport DOT from AssetHub to Frequency with DOT fee', () => {
     );
   });
 }, 240000);
-
-

@@ -181,7 +181,11 @@ export const getAccountBalance = async (api: any, address: string): Promise<bigi
  * @param address - Account address
  * @returns Foreign asset balance as BigInt
  */
-export const getForeignAssetBalance = async (api: any, assetLocation: any, address: string): Promise<bigint> => {
+export const getForeignAssetBalance = async (
+  api: any,
+  assetLocation: any,
+  address: string
+): Promise<bigint> => {
   const assetAccount = await api.query.foreignAssets.account(assetLocation, address);
   const balanceStr = (assetAccount.toHuman() as any).balance.replace(/,/g, '');
   return BigInt(balanceStr);
