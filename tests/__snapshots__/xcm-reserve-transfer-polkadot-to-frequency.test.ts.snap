@@ -1,5 +1,89 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`XCM > Frequency handles downward messages > frequency-downward-messages 1`] = `
+[
+  {
+    "data": {
+      "error": "Corrupt",
+      "id": "(hash)",
+      "origin": "Parent",
+    },
+    "method": "ProcessingFailed",
+    "section": "messageQueue",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
+exports[`XCM > Frequency handles downward messages > system events 1`] = `
+[
+  {
+    "data": {
+      "error": "Corrupt",
+      "id": "(hash)",
+      "origin": "Parent",
+    },
+    "method": "ProcessingFailed",
+    "section": "messageQueue",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 2000)",
+          "refTime": "(rounded 280000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 98000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;
+
 exports[`XCM > Polkadot send downward messages to frequency > frequency-receive-events 1`] = `
 [
   {
@@ -302,4 +386,45 @@ exports[`XCM > Polkadot send downward messages to frequency > polkadot-events 1`
     "section": "system",
   },
 ]
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": 0,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot 2`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": 0,
+    "free": 100000000000,
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`XCM > frequency send upward messages to Polkadot 3`] = `
+{
+  "balance": 100000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
 `;

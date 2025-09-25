@@ -1,19 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { setStorage, DownwardMessage } from '@acala-network/chopsticks-core';
+import { setStorage } from '@acala-network/chopsticks-core';
 import { withExpect } from '@acala-network/chopsticks-testing';
 import { testingPairs, sendTransaction } from '@acala-network/chopsticks-testing';
 import { connectVertical } from '@acala-network/chopsticks';
+import { getAccountBalance, getForeignAssetBalance } from './util.js';
 
-const { check, checkSystemEvents } = withExpect(expect);
+const { checkSystemEvents } = withExpect(expect);
 
 import networks, { type Network } from './networks.js';
-
-const downwardMessages: DownwardMessage[] = [
-  {
-    sentAt: 1,
-    msg: '0x0210010400010000078155a74e390a1300010000078155a74e39010300286bee0d01000400010100c0cbffafddbe39f71f0190c2369adfc59eaa4c81a308ebcad88cdd9c400ba57c',
-  },
-];
 
 describe('XCM', async () => {
   let frequency: Network;
@@ -29,73 +23,74 @@ describe('XCM', async () => {
     await polkadot.teardown();
   });
 
-  it('Frequency handles downward messages', async () => {
-    console.log('Creating new block with downward messages...');
-    await frequency.chain.newBlock({ downwardMessages });
-
-    console.log('Checking system events...');
-    const events = await frequency.api.query.system.events();
-    console.log('Raw system events:', JSON.stringify(events.toHuman(), null, 2));
-
-    await checkSystemEvents(frequency).toMatchSnapshot();
-  });
-
-  it.only('Polkadot send downward messages to frequency', async () => {
+  it('Polkadot send downward messages to frequency', async () => {
     await connectVertical(polkadot.chain, frequency.chain);
 
     const { alice, bob } = testingPairs();
 
-    polkadot.dev.setStorage({
+    // Token unit definitions (smallest units per token)
+    const DOT_UNIT = 10_000_000_000n; // 1 DOT = 10^10 smallest units
+    const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
+
+    // Parachain IDs
+    const FREQUENCY_PARA_ID = 2091;
+
+    setStorage(polkadot.chain, {
       System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
+        Account: [[[alice.address], { data: { free: 1000n * DOT_UNIT }, providers: 1 }]],
       },
     });
 
-    frequency.dev.setStorage({
+    setStorage(frequency.chain, {
       System: {
-        Account: [[[bob.address], { data: { free: 1000 * 1e10 }, providers: 1 }]],
+        Account: [[[bob.address], { data: { free: 1000n * FREQUENCY_UNIT }, providers: 1 }]],
       },
       ForeignAssets: {
         Asset: [
           [
             [{ parents: 1, interior: 'Here' }],
-            { supply: 1000 * 1e10, owner: alice.address, isSufficient: true },
+            { supply: 0n * DOT_UNIT, owner: alice.address, isSufficient: true },
           ],
         ],
-        // Account: [
-        //   [
-        //     [{ parents: 1, interior: 'Here' }, bob.address],
-        //     { balance: 100 * 1e10, status: { Liquid: null }, reason: { Consumer: null }, extra: null },
-        //   ],
-        // ],
       },
     });
 
-    const tx = await polkadot.api.tx.xcmPallet.reserveTransferAssets(
-      { V5: { parents: 0, interior: { X1: [{ Parachain: 2091 }] } } },
-      {
-        V5: {
-          parents: 0,
-          interior: {
-            X1: [
-              {
-                AccountId32: {
-                  network: null,
-                  id: bob.addressRaw,
-                },
+    // Step 1: Define the destination (Frequency parachain)
+    const destination = {
+      V5: { parents: 0, interior: { X1: [{ Parachain: FREQUENCY_PARA_ID }] } },
+    };
+
+    // Step 2: Define the beneficiary (Bob on Frequency)
+    const beneficiary = {
+      V5: {
+        parents: 0,
+        interior: {
+          X1: [
+            {
+              AccountId32: {
+                network: null,
+                id: bob.addressRaw,
               },
-            ],
-          },
+            },
+          ],
         },
       },
-      {
-        V5: [
-          {
-            id: { Concrete: { parents: 0, interior: 'Here' } },
-            fun: { Fungible: 100 * 1e10 },
-          },
-        ],
-      },
+    };
+
+    // Step 3: Define the asset to transfer (DOT)
+    const transferAsset = {
+      V5: [
+        {
+          id: { Concrete: { parents: 0, interior: 'Here' } },
+          fun: { Fungible: 100n * DOT_UNIT },
+        },
+      ],
+    };
+
+    const tx = await polkadot.api.tx.xcmPallet.reserveTransferAssets(
+      destination,
+      beneficiary,
+      transferAsset,
       0
     );
 
@@ -107,82 +102,25 @@ describe('XCM', async () => {
     // Frequency should receive the downward message
     await frequency.chain.newBlock();
     await checkSystemEvents(frequency).toMatchSnapshot('frequency-receive-events');
-  });
 
-  it('frequency send upward messages to Polkadot', async () => {
-    await connectVertical(polkadot.chain, frequency.chain);
+    // Check final balances
+    const alicePolkadotBalance = await getAccountBalance(polkadot.api, alice.address);
+    assert(
+      alicePolkadotBalance < 1000n * DOT_UNIT - 100n * DOT_UNIT,
+      'Alice should have less than 900 DOT on Polkadot but has ' + alicePolkadotBalance.toString()
+    );
 
-    const { alice } = testingPairs();
+    // 100 DOT was transferred to bob but about 1 DOT was used to pay the fee.
+    const bobDotBalance = await getForeignAssetBalance(
+      frequency.api,
+      { parents: 1, interior: 'Here' },
+      bob.address
+    );
+    assert(
+      99n * DOT_UNIT < bobDotBalance && bobDotBalance < 100n * DOT_UNIT,
+      'Bob should have 100 DOT on Frequency but has ' + bobDotBalance.toString()
+    );
 
-    await setStorage(frequency.chain, {
-      System: {
-        Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
-      },
-      ForeignAssets: {
-        Account: [
-          [
-            [
-              {
-                parents: 1,
-                interior: 'Here',
-              },
-              alice.address,
-            ],
-            {
-              balance: 10e10,
-              status: { Liquid: null },
-              reason: { Consumer: null },
-              extra: null,
-            },
-          ],
-        ],
-      },
-    });
-
-    await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot();
-    await check(frequency.api.query.system.account(alice.address)).toMatchSnapshot();
-    await check(
-      frequency.api.query.foreignAssets.account(
-        {
-          parents: 1,
-          interior: 'Here',
-        },
-        alice.address
-      )
-    ).toMatchSnapshot();
-
-    // await frequency.api.tx.polkadotXcm
-    //   .transfer(
-    //     {
-    //       Token: 'DOT',
-    //     },
-    //     10e10,
-    //     {
-    //       V1: {
-    //         parents: 1,
-    //         interior: {
-    //           X1: {
-    //             AccountId32: {
-    //               network: 'Any',
-    //               id: alice.addressRaw,
-    //             },
-    //           },
-    //         },
-    //       },
-    //     },
-    //     {
-    //       Unlimited: null,
-    //     },
-    //   )
-    //   .signAndSend(alice)
-
-    // await frequency.chain.newBlock()
-    // await checkSystemEvents(frequency).toMatchSnapshot()
-    // await check(frequency.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toMatchSnapshot()
-
-    // await polkadot.chain.newBlock()
-
-    // await check(polkadot.api.query.system.account(alice.address)).toMatchSnapshot()
-    // await checkSystemEvents(polkadot).toMatchSnapshot()
+    console.log('Alice Polkadot balance:', alicePolkadotBalance.toString());
   });
 }, 240000);
