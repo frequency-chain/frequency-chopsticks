@@ -1,11 +1,13 @@
-import { u8aToHex } from '@polkadot/util';
+import { u8aToHex } from "@polkadot/util";
 
 // https://substrate.stackexchange.com/questions/1200/how-to-calculate-sovereignaccount-for-parachain/1210
 /**
  * Get the sibling sovereign account for a parachain
  * This is the account that holds the parachain's sovereign funds on the relay chain
  */
-export async function getSiblingSovereignAccount(paraId: number): Promise<string> {
+export async function getSiblingSovereignAccount(
+  paraId: number,
+): Promise<string> {
   // The sibling sovereign account is derived from the parachain ID
   // Format: ParaId(paraId).into_account_truncating()
   const paraIdBytes = new Uint8Array(4);
@@ -70,7 +72,9 @@ export function checkingAccount(): string {
   return u8aToHex(accountId);
 }
 
-export async function getChildSovereignAccount(paraId: number): Promise<string> {
+export async function getChildSovereignAccount(
+  paraId: number,
+): Promise<string> {
   // The sibling sovereign account is derived from the parachain ID
   // Format: ParaId(paraId).into_account_truncating()
   const paraIdBytes = new Uint8Array(4);
@@ -101,7 +105,11 @@ export async function getChildSovereignAccount(paraId: number): Promise<string> 
 }
 
 // Send transaction and wait for it to be included
-export async function sendTransactionAndWait(tx: any, alice: any, chain: any): Promise<boolean> {
+export async function sendTransactionAndWait(
+  tx: any,
+  alice: any,
+  chain: any,
+): Promise<boolean> {
   return await new Promise(async (resolve, reject) => {
     const unsub = await tx.signAndSend(
       alice,
@@ -117,46 +125,51 @@ export async function sendTransactionAndWait(tx: any, alice: any, chain: any): P
         console.log(`Transaction status: ${status.toString()}`);
 
         if (status.isInvalid) {
-          console.log('❌ Transaction is invalid');
+          console.log("❌ Transaction is invalid");
           unsub();
-          reject(new Error('Transaction is invalid'));
+          reject(new Error("Transaction is invalid"));
           return;
         }
 
         if (status.isDropped) {
-          console.log('❌ Transaction is dropped');
+          console.log("❌ Transaction is dropped");
           unsub();
-          reject(new Error('Transaction is dropped'));
+          reject(new Error("Transaction is dropped"));
           return;
         }
 
         if (status.isReady) {
-          console.log('✅ Transaction is ready in pool');
+          console.log("✅ Transaction is ready in pool");
           // Create block to process the transaction
           await chain.chain.newBlock();
-          console.log('✅ Block created to process transaction');
+          console.log("✅ Block created to process transaction");
         }
 
         if (status.isInBlock) {
-          console.log('✅ Transaction is in block');
+          console.log("✅ Transaction is in block");
 
           if (dispatchError) {
             if (dispatchError.isModule) {
-              const decoded = chain.api.registry.findMetaError(dispatchError.asModule);
-              console.log('❌ Dispatch error:', `${decoded.section}.${decoded.name}`);
+              const decoded = chain.api.registry.findMetaError(
+                dispatchError.asModule,
+              );
+              console.log(
+                "❌ Dispatch error:",
+                `${decoded.section}.${decoded.name}`,
+              );
             } else {
-              console.log('❌ Dispatch error:', dispatchError.toString());
+              console.log("❌ Dispatch error:", dispatchError.toString());
             }
             unsub();
             reject(new Error(`Dispatch error: ${dispatchError.toString()}`));
             return;
           }
 
-          console.log('✅ Transaction successful, unsubscribing...');
+          console.log("✅ Transaction successful, unsubscribing...");
           unsub();
           resolve(true);
         }
-      }
+      },
     );
   });
 }

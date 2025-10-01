@@ -116,7 +116,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   {
     "data": {
       "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-      "freeBalance": "(rounded 100000000000)",
+      "freeBalance": "(rounded 1000000000000000)",
     },
     "method": "Endowed",
     "section": "balances",
@@ -135,7 +135,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
         "interior": "Here",
         "parents": 1,
       },
-      "balance": 80000000000,
+      "balance": 8000000000000,
       "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
     },
     "method": "Burned",
@@ -235,7 +235,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "WithdrawAsset": [
             {
               "fun": {
-                "Fungible": 80000000000,
+                "Fungible": 8000000000000,
               },
               "id": {
                 "interior": "Here",
@@ -249,7 +249,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
           "BuyExecution": {
             "fees": {
               "fun": {
-                "Fungible": 80000000000,
+                "Fungible": 8000000000000,
               },
               "id": {
                 "interior": "Here",
@@ -324,341 +324,6 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
     },
     "method": "ExtrinsicSuccess",
     "section": "system",
-  },
-]
-`;
-
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-events-after-sending-xcm-events 1`] = `
-[
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 2000)",
-          "refTime": "(rounded 280000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Mandatory",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 98000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-  {
-    "data": {
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "NewAccount",
-    "section": "system",
-  },
-  {
-    "data": {
-      "account": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-      "freeBalance": "(rounded 100000000000)",
-    },
-    "method": "Endowed",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1900000)",
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "balance": 80000000000,
-      "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Burned",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "outcome": {
-        "Complete": {
-          "used": {
-            "proofSize": "(rounded 4800)",
-            "refTime": "(rounded 470000000)",
-          },
-        },
-      },
-    },
-    "method": "Attempted",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "balance": "(rounded 31000000000)",
-      "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Burned",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "amount": "(rounded 31000000000)",
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "owner": "f6a1KBtrm86y5y1uxmbmEg14HDpaTTo9ww6JLdZhNPNXMJkUY",
-    },
-    "method": "Issued",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "fees": [
-        {
-          "fun": {
-            "Fungible": "(rounded 31000000000)",
-          },
-          "id": {
-            "interior": "Here",
-            "parents": 1,
-          },
-        },
-      ],
-      "paying": {
-        "interior": {
-          "X1": [
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": {
-                  "ByGenesis": "(hash)",
-                },
-              },
-            },
-          ],
-        },
-        "parents": 0,
-      },
-    },
-    "method": "FeesPaid",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "destination": {
-        "interior": {
-          "X1": [
-            {
-              "Parachain": 1000,
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "message": [
-        {
-          "WithdrawAsset": [
-            {
-              "fun": {
-                "Fungible": 80000000000,
-              },
-              "id": {
-                "interior": "Here",
-                "parents": 1,
-              },
-            },
-          ],
-        },
-        "ClearOrigin",
-        {
-          "BuyExecution": {
-            "fees": {
-              "fun": {
-                "Fungible": 80000000000,
-              },
-              "id": {
-                "interior": "Here",
-                "parents": 1,
-              },
-            },
-            "weightLimit": "Unlimited",
-          },
-        },
-        {
-          "DepositAsset": {
-            "assets": {
-              "Wild": {
-                "AllCounted": 1,
-              },
-            },
-            "beneficiary": {
-              "interior": {
-                "X1": [
-                  {
-                    "AccountId32": {
-                      "id": "(hash)",
-                      "network": null,
-                    },
-                  },
-                ],
-              },
-              "parents": 0,
-            },
-          },
-        },
-      ],
-      "messageId": "(hash)",
-      "origin": {
-        "interior": {
-          "X1": [
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": {
-                  "ByGenesis": "(hash)",
-                },
-              },
-            },
-          ],
-        },
-        "parents": 0,
-      },
-    },
-    "method": "Sent",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "actualFee": "(rounded 1900000)",
-      "tip": 0,
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "TransactionFeePaid",
-    "section": "transactionPayment",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Normal",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 1300000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from frequency to assethub > frequency-inbound-hrmp-messages 1`] = `
-[
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v4": [
-          {
-            "withdrawAsset": [
-              {
-                "fun": {
-                  "fungible": 80000000000,
-                },
-                "id": {
-                  "interior": {
-                    "here": null,
-                  },
-                  "parents": 1,
-                },
-              },
-            ],
-          },
-          {
-            "clearOrigin": null,
-          },
-          {
-            "buyExecution": {
-              "fees": {
-                "fun": {
-                  "fungible": 80000000000,
-                },
-                "id": {
-                  "interior": {
-                    "here": null,
-                  },
-                  "parents": 1,
-                },
-              },
-              "weightLimit": {
-                "unlimited": null,
-              },
-            },
-          },
-          {
-            "depositAsset": {
-              "assets": {
-                "wild": {
-                  "allCounted": 1,
-                },
-              },
-              "beneficiary": {
-                "interior": {
-                  "x1": [
-                    {
-                      "accountId32": {
-                        "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
-                        "network": null,
-                      },
-                    },
-                  ],
-                },
-                "parents": 0,
-              },
-            },
-          },
-          {
-            "setTopic": "0xd000b4079e51b05959c8d9648e4271c0811afb21c2af3d35e94a23750d900859",
-          },
-        ],
-      },
-    ],
-    "recipient": 1000,
   },
 ]
 `;
@@ -707,7 +372,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "withdrawAsset": [
               {
                 "fun": {
-                  "fungible": 80000000000,
+                  "fungible": 8000000000000,
                 },
                 "id": {
                   "interior": {
@@ -725,7 +390,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             "buyExecution": {
               "fees": {
                 "fun": {
-                  "fungible": 80000000000,
+                  "fungible": 8000000000000,
                 },
                 "id": {
                   "interior": {
@@ -762,7 +427,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
             },
           },
           {
-            "setTopic": "0x513fcaa50ba4ed2192f71e15941e1857c470dbbfe27d1231271bf3e330f57e96",
+            "setTopic": "0xd000b4079e51b05959c8d9648e4271c0811afb21c2af3d35e94a23750d900859",
           },
         ],
       },
@@ -777,7 +442,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 99998094206,
+    "free": 999999998084206,
     "frozen": 0,
     "reserved": 0,
   },
@@ -792,7 +457,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": "0x80000000000000000000000000000000",
-    "free": 99998094206,
+    "free": 999999998084206,
     "frozen": 0,
     "reserved": 0,
   },
@@ -807,7 +472,7 @@ exports[`XCM Reserve Transfer from Frequency to AssetHub > transfers assets from
   "consumers": 0,
   "data": {
     "flags": 0,
-    "free": 10000000000000,
+    "free": 1000000000000000,
     "frozen": 0,
     "reserved": 0,
   },

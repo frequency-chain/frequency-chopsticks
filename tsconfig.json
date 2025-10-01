@@ -14,7 +14,7 @@
     "declaration": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
   },
   "include": ["tests/**/*", "*.ts"],
   "exclude": ["node_modules", "dist"]
