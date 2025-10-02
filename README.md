@@ -58,7 +58,7 @@ The configuration includes pre-funded test accounts:
 
 - `tests/networks.ts` - Wire up configurations for each chain
 <!-- - `tests/setup.ts` - Test environment setup and chain connections -->
-- `tests/xcm-utils.ts` - XCM utility functions and helpers
+- `tests/xcm-test-utils.ts` - XCM utility functions and helpers
 - `tests/xcm-transfer.test.ts` - XCM transfer test cases (in progress)
 
 ## Configuration Files

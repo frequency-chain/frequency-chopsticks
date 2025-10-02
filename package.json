@@ -4,6 +4,7 @@
   "description": "XCM testing environment for Frequency and AssetHub using Chopsticks",
   "scripts": {
     "test": "VERBOSE_LOG=true RUNTIME_LOG_LEVEL=5 vitest run",
+    "test:fuzz": "VERBOSE_LOG=false RUNTIME_LOG_LEVEL=2 vitest run tests/fuzzing/reserve-transfer/*.test.ts",
     "test:debug": "LOG_LEVEL=debug RUNTIME_LOG_LEVEL=5 vitest run",
     "test:trace": "LOG_LEVEL=trace RUNTIME_LOG_LEVEL=5  vitest run --reporter=verbose",
     "test:xcm": "npx @acala-network/chopsticks xcm --r polkadot --p frequency --p asset-hub",
