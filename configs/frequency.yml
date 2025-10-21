@@ -2,15 +2,19 @@ endpoint:
   - wss://0.rpc.frequency.xyz
   # - wss://1.rpc.frequency.xyz
 mock-signature-host: true
-block: ${env.FREQUENCY_BLOCK_NUMBER}
-db: ./db/frequency.sqlite
-# runtime-log-level: 5
+# block: ${env.FREQUENCY_BLOCK_NUMBER}
+db: ./db/frequency-proxy.sqlite
+runtime-log-level: 5
+wasm-override: ./wasm/frequency_runtime-proxy.wasm
+# block: 9631261
+block: 9631261
+allow-unresolved-imports: true
 # log-level: debug
 # log-file: ./logs/frequency.log
 
 # allow-unresolved-imports: true
 
-wasm-override: ./wasm/frequency_runtime.wasm
+# wasm-override: ./wasm/frequency_runtime.wasm
 
 import-storage:
   System:
