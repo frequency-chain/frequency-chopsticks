@@ -1,46 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-frequency 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": 0,
-    "free": 100000000000,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-frequency-dot-foreign-assets 1`] = `
-{
-  "balance": 10000000000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
-}
-`;
-
-exports[`XCM > frequency send upward messages to Polkadot > alice-starting-balance-polkadot 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": 0,
-    "free": 10000000000000,
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
 exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`] = `
 [
   {
@@ -50,7 +9,7 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`]
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 2000)",
-          "refTime": "(rounded 280000000)",
+          "refTime": "(rounded 410000000)",
         },
       },
     },
@@ -73,361 +32,62 @@ exports[`XCM > frequency send upward messages to Polkadot > frequency-events 1`]
   },
   {
     "data": {
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+      "who": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
     },
     "method": "Upgraded",
     "section": "balances",
   },
   {
     "data": {
-      "amount": "(rounded 1900000)",
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+      "amount": "(rounded 2000000)",
+      "who": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
     },
     "method": "Withdraw",
     "section": "balances",
   },
   {
     "data": {
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "balance": 1000000000000,
-      "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Burned",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "outcome": {
-        "Complete": {
-          "used": {
-            "proofSize": "(rounded 4800)",
-            "refTime": "(rounded 470000000)",
-          },
-        },
-      },
-    },
-    "method": "Attempted",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "balance": "(rounded 31000000000)",
-      "owner": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
-    },
-    "method": "Burned",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "amount": "(rounded 31000000000)",
-      "assetId": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "owner": "f6a1KBtrm86y5y1uxmbmEg14HDpaTTo9ww6JLdZhNPNXMJkUY",
-    },
-    "method": "Issued",
-    "section": "foreignAssets",
-  },
-  {
-    "data": {
-      "fees": [
-        {
-          "fun": {
-            "Fungible": "(rounded 31000000000)",
-          },
-          "id": {
-            "interior": "Here",
-            "parents": 1,
-          },
-        },
-      ],
-      "paying": {
-        "interior": {
-          "X1": [
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": {
-                  "ByGenesis": "(hash)",
-                },
-              },
-            },
-          ],
-        },
-        "parents": 0,
-      },
-    },
-    "method": "FeesPaid",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "UpwardMessageSent",
-    "section": "parachainSystem",
-  },
-  {
-    "data": {
-      "destination": {
-        "interior": "Here",
-        "parents": 1,
-      },
-      "message": [
-        {
-          "WithdrawAsset": [
-            {
-              "fun": {
-                "Fungible": 1000000000000,
-              },
-              "id": {
-                "interior": "Here",
-                "parents": 0,
-              },
-            },
-          ],
-        },
-        "ClearOrigin",
-        {
-          "BuyExecution": {
-            "fees": {
-              "fun": {
-                "Fungible": 1000000000000,
-              },
-              "id": {
-                "interior": "Here",
-                "parents": 0,
-              },
-            },
-            "weightLimit": "Unlimited",
-          },
-        },
-        {
-          "DepositAsset": {
-            "assets": {
-              "Wild": {
-                "AllCounted": 1,
-              },
-            },
-            "beneficiary": {
-              "interior": {
-                "X1": [
-                  {
-                    "AccountId32": {
-                      "id": "(hash)",
-                      "network": null,
-                    },
-                  },
-                ],
-              },
-              "parents": 0,
-            },
-          },
-        },
-      ],
-      "messageId": "(hash)",
-      "origin": {
-        "interior": {
-          "X1": [
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": {
-                  "ByGenesis": "(hash)",
-                },
-              },
-            },
-          ],
-        },
-        "parents": 0,
-      },
-    },
-    "method": "Sent",
-    "section": "polkadotXcm",
-  },
-  {
-    "data": {
-      "actualFee": "(rounded 1900000)",
+      "actualFee": "(rounded 2000000)",
       "tip": 0,
-      "who": "f6adGoezY4QWXCbz5EK8wfTJ8FLyCUtnW4KMiWbj9ugXKgYbC",
+      "who": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
     },
     "method": "TransactionFeePaid",
     "section": "transactionPayment",
   },
   {
     "data": {
+      "dispatchError": {
+        "Module": {
+          "error": "0x15000000",
+          "index": 72,
+        },
+      },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
           "proofSize": 0,
-          "refTime": "(rounded 1300000000)",
+          "refTime": "(rounded 2200000000)",
         },
       },
     },
-    "method": "ExtrinsicSuccess",
+    "method": "ExtrinsicFailed",
     "section": "system",
   },
 ]
 `;
 
-exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events 1`] = `
-[
-  {
-    "v4": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "interior": {
-                "here": null,
-              },
-              "parents": 0,
-            },
-          },
-        ],
-      },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "interior": {
-                "here": null,
-              },
-              "parents": 0,
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "allCounted": 1,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": [
-                {
-                  "accountId32": {
-                    "id": "0xd17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
-                    "network": null,
-                  },
-                },
-              ],
-            },
-            "parents": 0,
-          },
-        },
-      },
-      {
-        "setTopic": "0x8bc93def8abed952231ab1c18691ccea5e1ee4711ae651014df9eec156f19661",
-      },
-    ],
-  },
-]
-`;
+exports[`XCM > frequency send upward messages to Polkadot > frequency-ump-events 1`] = `[]`;
 
 exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] = `
 [
   {
     "data": {
-      "deactivated": "(rounded 130000000000000000)",
-      "reactivated": "(rounded 130000000000000000)",
+      "deactivated": "(rounded 410000000000000)",
+      "reactivated": "(rounded 410000000000000)",
     },
     "method": "UpdatedInactive",
     "section": "treasury",
-  },
-  {
-    "data": {
-      "who": "13YMK2dyjeWEiCk1t1jn71fyRUN2uaz2G14S783BCR3LvvaD",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 1000000000000,
-      "who": "13YMK2dyjeWEiCk1t1jn71fyRUN2uaz2G14S783BCR3LvvaD",
-    },
-    "method": "Burned",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "account": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
-    },
-    "method": "NewAccount",
-    "section": "system",
-  },
-  {
-    "data": {
-      "account": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
-      "freeBalance": "(rounded 1000000000000)",
-    },
-    "method": "Endowed",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1000000000000)",
-      "who": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
-    },
-    "method": "Minted",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 23000000)",
-    },
-    "method": "Issued",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 23000000)",
-      "who": "12WRpiUFDZ1GjksnpmBL3EzT2jz2TZ7QHhUTqoubhYPQ7PAZ",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Ump": {
-          "Para": "(rounded 2100)",
-        },
-      },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 290000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
   },
   {
     "data": {
@@ -436,7 +96,7 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 260000000)",
+          "refTime": "(rounded 270000000)",
         },
       },
     },

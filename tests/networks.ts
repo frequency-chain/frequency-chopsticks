@@ -11,8 +11,10 @@ export type NetworkEndpoints = {
 };
 
 const endpoints: NetworkEndpoints = {
-  polkadot: ['wss://rpc.ibp.network/polkadot'],
-  frequency: ['wss://0.rpc.frequency.xyz'],
+  // polkadot: ['wss://rpc.ibp.network/polkadot'],
+  polkadot: ['wss://paseo.dotters.network'],
+  // frequency: ['wss://0.rpc.frequency.xyz'],
+  frequency: ['wss://0.rpc.testnet.amplica.io'], // paseo
   assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
 };
 
@@ -30,19 +32,28 @@ export default {
   polkadot: (options?: Partial<SetupOption>): Promise<Network> => {
     console.log('Setting up Polkadot network with options:', {
       wasmOverride: process.env.POLKADOT_WASM || undefined,
-      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
+      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 10225105,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/polkadot-db.sqlite' : undefined,
     });
     return setupContext({
       wasmOverride: process.env.POLKADOT_WASM || undefined,
-      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 27781571,
+      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER) || 10225105,
       endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/polkadot-db.sqlite' : undefined,
       ...options,
     });
   },
   frequency: (options?: Partial<SetupOption>): Promise<Network> => {
+    console.log('setting up frequency network options: ', {
+      wasmOverride: process.env.FREQUENCY_WASM || undefined,
+      blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
+      endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
+      db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/frequency-db.sqlite' : undefined,
+      runtimeLogLevel: 5,
+      processQueuedMessages: true,
+      ...options,
+    });
     return setupContext({
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
