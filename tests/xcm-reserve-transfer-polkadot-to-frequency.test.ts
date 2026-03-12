@@ -33,7 +33,7 @@ describe('XCM', async () => {
     const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
 
     // Parachain IDs
-    const FREQUENCY_PARA_ID = 2091;
+    const FREQUENCY_PARA_ID = 4000;
 
     setStorage(polkadot.chain, {
       System: {
@@ -68,7 +68,6 @@ describe('XCM', async () => {
           X1: [
             {
               AccountId32: {
-                network: null,
                 id: bob.addressRaw,
               },
             },
@@ -81,17 +80,18 @@ describe('XCM', async () => {
     const transferAsset = {
       V5: [
         {
-          id: { Concrete: { parents: 0, interior: 'Here' } },
+          id: { parents: 0, interior: 'Here' },
           fun: { Fungible: 100n * DOT_UNIT },
         },
       ],
     };
 
-    const tx = await polkadot.api.tx.xcmPallet.reserveTransferAssets(
+    const tx = await polkadot.api.tx.xcmPallet.limitedReserveTransferAssets(
       destination,
       beneficiary,
       transferAsset,
-      0
+      0,
+      'Unlimited'
     );
 
     await sendTransaction(tx.signAsync(alice));
