@@ -83,14 +83,6 @@ exports[`XCM > frequency send upward messages to Polkadot > polkadot-events 1`] 
 [
   {
     "data": {
-      "deactivated": "(rounded 410000000000000)",
-      "reactivated": "(rounded 410000000000000)",
-    },
-    "method": "UpdatedInactive",
-    "section": "treasury",
-  },
-  {
-    "data": {
       "dispatchInfo": {
         "class": "Mandatory",
         "paysFee": "Yes",
