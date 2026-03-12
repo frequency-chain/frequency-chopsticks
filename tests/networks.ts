@@ -11,11 +11,9 @@ export type NetworkEndpoints = {
 };
 
 const endpoints: NetworkEndpoints = {
-  // polkadot: ['wss://rpc.ibp.network/polkadot'],
-  polkadot: ['wss://paseo.dotters.network'],
-  // frequency: ['wss://0.rpc.frequency.xyz'],
+  polkadot: ['wss://paseo-rpc.n.dwellir.com'],
   frequency: ['wss://0.rpc.testnet.amplica.io'], // paseo
-  assetHub: ['wss://polkadot-asset-hub-rpc.polkadot.io'],
+  assetHub: ['wss://asset-hub-paseo.dotters.network'],
 };
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -47,6 +45,8 @@ export default {
   frequency: (options?: Partial<SetupOption>): Promise<Network> => {
     console.log('setting up frequency network options: ', {
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
+      allowUnresolvedImports: true,
+      mockSignatureHost: true,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
       endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/frequency-db.sqlite' : undefined,
@@ -57,6 +57,7 @@ export default {
     return setupContext({
       wasmOverride: process.env.FREQUENCY_WASM || undefined,
       blockNumber: toNumber(process.env.FREQUENCY_BLOCK_NUMBER) || 3000000,
+      allowUnresolvedImports: true,
       endpoint: process.env.FREQUENCY_ENDPOINT ?? endpoints.frequency,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/frequency-db.sqlite' : undefined,
       runtimeLogLevel: 5,
@@ -67,6 +68,7 @@ export default {
   assetHub: (options?: Partial<SetupOption>): Promise<Network> => {
     const config: SetupOption = {
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
+      allowUnresolvedImports: true,
       runtimeLogLevel: 5,
       blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9669797,
       port: options?.port || 0, // Use 0 for dynamic port assignment

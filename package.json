@@ -17,8 +17,8 @@
     "lint": "prettier --check . && npm run format"
   },
   "devDependencies": {
-    "@acala-network/chopsticks": "^1.2.2",
-    "@acala-network/chopsticks-testing": "^1.2.2",
+    "@acala-network/chopsticks": "^1.2.8",
+    "@acala-network/chopsticks-testing": "^1.2.8",
     "@polkadot/api": "^12.0.0",
     "@polkadot/types": "^16.0.0",
     "@polkadot/util": "^13.0.0",

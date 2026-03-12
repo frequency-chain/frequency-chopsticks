@@ -33,7 +33,7 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
     const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
 
     // Parachain IDs
-    const FREQUENCY_PARA_ID = 2091;
+    const FREQUENCY_PARA_ID = 4000;
     const ASSETHUB_PARA_ID = 1000;
 
     const frequencySovereignAccount = await getSiblingSovereignAccount(FREQUENCY_PARA_ID);
@@ -117,6 +117,10 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
       )
     ).toMatchSnapshot('frequency-check-foreign-assets-account');
 
+    // Create initial blocks on both chains to ensure synchronization
+    await frequency.chain.newBlock();
+    await assetHub.chain.newBlock();
+
     // Step 1: Define the assets to withdraw
     const frequencyAsset = {
       id: { parents: 0, interior: 'here' },
@@ -195,8 +199,6 @@ describe('Teleport XFRQCY to AssetHub with DOT fee', () => {
         },
       ],
     };
-
-    await frequency.chain.newBlock();
 
     const tx = await frequency.api.tx.polkadotXcm.execute(xcm, {
       refTime: 8000000000,
