@@ -33,7 +33,7 @@ describe('XCM Reserve Transfer from Frequency to AssetHub', async () => {
     const FREQUENCY_UNIT = 100_000_000n; // 1 Frequency = 10^8 smallest units
 
     // Parachain IDs
-    const FREQUENCY_PARA_ID = 2091;
+    const FREQUENCY_PARA_ID = 4000;
     const ASSETHUB_PARA_ID = 1000;
 
     // Test amounts
