@@ -15,9 +15,9 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
 [
   {
     "data": {
-      "amount": "(rounded 4100)",
+      "amount": "(rounded 2200000)",
       "from": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
-      "to": "13xAUHVDyG1v9LLHYtMm7XZFyKNVxoj47oWV431XQ9kjXN38",
+      "to": "1LfAfKweyPjXs4JkKW4AxHPTe7pu4w4HjcZbEtB6a8vMqkd",
     },
     "method": "Transfer",
     "section": "balances",
@@ -29,7 +29,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 1500)",
-          "refTime": "(rounded 280000000)",
+          "refTime": "(rounded 290000000)",
         },
       },
     },
@@ -59,7 +59,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 120000000)",
+      "amount": "(rounded 33000000)",
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Withdraw",
@@ -79,7 +79,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "interior": {
           "X1": [
             {
-              "Parachain": "(rounded 2100)",
+              "Parachain": 4000,
             },
           ],
         },
@@ -93,14 +93,14 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+      "account": "13cKp89CGRYN7bn8ZiHM6YnFhaNfwjneN6L2gXMuZCqNx1En",
     },
     "method": "NewAccount",
     "section": "system",
   },
   {
     "data": {
-      "account": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+      "account": "13cKp89CGRYN7bn8ZiHM6YnFhaNfwjneN6L2gXMuZCqNx1En",
       "freeBalance": 30000000000,
     },
     "method": "Endowed",
@@ -109,7 +109,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   {
     "data": {
       "amount": 30000000000,
-      "who": "13cKp88npNh8qoUAS1gsDf1nfx3Ld138KehsN5Zg594unc7o",
+      "who": "13cKp89CGRYN7bn8ZiHM6YnFhaNfwjneN6L2gXMuZCqNx1En",
     },
     "method": "Minted",
     "section": "balances",
@@ -117,7 +117,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   {
     "data": {
       "amount": "(rounded 310000000)",
-      "who": "14xmwinmCEz6oRrFdczHKqHgWNMiCysE2KrA4jXXAAM1Eogk",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
     },
     "method": "Minted",
     "section": "balances",
@@ -135,7 +135,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "interior": {
           "X1": [
             {
-              "Parachain": "(rounded 2100)",
+              "Parachain": 4000,
             },
           ],
         },
@@ -170,14 +170,14 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 130000000)",
+      "amount": "(rounded 24000000)",
     },
     "method": "Issued",
     "section": "balances",
   },
   {
     "data": {
-      "amount": "(rounded 130000000)",
+      "amount": "(rounded 24000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -189,7 +189,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "Complete": {
           "used": {
             "proofSize": "(rounded 27000)",
-            "refTime": "(rounded 1800000000)",
+            "refTime": "(rounded 3300000000)",
           },
         },
       },
@@ -199,7 +199,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 87000000)",
+      "amount": "(rounded 15000000)",
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
     "method": "Deposit",
@@ -207,7 +207,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "amount": "(rounded 33000000)",
+      "amount": "(rounded 17000000)",
       "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
     },
     "method": "Deposit",
@@ -215,7 +215,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
   },
   {
     "data": {
-      "actualFee": "(rounded 33000000)",
+      "actualFee": "(rounded 17000000)",
       "tip": 0,
       "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
     },
@@ -228,13 +228,53 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 38000)",
-          "refTime": "(rounded 2300000000)",
+          "proofSize": 0,
+          "refTime": "(rounded 4000000000)",
         },
       },
     },
     "method": "ExtrinsicSuccess",
     "section": "system",
+  },
+  {
+    "data": {
+      "newScore": 7500000000000,
+      "who": "16CorvriCpRTkhDWA2YSPAn8KmCMdys1peJhYFK3NA8wuVRW",
+    },
+    "method": "ScoreUpdated",
+    "section": "voterList",
+  },
+  {
+    "data": {
+      "newScore": 6800000000000,
+      "who": "15JXvRswW3d6U4ec7J83sxQL5iiee563NS2S9iE2qAMyS6DW",
+    },
+    "method": "ScoreUpdated",
+    "section": "voterList",
+  },
+  {
+    "data": {
+      "newScore": "(rounded 6500000000000)",
+      "who": "1pM3QfGN975GTYmdiBL4mLEM4CRmZ9hqTypwS3MNeywmwyn",
+    },
+    "method": "ScoreUpdated",
+    "section": "voterList",
+  },
+  {
+    "data": {
+      "newScore": 5700000000000,
+      "who": "13dqXbdXoDiJzmhcwNTP76zihNDpQp6Pg4J7VoARk5k7QK1P",
+    },
+    "method": "ScoreUpdated",
+    "section": "voterList",
+  },
+  {
+    "data": {
+      "newScore": 6000000000000,
+      "who": "12GZkSPRg1nvbDJBMt7rzd7Fp9YDJY2VJN3vVFR68e5492cd",
+    },
+    "method": "ScoreUpdated",
+    "section": "voterList",
   },
 ]
 `;
@@ -325,7 +365,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
         ],
       },
     ],
-    "recipient": 2091,
+    "recipient": 4000,
   },
 ]
 `;
