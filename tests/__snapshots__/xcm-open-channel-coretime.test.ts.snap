@@ -305,7 +305,7 @@ exports[`XCM Channel Opening with Coretime > opens HRMP channel with Coretime vi
         },
       },
       {
-        "setTopic": "0x439678772312eea809dcae593ed8db62ace366f393c4f222020f0b48c4990605",
+        "setTopic": "0xe5e10cff6cfa481aa147936baa58999edbd1aecced02bcb96d5f7aec6bc6f082",
       },
     ],
   },
