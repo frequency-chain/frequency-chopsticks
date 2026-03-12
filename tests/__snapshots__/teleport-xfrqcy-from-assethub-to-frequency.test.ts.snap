@@ -381,7 +381,7 @@ exports[`Teleport DOT from AssetHub to Frequency with DOT fee > Teleport DOT fro
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 14000)",
-        "refTime": "(rounded 1100000000)",
+        "refTime": "(rounded 1800000000)",
       },
     },
     "method": "Processed",

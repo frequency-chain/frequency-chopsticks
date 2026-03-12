@@ -70,7 +70,7 @@ export default {
       wasmOverride: process.env.ASSET_HUB_WASM || undefined,
       allowUnresolvedImports: true,
       runtimeLogLevel: 5,
-      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER) || 9669797,
+      blockNumber: toNumber(process.env.ASSET_HUB_BLOCK_NUMBER),
       port: options?.port || 0, // Use 0 for dynamic port assignment
       endpoint: process.env.ASSET_HUB_ENDPOINT ?? endpoints.assetHub,
       db: !process.env.RUN_TESTS_WITHOUT_DB ? './db/assethub-db.sqlite' : undefined,
